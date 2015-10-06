@@ -1,32 +1,51 @@
 body {
   margin: 0px;
 
-  font: 16px/1.7 "Helvetica Neue",Helvetica,arial,freesans,clean,sans-serif;
+  font: 1.2em/1.5em arial,verdana,geneva,helvetica,sans-serif;
   color: #ffffff;
  
 }
 
 #top_bar {
-  height: 23px;
-  background-color: rgba(11, 2, 98, 1);
+  height: 24px;
+  background-color: rgb(0, 32, 84);
+}
+
+#header_wrapper {
+  background-color: #002E78;
 }
 
 #header {
-  padding-top: 20px;
-  padding-bottom: 20px;
-
-  background-color: #002E78;
-
+  position: relative;
+  margin: auto;
+  width: 995px;
   color: #ffffff;
 }
 
 #logo_site {
-  display: inline-block;
-  padding-left: 220px;
-
   line-height: 1.2;
   font-size: 40px;
   font-weight: 300;
+}
+
+#search_bar {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 390px;
+  margin-top: 22px;
+}
+
+#search_bar_glass {
+  height: 30px;
+  width: 30px;
+  background: none repeat scroll 0% 0% #FFF;
+  float: left;
+}
+
+#search_bar_field {
+  margin-top: 22px;
+  width: 306px;
 }
 
 #right_buttons {
@@ -45,6 +64,7 @@ body {
 }
 
 .button {
+  display: inline-block;
   border-radius: 3px;
   font-family: AvenirNext,Arial,Helvetica,sans-serif;
   font-weight: 600;
@@ -52,7 +72,7 @@ body {
   color: #ffffff;
   font-size: 13px;
   background: rgb(0,150,202);
-  padding: 7px 7px 7px;
+  padding: 3px 3px 3px;
   margin-bottom: 7px;
   line-height: 27px;
   height: 27px;

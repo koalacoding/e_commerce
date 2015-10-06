@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="../index_style.css">
-		<title>Admin panel</title>
+		<title>Panneau d'administration</title>
 	</head>
 
 	<body>

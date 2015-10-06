@@ -23,7 +23,9 @@
 					echo 'Redirection in 2 seconds...';
 
 					if ($registration_result == 1) { // If registration succeeded.
+						echo 'Votre compte a été créé avec succès.';
 						header("refresh:2;url=../index.php");
+						die();
 					}
 
 					else {
