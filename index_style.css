@@ -19,83 +19,150 @@ body {
   position: relative;
   margin: auto;
   width: 995px;
+  overflow:hidden;
+
   color: #ffffff;
 }
 
+#logo_site, #search_bar, #right_elements {
+  display:inline;
+}
+
 #logo_site {
+  width: 175px;
+  height: 76px;
+
   line-height: 1.2;
   font-size: 40px;
   font-weight: 300;
 }
 
 #search_bar {
-  display: block;
   position: absolute;
   top: 0px;
   right: 390px;
   margin-top: 22px;
+
+  text-align: center;
+}
+
+#search_bar_glass_container {
+  height: 30px;
+  width: 30px;
+  float: left;
+  background: #fff;
+
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 0px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
 }
 
 #search_bar_glass {
-  height: 30px;
-  width: 30px;
-  background: none repeat scroll 0% 0% #FFF;
-  float: left;
+  height: 22px;
+  width: 22px;
+  margin-top: 4px;
 }
 
 #search_bar_field {
-  margin-top: 22px;
+  vertical-align: top;
   width: 306px;
+  height: 30px;
+  left: -2px;
+  padding: 0 2px;
+
+  border: 0 none;
+
+  line-height: 30px;
+  color: #646464;
+  font-style: italic;
 }
 
-#right_buttons {
-  float: right;
-  width: 30%;
-  margin-right: 10%;
-
-}
-
-#username_and_balance {
-  position:relative;
-}
-
-#not_registred {
-  margin-top: 25px;
-}
-
-.button {
+#search_bar_ok {
   display: inline-block;
-  border-radius: 3px;
-  font-family: AvenirNext,Arial,Helvetica,sans-serif;
-  font-weight: 600;
+  height: 30px;
+  width: 40px;
+  left: -5px;
+  position: relative;
+  vertical-align: top;
 
-  color: #ffffff;
-  font-size: 13px;
-  background: rgb(0,150,202);
-  padding: 3px 3px 3px;
-  margin-bottom: 7px;
-  line-height: 27px;
-  height: 27px;
-  text-decoration: none;
+  background: #0096CA;
 
-  box-shadow: 0px 2px 0px rgb(0,12,15);
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 31px;
+  text-align: center;
 }
 
-.right_button2 {
-    background: #132847;
-    box-shadow: 0px 2px 0px #0E2149;
+#right_elements {
+  float: right;
 }
 
-#admin_button {
-  background: #DF0101;
+.right_element {
+  top: 0px;
+  margin-top: 15px;
+  margin-left: 55px;
+  display:inline-block;
+}
+
+.element_logo {
+ float: left;
+}
+
+.right_element_content {
+  float: right;
+  padding-left: 5px;
+}
+
+.element_title, .element_text {
+  float: left;
+  clear: left;
+  height: 15px;
+  text-align: left;
+}
+
+.element_title {
+  font-style: normal;
+  font-size: 17px;
+  font-family: DINPro,arial;
+  font-weight: bold;
+}
+
+#small_blue_arrow {
+  float: left;
+  width: 12px;
+  height: 12px;
+  margin-top: 7px;
+  margin-left: 5px;
+
+  background: url(http://media.ldlc.com/v3/img/general/ico-fleche.svg) no-repeat 0 top;
+}
+
+.element_text {
+  font-size: 12px;
+  color: #cbd5e4;
 }
 
 #core {
-    position:absolute; 
-    background-size:cover;
-    height: 100%;
-    width: 100%;
-    background: url("https://www.pinnaclesports.com/Cms_Data/Contents/Guest/Media/Background/generic-background-3.jpg") no-repeat scroll center top transparent;
+  position:absolute; 
+  background-size:cover;
+  height: 100%;
+  width: 100%;
+
+  background-color: #e5e5e5;
 }
 
 
@@ -106,7 +173,7 @@ body {
 
 #core_core_core {
   display: inline-block;
-  float: right;
+  margin: auto;
   width: 77.32%;
   height: 100%;
   background-color: #ffffff;
@@ -117,24 +184,4 @@ body {
 #core_core_core_title {
   font-size: 23px;
   font-weight: 800;
-}
-
-#menu {
-  display: inline-block;
-  float: left;
-  width: 22.68%;
-  height: 100%;
-
-  background-color: #222F42;
-}
-
-#menu_title {
-  height: 30px;
-
-  background-color: rgba(11, 2, 98, 1);
-
-  line-height: 33px;
-  font-family: Arial,Helvetica,sans-serif;
-  font-size: 14px;
-  font-weight: 500;
 }
