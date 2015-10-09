@@ -165,20 +165,46 @@ body {
   background-color: #e5e5e5;
 }
 
+#core_core_top_bar, #core_core {
+  margin: 0 auto;
+}
+
+#core_core_top_bar {
+  width: 995px;
+  margin-top: 20px;
+  height: 30px;
+
+  background-color: rgb(246, 246, 246);
+  border: 1px solid #c8c8c8;
+}
+
+#core_core_top_bar_part1, #core_core_top_bar_part2 {
+  height: 30px;
+}
+
+#core_core_top_bar_part1 {
+
+  background: url(http://image.noelshack.com/fichiers/2015/41/1444282525-core-core-top-bar.png) no-repeat 0 0;
+}
+
+#core_core_top_bar_part2 {
+
+}
 
 #core_core {
-  width: 970px;
-  height: 100%;
+  width: 975px;
+  background: #fff;
+  padding: 10px 10px 0;
+
+  border-right: 1px solid #c8c8c8;
+  border-left: 1px solid #c8c8c8;
+  border-bottom: 1px solid #c8c8c8;
+
+  color: #141414;
 }
 
 #core_core_core {
-  display: inline-block;
-  margin: auto;
-  width: 77.32%;
-  height: 100%;
-  background-color: #ffffff;
 
-  color: #000000;
 }
 
 #core_core_core_title {

@@ -1,4 +1,40 @@
 <?php
+  /*--------------------------------------------------
+  ----------------------------------------------------
+  ------------------------ADMIN-----------------------
+  ----------------------------------------------------
+  --------------------------------------------------*/
+
+  /*------------------------------
+  ------CHECK IF USER IS ADMIN----
+  ------------------------------*/
+
+  function is_user_admin($bdd, $username) {
+    $request = $bdd->prepare("SELECT is_admin FROM users WHERE username=?");
+    $request->execute(array($username));
+    $fetch = $request->fetch();
+    $request->closeCursor();
+
+    if ($fetch['is_admin'] == 1) { // If the user is admin.
+      return TRUE;
+    }
+
+    return FALSE;
+  }
+
+  /*-------------------------------------
+  ------SHOW ADMIN ZONE ACCESS LINK------
+  -------------------------------------*/
+
+  function show_admin_zone_link() {
+    include_once('sql/sql_connexion.php');
+    if (isset($_SESSION['username'])) {
+        if (is_user_admin($bdd, $_SESSION['username']) == 1) {
+          echo '<a>Zone d\'administration</a>';
+        }
+    }
+  }
+
   /*----------------------------------------
   ------------------------------------------
   ---------------SHOW BUTTONS---------------
