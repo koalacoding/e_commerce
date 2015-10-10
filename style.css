@@ -157,10 +157,10 @@ body {
 }
 
 #core {
-  position:absolute; 
-  background-size:cover;
-  height: 100%;
-  width: 100%;
+  padding-top: 20px;
+  position:absolute;
+  min-height: 100%;
+  min-width: 100%;
 
   background-color: #e5e5e5;
 }
@@ -171,24 +171,31 @@ body {
 
 #core_core_top_bar {
   width: 995px;
-  margin-top: 20px;
   height: 30px;
 
-  background-color: rgb(246, 246, 246);
+  background: url(http://image.noelshack.com/fichiers/2015/41/1444282525-core-core-top-bar.png) no-repeat 0 0;
+
   border: 1px solid #c8c8c8;
 }
 
 #core_core_top_bar_part1, #core_core_top_bar_part2 {
   height: 30px;
+
+  font: 14px arial,verdana,geneva,helvetica,sans-serif;
 }
 
 #core_core_top_bar_part1 {
+  display: inline-block;
+  margin-left: 15%;
 
-  background: url(http://image.noelshack.com/fichiers/2015/41/1444282525-core-core-top-bar.png) no-repeat 0 0;
+  text-decoration: underline;
 }
 
 #core_core_top_bar_part2 {
+  display: inline-block;
+  margin-left: 6%;
 
+  color: #000000;
 }
 
 #core_core {

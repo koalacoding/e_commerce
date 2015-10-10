@@ -2,6 +2,6 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="index_style.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>style.css">
 		<title><?php echo $title; ?></title>
 	</head>

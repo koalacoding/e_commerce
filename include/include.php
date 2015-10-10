@@ -1,10 +1,9 @@
 <?php
-	function include_pages($title, $path) {
-		$title = $title;
-		$path = $path;
-		include_once('include/session.php');
-		include_once('include/head.php');
-		include_once('include/top_bar.php');
-		include_once('include/header.php');
+	function include_pages($title, $path, $activate_core_core_top_bar, $top_bar_text) {
+		include_once($path . 'include/session.php');
+		include_once($path . 'include/head.php');
+		include_once($path . 'include/top_bar.php');
+		include_once($path . 'include/header.php');
+		include_once($path . 'include/core.php');
 	}
 ?>
