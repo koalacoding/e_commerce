@@ -1,4 +1,5 @@
 <?php
+	include_once('../include/session.php');
 	include_once('register_action_functions.php');
 
 	// If not all the POST variables are set, we redirect to register.php.

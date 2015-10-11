@@ -76,7 +76,8 @@
 	function is_adress_valid($adress) {
 		/* Check if the adress is between 2 and 50 characters,
 			and only contains letters, numbers or dashes */
-		if (preg_match("#^[a-zA-Z0-9-]{2, 50}$#", $adress)) {
+		echo 'adress:'.$adress;
+		if (preg_match("#^[a-zA-Z0-9- ]{2,50}$#", $adress)) {
 			return TRUE;
 		}
 
@@ -93,7 +94,7 @@
 	function is_postal_code_valid($postal_code) {
 		/* Check if the postal code is between 3 and 10 numbers,
 			and only contains numbers or dashes. */
-		if (preg_match("#^[0-9-]{3, 10}$#", $postal_code)) {
+		if (preg_match("#^[0-9-]{3,10}$#", $postal_code)) {
 			return TRUE;
 		}
 
@@ -110,7 +111,7 @@
 	function is_city_valid($city) {
 		/* Check if the city's name is between 1 and 30 characters,
 			and only contains letters or dashes. */
-		if (preg_match("#^[a-zA-Z-]{1, 30}$#", $city)) {
+		if (preg_match("#^[a-zA-Z-]{1,30}$#", $city)) {
 			return TRUE;
 		}
 
@@ -128,7 +129,7 @@
 	function is_phone_number_valid($phone_number) {
 		/* Check if the phone number is between 4 and 14 numbers,
 			and only contains numbers or dashes. */
-		if (preg_match("#^[0-9-]{4, 14}$#", $phone_number)) {
+		if (preg_match("#^[0-9-]{4,14}$#", $phone_number)) {
 			return TRUE;
 		}
 
@@ -177,7 +178,7 @@
 	----------------------------------------*/
 
 
-	function insert_account_in_db($email, $civility, $firstname, $lastname, $adress, $country,
+	function insert_account_in_db($bdd, $email, $civility, $firstname, $lastname, $adress, $country,
 									$postal_code, $city, $phone_fixe, $phone_mobile, $password) {
 		// Hashing password + salt to SHA-256;
 		$password = hash('sha256', 'er4t94e4r5' . $password);
@@ -204,69 +205,79 @@
 	function register_account($bdd, $email, $email_confirmation, $civility, $firstname, $lastname,
 							  $adress, $country, $postal_code, $city, $phone_fixe, $phone_mobile,
 							  $password, $password_confirmation) {
-		$error_message = '';
+		$error_message = array();
+
+		$error_message['email_invalid'] = $error_message['email_already_used'] =
+		$error_message['emails_dont_match'] = $error_message['civility'] =
+		$error_message['firstname'] = $error_message['firstname'] =
+		$error_message['lastname'] = $error_message['adress'] =
+		$error_message['postal_code'] = $error_message['city'] =
+		$error_message['phone_fixe'] = $error_message['phone_mobile'] =
+		$error_message['password_invalid'] = $error_message['passwords_dont_match'] = '';
+
 
 		if (!is_email_valid($email)) {
-			$error_message = '- Email invalide.<br />';
+			$error_message['email_invalid'] = '- Email invalide.';
 		}
 
 		if (check_if_email_already_taken($bdd, $email)) {
-			$error_message = $error_message . '- Cet email est déjà utilisé.<br />';
+			$error_message['email_already_used'] = '- Cet email est déjà utilisé.';
 		}
 
 		if (!do_passwords_match($email, $email_confirmation)) {
-			$error_message = $error_message . '- Les deux emails ne sont pas identiques.<br />';
+			$error_message['emails_dont_match'] = '- Les deux emails ne sont pas identiques.';
 		}	
 
 		if ($civility != 'monsieur' && $civility != 'mademoiselle' && $civility != 'madame') {
-			$error_message = $error_message . '- Civilité incorrecte.<br />';
+			$error_message['civility'] = '- Civilité incorrecte.';
 		}
 
 		if (!is_name_valid($firstname)) {
-			$error_message = $error_message . '- Prénom incorrect.<br />';
+			$error_message['firstname'] = '- Prénom incorrect.';
 		}
 
 		if (!is_name_valid($lastname)) {
-			$error_message = $error_message . '- Nom incorrect.<br />';
+			$error_message['lastname'] = '- Nom incorrect.';
 		}
 
 		if (!is_adress_valid($adress)) {
-			$error_message = $error_message . '- Adresse incorrecte.<br />';
+			$error_message['adress'] = '- Adresse incorrecte.';
 		}
 
 		if (!is_postal_code_valid($postal_code)) {
-			$error_message = $error_message . '- Code postal incorrect.<br />';
+			$error_message['postal_code'] = '- Code postal incorrect.';
 		}
 
 		if (!is_city_valid($city)) {
-			$error_message = $error_message . '- Ville incorrecte.<br />';
+			$error_message['city'] = '- Ville incorrecte.';
 		}
 
 		if (!is_phone_number_valid($phone_fixe)) {
-			$error_message = $error_message . '- Téléphone fixe incorrect.<br />';
+			$error_message['phone_fixe'] = '- Téléphone fixe incorrect.';
 		}
 
 		if (!is_phone_number_valid($phone_mobile)) {
-			$error_message = $error_message . '- Téléphone mobile incorrect.<br />';
+			$error_message['phone_mobile'] = '- Téléphone mobile incorrect.';
 		}
 
 		if (!is_password_valid($password)) {
-			$error_message = $error_message . '- Mot de passe invalide.<br />';
+			$error_message['password_invalid'] = '- Mot de passe invalide.';
 		}
 
 		if (!do_passwords_match($password, $password_confirmation)) {
-			$error_message = $error_message .
-							 '- Les deux mots de passes ne sont pas identiques.<br />';
+			$error_message['passwords_dont_match'] =
+			'- Les deux mots de passes ne sont pas identiques.';
 		}		
 
 		
-		if ($error_message == '') { // If no error is raised, we insert the account into the DB.
-			insert_account_in_db($email, $civility, $firstname, $lastname, $adress, $country,
+		if (count($error_message) == 0) { // If no error is raised, we insert the account into the DB.
+			insert_account_in_db($bdd, $email, $civility, $firstname, $lastname, $adress, $country,
 								 $postal_code, $city, $phone_fixe, $phone_mobile, $password);
 			return 'Votre compte a été créé avec succès';
 		}
 
 		else {
-			return $error_message;
+			$_SESSION['error_message'] = $error_message;
+			redirect('register.php');
 		}
 	}
