@@ -27,7 +27,6 @@
   -------------------------------------*/
 
   function show_admin_zone_link() {
-    include_once('sql/sql_connexion.php');
     if (isset($_SESSION['username'])) {
         if (is_user_admin($bdd, $_SESSION['username']) == 1) {
           echo '<a>Zone d\'administration</a>';

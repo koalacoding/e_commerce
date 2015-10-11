@@ -8,7 +8,12 @@ body {
 
   font: 1.2em/1.5em arial,verdana,geneva,helvetica,sans-serif;
   color: #ffffff;
- 
+}
+
+input {
+  height: 20px;
+
+  border: 1px solid #c8c8c8;
 }
 
 #top_bar {
@@ -30,23 +35,21 @@ body {
 }
 
 #logo_site, #search_bar, #right_elements {
-  display:inline;
+  display: inline-block;
 }
 
 #logo_site {
   width: 175px;
   height: 76px;
-
+  
   line-height: 1.2;
   font-size: 40px;
   font-weight: 300;
 }
 
 #search_bar {
-  position: absolute;
-  top: 0px;
-  right: 390px;
-  margin-top: 22px;
+  margin-left: 4.5%;
+  transform: translateY(-110%);
 
   text-align: center;
 }
@@ -113,7 +116,7 @@ body {
 }
 
 #right_elements {
-  float: right;
+  transform: translateY(-40%);
 }
 
 .right_element {
@@ -248,7 +251,7 @@ body {
 
 #core_core_top_bar_part2 {
   display: inline-block;
-  margin-left: 4%;
+  margin-left: 3%;
 
   color: #000000;
 }
@@ -263,13 +266,19 @@ body {
   border-bottom: 1px solid #c8c8c8;
 
   color: #141414;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-#core_core_core {
+/*----------------------------------------
+------------------------------------------
+-----------------GREY BAR-----------------
+------------------------------------------
+----------------------------------------*/
 
-}
+#grey_bar {
+  height: 0px;
+  width: 100%;
 
-#core_core_core_title {
-  font-size: 23px;
-  font-weight: 800;
+  border-bottom: 1px solid #c8c8c8;
 }

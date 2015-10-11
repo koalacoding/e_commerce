@@ -4,36 +4,56 @@
 	include_pages('Création d\'un compte', '../', TRUE, $top_bar_text);
 ?>
 		<form action="register_action.php" method="post">
-			Entrez votre adresse e-mail : <input type="text" name="email" />
+			Entrez votre adresse e-mail :<br />
+			<input type="text" name="email" style="width: 35%;"/>
+			<br />
+			Confirmez votre email :<br />
+			<input type="text" name="email_confirmation" style="width: 35%;"/>
 			<br /><br />
-			Confirmez votre email : <input type="text" name="confirm_email" />
+			<div id="grey_bar">&nbsp;</div>
+			<br />
+			Votre civilité :<br />
+			<input type="radio" name="civility" value="monsieur" checked>M.
+			<input type="radio" name="civility" value="mademoiselle" checked>Mlle
+			<input type="radio" name="civility" value="madame" checked>Mme
+			<br />
+			Votre prénom :<br />
+			<input type="text" name="firstname" />
+			<br />
+			Votre nom :<br />
+			<input type="text" name="lastname" />
 			<br /><br />
-			Votre civilité :
-			<input type="radio" name="civilite" value="monsieur" checked>M.
-			<input type="radio" name="civilite" value="mademoiselle" checked>Mlle
-			<input type="radio" name="civilite" value="madame" checked>Mme
-			<br /><br />						
-			Votre prénom <input type="text" name="prenom" />
-			<br /><br />
-			Nom : <input type="text" name="nom" />
-			<br /><br />
-			Votre adresse : <input type="text" name="adresse" />
-			<br /><br />
-			Pays : 
-			<select name="pays">
+			<div id="grey_bar">&nbsp;</div>
+			<br />
+			Votre adresse :<br />
+			<input type="text" name="adress" />
+			<br />
+			Pays :<br />
+			<select name="country">
 			    <option value="France" selected>France</option>
 			    <option value="Belgique">Belgique</option>
-			 </select>
-			Code postal : <input type="text" name="code_postal" />
+			</select>
+			<br />
+			Code postal :<br />
+			<input type="text" name="postal_code" />
+			<br />
+			Ville :<br />
+			<input type="text" name="city" />
 			<br /><br />
-			Ville : <input type="text" name="ville" />
+			Numéros de téléphone pour vous joindre :<br />
+			Fixe :<br />
+			<input type="text" name="phone_fixe" />
+			<br />
+			Mobile :<br />
+			<input type="text" name="phone_mobile" />
 			<br /><br />
-			Numéros de téléphone pour vous joindre :
-			Fixe : <input type="text" name="phone_fixe" />
-			Mobile : <input type="text" name="phone_mobile" />
-			<br /><br />
-			Votre mot de passe : <input type="text" name="password" />
-			Confirmation : <input type="text" name="password_confirmation" />
+			<div id="grey_bar">&nbsp;</div>
+			<br />
+			Votre mot de passe :<br />
+			<input type="text" name="password" />
+			<br />
+			Confirmation :<br />
+			<input type="text" name="password_confirmation" />
 			<br /><br />
 			<input type="submit" value="OK" />
 		</form>

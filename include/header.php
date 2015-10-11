@@ -45,14 +45,11 @@
 		</div>
 
 		<div id="menu">
-			<div class="menu_element">
-				<div class="menu_element_title">Informatique</div>
-				<div class="menu_element_white_arrow"><img src="http://media.ldlc.com/v3/img/general/ico-triangle-bas.gif" /></div>
-			</div>
-			<div class="menu_element">
-				<div class="menu_element_title">Image & son</div>
-				<div class="menu_element_white_arrow"><img src="http://media.ldlc.com/v3/img/general/ico-triangle-bas.gif" /></div>
-			</div>
+			<?php
+				require_once $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
+				require_once(__DIR__.'/header_functions.php');
+				show_menu_elements($bdd);
+			?>
 		</div>
 	</div>
 </div>

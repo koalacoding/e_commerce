@@ -8,7 +8,7 @@
 ?>
 
 Voici le menu : <?php 
-	require '../../sql/sql_connexion.php';
+	require_once(__DIR__.'../../sql/sql_connexion.php');
 
   show_menu($bdd);
   ?>

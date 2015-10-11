@@ -22,9 +22,8 @@
 	---------IS EMAIL VALID AND DOES IT MATCH TO THE EMAIL CONFIRMATION ?-------
 	--------------------------------------------------------------------------*/
 
-	function is_email_valid_and_match($email) {
-		if (preg_match("#^[a-zA-Z0-9-_]{1,17}@[a-zA-Z0-9-_]{1,17}.[a-zA-Z]{1,7}$#", $email)
-			&& $email == $email_confirmation) {
+	function is_email_valid($email) {
+		if (preg_match("#^[a-zA-Z0-9-_]{1,17}@[a-zA-Z0-9-_]{1,17}.[a-zA-Z]{1,7}$#", $email)) {
 			return TRUE;
 		}
 
@@ -108,10 +107,10 @@
 	----------------------------------------*/
 
 
-	function is_city_name_valid($city_name) {
+	function is_city_valid($city) {
 		/* Check if the city's name is between 1 and 30 characters,
 			and only contains letters or dashes. */
-		if (preg_match("#^[a-zA-Z-]{1, 30}$#", $city_name)) {
+		if (preg_match("#^[a-zA-Z-]{1, 30}$#", $city)) {
 			return TRUE;
 		}
 
@@ -145,13 +144,25 @@
 
 
 	/*----------------------------------------
-	-------IS PASSWORD VALID AND MATCH ?------
+	------------IS PASSWORD VALID ?-----------
 	----------------------------------------*/
 
-	function is_password_valid_and_match($password, $password_confirmation) {
+	function is_password_valid($password) {
 		/* Check if the password is between 2 and 30 characters, and only contains letters,
-			numbers, underscores or dashes. Also checks if it matches the password confirmation. */
-		if (preg_match("#^[a-zA-Z0-9-_]{2,30}$#", $password) && $password == $password_confirmation) {
+			numbers, underscores or dashes. */
+		if (preg_match("#^[a-zA-Z0-9-_]{2,30}$#", $password)) {
+			return TRUE;
+		}
+
+		return FALSE;
+	}
+
+	/*----------------------------------------
+	------------DO PASSWORDS MATCH ?----------
+	----------------------------------------*/
+
+	function do_passwords_match($password0, $password1) {
+		if ($password0 == $password1) {
 			return TRUE;
 		}
 
@@ -190,28 +201,72 @@
 
 	/* Function to do all the necessary tasks to check the fields the user gave,
 		and if they are correct, to register the account into the database. */
-	function register_account($username, $password, $password2, $email) {
-		if (!is_username_valid($username)) {
-			return 'Invalid username.';
+	function register_account($bdd, $email, $email_confirmation, $civility, $firstname, $lastname,
+							  $adress, $country, $postal_code, $city, $phone_fixe, $phone_mobile,
+							  $password, $password_confirmation) {
+		$error_message = '';
+
+		if (!is_email_valid($email)) {
+			$error_message = '- Email invalide.<br />';
 		}
 
-		if (check_if_username_already_taken($username)) {
-			return 'Username already taken.';
+		if (check_if_email_already_taken($bdd, $email)) {
+			$error_message = $error_message . '- Cet email est déjà utilisé.<br />';
+		}
+
+		if (!do_passwords_match($email, $email_confirmation)) {
+			$error_message = $error_message . '- Les deux emails ne sont pas identiques.<br />';
+		}	
+
+		if ($civility != 'monsieur' && $civility != 'mademoiselle' && $civility != 'madame') {
+			$error_message = $error_message . '- Civilité incorrecte.<br />';
+		}
+
+		if (!is_name_valid($firstname)) {
+			$error_message = $error_message . '- Prénom incorrect.<br />';
+		}
+
+		if (!is_name_valid($lastname)) {
+			$error_message = $error_message . '- Nom incorrect.<br />';
+		}
+
+		if (!is_adress_valid($adress)) {
+			$error_message = $error_message . '- Adresse incorrecte.<br />';
+		}
+
+		if (!is_postal_code_valid($postal_code)) {
+			$error_message = $error_message . '- Code postal incorrect.<br />';
+		}
+
+		if (!is_city_valid($city)) {
+			$error_message = $error_message . '- Ville incorrecte.<br />';
+		}
+
+		if (!is_phone_number_valid($phone_fixe)) {
+			$error_message = $error_message . '- Téléphone fixe incorrect.<br />';
+		}
+
+		if (!is_phone_number_valid($phone_mobile)) {
+			$error_message = $error_message . '- Téléphone mobile incorrect.<br />';
 		}
 
 		if (!is_password_valid($password)) {
-			return 'Invalid password.';
+			$error_message = $error_message . '- Mot de passe invalide.<br />';
 		}
 
-		if (!check_if_passwords_match($password, $password2)) {
-			return "Passwords don't match.";
+		if (!do_passwords_match($password, $password_confirmation)) {
+			$error_message = $error_message .
+							 '- Les deux mots de passes ne sont pas identiques.<br />';
+		}		
+
+		
+		if ($error_message == '') { // If no error is raised, we insert the account into the DB.
+			insert_account_in_db($email, $civility, $firstname, $lastname, $adress, $country,
+								 $postal_code, $city, $phone_fixe, $phone_mobile, $password);
+			return 'Votre compte a été créé avec succès';
 		}
 
-		if (!is_email_valid($email)) {
-			return 'Invalid email.';
+		else {
+			return $error_message;
 		}
-
-		// If no error is raised, we insert the account into the DB.
-		insert_account_in_db($username, $password, $email);
-		return 1;
 	}
