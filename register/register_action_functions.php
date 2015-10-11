@@ -1,20 +1,30 @@
 <?php
+	/*----------------------------------------
+	------------------------------------------
+	-----------------REDIRECT-----------------
+	------------------------------------------
+	----------------------------------------*/
+
+	function redirect($page_path) { // Redirect to a page.
+		header('Location: ' . $page_path);
+		die();
+	}
+
 
 	/*----------------------------------------
 	------------------------------------------
-	-----------------USERNAME-----------------
+	------------------EMAIL-------------------
 	------------------------------------------
 	----------------------------------------*/
 
 
-	/*------------------------------
-	-------IS USERNAME VALID ?------
-	------------------------------*/
+	/*--------------------------------------------------------------------------
+	---------IS EMAIL VALID AND DOES IT MATCH TO THE EMAIL CONFIRMATION ?-------
+	--------------------------------------------------------------------------*/
 
-	function is_username_valid($username) {
-		/* Check if the username is between 2 and 17 characters, and only contains letters,
-			numbers, underscores or dashes. */
-		if (preg_match("#^[a-zA-Z0-9-_]{2,17}$#", $username)) {
+	function is_email_valid_and_match($email) {
+		if (preg_match("#^[a-zA-Z0-9-_]{1,17}@[a-zA-Z0-9-_]{1,17}.[a-zA-Z]{1,7}$#", $email)
+			&& $email == $email_confirmation) {
 			return TRUE;
 		}
 
@@ -22,21 +32,107 @@
 	}
 
 	/*------------------------------
-	--IS USERNAME ALREADY TAKEN ?---
+	-----IS EMAIL ALREADY TAKEN ?---
 	------------------------------*/
 
-	function check_if_username_already_taken($username) {
-		include_once('../sql/sql_connexion.php'); // We connect to the SQL database.
+	function check_if_email_already_taken($bdd, $email) {
+		$request = $bdd->prepare("SELECT email FROM users WHERE email=?");
+		$request->execute(array($email));
 
-		$request = $bdd->prepare("SELECT username FROM users WHERE username=?");
-		$request->execute(array($username));
-
-		if ($request->rowCount() > 0) { // If the username is already used in the database.
+		if ($request->rowCount() > 0) { // If the email is already used in the database.
 			$request->closeCursor();
 			return TRUE;
 		}
 
 		$request->closeCursor();
+		return FALSE;
+	}	
+
+
+	/*----------------------------------------
+	------------------------------------------
+	----------CHECK IF NAME IS VALID----------
+	------------------------------------------
+	----------------------------------------*/
+
+
+	function is_name_valid($name) {
+		/* Check if the username is between 2 and 30 characters,
+			and only contains letters or dashes */
+		if (preg_match("#^[a-zA-Z-]{2,30}$#", $name)) {
+			return TRUE;
+		}
+
+		return FALSE;
+	}
+
+
+	/*----------------------------------------
+	------------------------------------------
+	---------CHECK IF ADRESS IS VALID---------
+	------------------------------------------
+	----------------------------------------*/
+
+
+	function is_adress_valid($adress) {
+		/* Check if the adress is between 2 and 50 characters,
+			and only contains letters, numbers or dashes */
+		if (preg_match("#^[a-zA-Z0-9-]{2, 50}$#", $adress)) {
+			return TRUE;
+		}
+
+		return FALSE;
+	}
+
+	/*----------------------------------------
+	------------------------------------------
+	-------CHECK IF POSTAL CODE IS VALID------
+	------------------------------------------
+	----------------------------------------*/
+
+
+	function is_postal_code_valid($postal_code) {
+		/* Check if the postal code is between 3 and 10 numbers,
+			and only contains numbers or dashes. */
+		if (preg_match("#^[0-9-]{3, 10}$#", $postal_code)) {
+			return TRUE;
+		}
+
+		return FALSE;
+	}
+
+	/*----------------------------------------
+	------------------------------------------
+	-------CHECK IF CITY'S NAME IS VALID------
+	------------------------------------------
+	----------------------------------------*/
+
+
+	function is_city_name_valid($city_name) {
+		/* Check if the city's name is between 1 and 30 characters,
+			and only contains letters or dashes. */
+		if (preg_match("#^[a-zA-Z-]{1, 30}$#", $city_name)) {
+			return TRUE;
+		}
+
+		return FALSE;
+	}
+
+
+	/*----------------------------------------
+	------------------------------------------
+	-------CHECK IF PHONE NUMBER IS VALID-----
+	------------------------------------------
+	----------------------------------------*/
+
+
+	function is_phone_number_valid($phone_number) {
+		/* Check if the phone number is between 4 and 14 numbers,
+			and only contains numbers or dashes. */
+		if (preg_match("#^[0-9-]{4, 14}$#", $phone_number)) {
+			return TRUE;
+		}
+
 		return FALSE;
 	}
 
@@ -48,47 +144,14 @@
 	----------------------------------------*/
 
 
-	/*------------------------------
-	-------IS PASSWORD VALID ?------
-	------------------------------*/
-
-	function is_password_valid($password) {
-		/* Check if the password is between 2 and 30 characters, and only contains letters,
-			numbers, underscores or dashes. */
-		if (preg_match("#^[a-zA-Z0-9-_]{2,30}$#", $password)) {
-			return TRUE;
-		}
-
-		return FALSE;
-	}
-
-	/*------------------------------
-	-------DO PASSWORDS MATCH ?-----
-	------------------------------*/
-
-	// Check if password and password confirmation are the same.
-	function check_if_passwords_match($password1, $password2) {
-		if ($password1 == $password2) {
-			return TRUE;
-		}
-
-		return FALSE;
-	}
-
-
 	/*----------------------------------------
-	------------------------------------------
-	------------------EMAIL-------------------
-	------------------------------------------
+	-------IS PASSWORD VALID AND MATCH ?------
 	----------------------------------------*/
 
-
-	/*------------------------------
-	---------IS EMAIL VALID ?-------
-	------------------------------*/
-
-	function is_email_valid($email) {
-		if (preg_match("#^[a-zA-Z0-9-_]{1,17}@[a-zA-Z0-9-_]{1,17}.[a-zA-Z]{1,7}$#", $email)) {
+	function is_password_valid_and_match($password, $password_confirmation) {
+		/* Check if the password is between 2 and 30 characters, and only contains letters,
+			numbers, underscores or dashes. Also checks if it matches the password confirmation. */
+		if (preg_match("#^[a-zA-Z0-9-_]{2,30}$#", $password) && $password == $password_confirmation) {
 			return TRUE;
 		}
 
@@ -103,14 +166,17 @@
 	----------------------------------------*/
 
 
-	function insert_account_in_db($username, $password, $email) {
-		include('../sql/sql_connexion.php'); // We connect to the SQL database.
+	function insert_account_in_db($email, $civility, $firstname, $lastname, $adress, $country,
+									$postal_code, $city, $phone_fixe, $phone_mobile, $password) {
+		// Hashing password + salt to SHA-256;
+		$password = hash('sha256', 'er4t94e4r5' . $password);
 
-		$password = hash('sha256', 'er4t94e4r5' . $password); // Hashing password + salt to SHA-256;
-
-		$request = $bdd->prepare ('INSERT INTO users(username, password, email, registration_date)
-																VALUES(?, ?, ?, NOW())');
-		$request->execute(array($username, $password, $email));
+		$request = $bdd->prepare ('INSERT INTO users(email, civility, firstname, lastname, adress,
+														country, postal_code, city, phone_fixe,
+														phone_mobile, password, subscription_date)
+									VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())');
+		$request->execute(array($email, $civility, $firstname, $lastname, $adress, $country,
+								$postal_code, $city, $phone_fixe, $phone_mobile, $password));
 		$request->closeCursor();
 	}
 

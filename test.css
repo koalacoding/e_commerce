@@ -1,0 +1,5 @@
+ @font-face { font-family: dinpro; src: url('dinpro.ttf'); } 
+
+ p {
+ 	font-family: dinpro;
+ }

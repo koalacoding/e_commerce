@@ -1,3 +1,8 @@
+@font-face {
+    font-family: dinpro;
+    src: url('dinpro.ttf'); 
+}
+
 body {
   margin: 0px;
 
@@ -156,6 +161,56 @@ body {
   color: #cbd5e4;
 }
 
+
+/*----------------------------------------
+------------------------------------------
+-------------------MENU-------------------
+------------------------------------------
+----------------------------------------*/
+
+
+  /*-----------------------
+  -------MENU ELEMENT------
+  -----------------------*/
+
+  .menu_element {
+    display: inline-block;
+    height: 30px;
+    margin-right: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
+
+    background: #0096CA;
+
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+
+    /*-----------------------
+    ---MENU ELEMENT TITLE----
+    -----------------------*/
+
+    .menu_element_title {
+      display: inline-block;
+
+      font-family: dinpro;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    /*------------------------
+    -MENU ELEMENT WHITE ARROW-
+    ------------------------*/
+
+    .menu_element_white_arrow {
+      display: inline-block;
+      top: -8%;
+      position: relative;
+
+      height: 4px;
+    }
+
 #core {
   padding-top: 20px;
   position:absolute;
@@ -186,14 +241,14 @@ body {
 
 #core_core_top_bar_part1 {
   display: inline-block;
-  margin-left: 15%;
+  margin-left: 6%;
 
   text-decoration: underline;
 }
 
 #core_core_top_bar_part2 {
   display: inline-block;
-  margin-left: 6%;
+  margin-left: 4%;
 
   color: #000000;
 }

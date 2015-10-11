@@ -9,7 +9,7 @@
 			<div id="search_bar_glass_container">
 				<img id="search_bar_glass" src="http://media.ldlc.com/v3/img/general/moteur/ico-loupe.svg" />
 			</div>
-			<input id="search_bar_field" type="search" name="search_field" value="Rechercher"/>
+			<input id="search_bar_field" type="search" name="search_field" value="Rechercher" onclick="this.value='';"/>
 			<div id="search_bar_ok">OK</div>
 		</div>
 
@@ -44,5 +44,15 @@
 			</div>
 		</div>
 
+		<div id="menu">
+			<div class="menu_element">
+				<div class="menu_element_title">Informatique</div>
+				<div class="menu_element_white_arrow"><img src="http://media.ldlc.com/v3/img/general/ico-triangle-bas.gif" /></div>
+			</div>
+			<div class="menu_element">
+				<div class="menu_element_title">Image & son</div>
+				<div class="menu_element_white_arrow"><img src="http://media.ldlc.com/v3/img/general/ico-triangle-bas.gif" /></div>
+			</div>
+		</div>
 	</div>
 </div>

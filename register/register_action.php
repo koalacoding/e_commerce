@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title>Blog : Registering a new account</title>
-	</head>
+<?php
+	include_once('register_action_functions.php');
 
-	<body>
-		<center>
-			<?php
-				include_once('register_action_functions.php');
-
-				if (isset($_POST['username'], $_POST['password'], $_POST['password_confirmation'],
-									$_POST['email'])) {
-					$registration_result = register_account($_POST['username'], $_POST['password'],
+	if (count($_POST) != 13) {
+		redirect('register.php');
+	}
+/*
+	$registration_result = register_account($_POST['username'], $_POST['password'],
 																									$_POST['password_confirmation'], $_POST['email']);
 
 					if ($registration_result != 1) { // If the registration failed, we show the error message.
@@ -32,8 +25,6 @@
 						header("refresh:2;url=register.php");
 					}
 
-				}
-			?>
-		</center>
-	</body>
-</html>
+				} */
+?>
+
