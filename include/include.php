@@ -1,9 +1,9 @@
 <?php
-	function include_pages($title, $path, $activate_core_core_top_bar, $top_bar_text) {
-		include_once($path . 'include/session.php');
-		include_once($path . 'include/head.php');
-		include_once($path . 'include/top_bar.php');
-		include_once($path . 'include/header.php');
-		include_once($path . 'include/core.php');
+	function include_pages($title, $activate_core_core_top_bar, $top_bar_text) {
+		require_once($_SERVER['DOCUMENT_ROOT'] . '/e_commerce/include/session.php');
+		require_once($_SERVER['DOCUMENT_ROOT'] . '/e_commerce/include/head.php');
+		require_once($_SERVER['DOCUMENT_ROOT'] . '/e_commerce/include/top_bar.php');
+		require_once($_SERVER['DOCUMENT_ROOT'] . '/e_commerce/include/header.php');
+		require_once($_SERVER['DOCUMENT_ROOT'] . '/e_commerce/include/core.php');
 	}
 ?>

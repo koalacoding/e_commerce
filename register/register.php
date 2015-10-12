@@ -1,7 +1,7 @@
 <?php 
 	include_once('../include/include.php');
 	$top_bar_text = array('Mon compte', 'Création d\'un compte');
-	include_pages('Création d\'un compte', '../', TRUE, $top_bar_text);
+	include_pages('Création d\'un compte', TRUE, $top_bar_text);
 
 	if (isset($_SESSION['error_message'])) {
 		$error_message = $_SESSION['error_message'];

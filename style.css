@@ -387,20 +387,21 @@ input {
 }
 
 #core_core_top_bar_part1, #core_core_top_bar_part2 {
+  display: block;
   height: 30px;
+  margin-top: 0.6%;
 
   font: 14px arial,verdana,geneva,helvetica,sans-serif;
 }
 
 #core_core_top_bar_part1 {
-  display: inline-block;
+  
   margin-left: 6%;
 
   text-decoration: underline;
 }
 
 #core_core_top_bar_part2 {
-  display: inline-block;
   margin-left: 3%;
 
   color: #000000;
@@ -441,4 +442,20 @@ input {
 
 .error_message {
   color: #FF0000;
+}
+
+
+/*----------------------------------------
+------------------------------------------
+-------------CORE_CORE_MENU---------------
+------------------------------------------
+----------------------------------------*/
+
+
+#core_core_menu {
+  width: 24%;
+
+  background: rgb(220, 235, 245);
+
+  border: 5px solid rgb(234, 234, 234);
 }

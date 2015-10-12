@@ -1,7 +1,7 @@
 <div id="header_wrapper">
 	<div id="header">
 		<div id="logo_site">
-			<a href="<?php echo $path; ?>index.php">
+			<a href="/e_commerce/index.php">
 				<img src="http://media.ldlc.com/v3/img/general/logo-ldlc-anim.gif"
 				height="76" width="175">
 			</a>

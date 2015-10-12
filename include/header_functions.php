@@ -49,7 +49,8 @@
 		----------------------------------------------------*/	
 
 		function show_connected_login_tooltip() {
-			echo '<a href="test.php" id="login_tooltip_access_member_zone_button">
+			echo '<a href="/e_commerce/mon_compte/mon_compte.php"
+					 id="login_tooltip_access_member_zone_button">
 				  	ACCEDER A MON COMPTE
 				  </a>
 				  <br />
