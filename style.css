@@ -27,6 +27,7 @@ input {
 
 #header {
   position: relative;
+  height: 180px;
   margin: auto;
   width: 995px;
   overflow:hidden;
@@ -41,6 +42,7 @@ input {
 #logo_site {
   width: 175px;
   height: 76px;
+  transform: translateY(60%);
   
   line-height: 1.2;
   font-size: 40px;
@@ -49,7 +51,7 @@ input {
 
 #search_bar {
   margin-left: 4.5%;
-  transform: translateY(-110%);
+  transform: translateY(60%);
 
   text-align: center;
 }
@@ -116,30 +118,23 @@ input {
 }
 
 #right_elements {
-  transform: translateY(-40%);
+  display:inline-block;
+  transform: translateY(-30%);
 }
 
 .right_element {
-  top: 0px;
-  margin-top: 15px;
-  margin-left: 55px;
   display:inline-block;
+  margin-left: 55px;
 }
 
 .element_logo {
- float: left;
-}
+  display:inline-block;
+  transform: translateY(17%);
+  height: 20px;
+  width: 20px;
 
-.right_element_content {
-  float: right;
-  padding-left: 5px;
-}
-
-.element_title, .element_text {
-  float: left;
-  clear: left;
-  height: 15px;
-  text-align: left;
+  background: url(http://media.ldlc.com/v3/img/general/ico-compte.png) no-repeat 0 top;
+  background-size: 20px 20px;
 }
 
 .element_title {
@@ -150,18 +145,63 @@ input {
 }
 
 #small_blue_arrow {
-  float: left;
+  display:inline-block;
   width: 12px;
   height: 12px;
-  margin-top: 7px;
-  margin-left: 5px;
+  transform: translateY(70%);
 
   background: url(http://media.ldlc.com/v3/img/general/ico-fleche.svg) no-repeat 0 top;
+  background-size: 12px 12px;
 }
 
 .element_text {
+  margin-left: 19%;
+
   font-size: 12px;
   color: #cbd5e4;
+}
+
+/*-----------------------
+-------LOGIN TOOLTIP-----
+-----------------------*/
+
+.right_element:hover .login_tooltip {
+    display: block;
+}
+
+.right_element:hover #header {
+    height: 200px;
+}
+
+.right_element:hover {
+    color: #000000 !important;
+
+    background-color: #ddebf4;
+}
+
+.right_element:hover .element_text {
+  color: #000000;
+}
+
+.login_tooltip {
+    display: none;
+
+
+
+    transform: translateY(-1%);
+
+    background-color: #ddebf4;
+
+
+
+    border: 1px solid #000;
+    border-radius: 4px;
+    margin-left: 28px;
+    padding: 10px;
+    position: absolute;
+    z-index: 99999;
+    width:200px;
+    height:100px;
 }
 
 
@@ -171,7 +211,10 @@ input {
 ------------------------------------------
 ----------------------------------------*/
 
-
+#menu {
+  position: absolute;
+  bottom: 0;
+}
   /*-----------------------
   -------MENU ELEMENT------
   -----------------------*/

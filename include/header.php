@@ -1,3 +1,7 @@
+<span class="simple-tooltip" title="First tooltip">I have a tooltip</span>
+
+
+
 <div id="header_wrapper">
 	<div id="header">
 		<div id="logo_site">
@@ -15,28 +19,26 @@
 
 		<div id="right_elements">
 			<div class="right_element">
-				<span class="element_logo">
-					<img src="http://media.ldlc.com/v3/img/general/ico-compte.png"
-					 alt="Mon compte" style="height:20px;width:20px;">
-				</span>
+				<div class="element_logo">&nbsp;</div>
 
-				<div class="right_element_content">
-					<span class="element_title">Mon compte</span>
-					<span id="small_blue_arrow">&nbsp;</span>
-					<span class="element_text">Se connecter</span>
+				<span class="element_title">Mon compte</span>
+				<div id="small_blue_arrow">&nbsp;</div>
+				<div class="element_text" onmouseover="tooltip.pop(this, 'Lorem ipsum dolor...mauris')">Se connecter</div>
+
+				<div class="login_tooltip">
+					<input type="text" name="password" />
+					<br />
+					<input type="password" name="password" />
 				</div>
 			</div>
 
 			<div class="right_element">
-				<span class="element_logo">
-					<img src="http://media.ldlc.com/v3/img/general/ico-compte.png"
-					 alt="Mon compte" style="height:20px;width:20px;">
-				</span>
+				<div class="element_logo">&nbsp;</div>
 
-				<div class="right_element_content">
-					<span class="element_title">Mon panier</span>
-					<span id="small_blue_arrow">&nbsp;</span>
-					<span class="element_text">0 article&nbsp&nbsp&nbsp<span style="color: #ff0; font-weight: bold;">0,00 €</span></span>
+				<span class="element_title">Mon panier</span>
+				<span id="small_blue_arrow">&nbsp;</span>
+				<div class="element_text">0 article&nbsp&nbsp&nbsp
+					<span style="color: #ff0; font-weight: bold;">0,00 €</span>
 				</div>
 			</div>				
 

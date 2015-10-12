@@ -16,6 +16,9 @@
 		$error_message = $_SESSION['error_message'];
 	}
 ?>
+
+<?php echo $_SERVER['DOCUMENT_ROOT']; ?>
+<a href="http://calebjacob.com" class="tooltip" title="This is my link's tooltip message!">Link</a>
 		<form action="register_action.php" method="post">
 			Entrez votre adresse e-mail :<br />
 			<input type="text" name="email" style="width: 35%;"/>
