@@ -30,7 +30,6 @@ input {
   height: 180px;
   margin: auto;
   width: 995px;
-  overflow:hidden;
 
   color: #ffffff;
 }
@@ -117,92 +116,200 @@ input {
   text-align: center;
 }
 
-#right_elements {
-  display:inline-block;
-  transform: translateY(-30%);
-}
 
-.right_element {
-  display:inline-block;
-  margin-left: 55px;
-}
+/*----------------------------------------
+------------------------------------------
+-----------HEADER - RIGHT ELEMENTS--------
+------------------------------------------
+----------------------------------------*/
 
-.element_logo {
-  display:inline-block;
-  transform: translateY(17%);
-  height: 20px;
-  width: 20px;
 
-  background: url(http://media.ldlc.com/v3/img/general/ico-compte.png) no-repeat 0 top;
-  background-size: 20px 20px;
-}
+  #right_elements {
+    display:inline-block;
+    transform: translateY(0%);
+  }
 
-.element_title {
-  font-style: normal;
-  font-size: 17px;
-  font-family: DINPro,arial;
-  font-weight: bold;
-}
+  .right_element {
+    display:inline-block;
+    margin-left: 30px;
+    padding-right: 5px;
+  }
 
-#small_blue_arrow {
-  display:inline-block;
-  width: 12px;
-  height: 12px;
-  transform: translateY(70%);
+  .right_element, .login_tooltip {
+    border-radius: 4px;
+  }
 
-  background: url(http://media.ldlc.com/v3/img/general/ico-fleche.svg) no-repeat 0 top;
-  background-size: 12px 12px;
-}
+  .element_logo {
+    display:inline-block;
+    transform: translateY(17%);
+    height: 20px;
+    width: 20px;
 
-.element_text {
-  margin-left: 19%;
+    background: url(http://media.ldlc.com/v3/img/general/ico-compte.png) no-repeat 0 top;
+    background-size: 20px 20px;
+  }
 
-  font-size: 12px;
-  color: #cbd5e4;
-}
+  .element_title {
+    font-style: normal;
+    font-size: 17px;
+    font-family: DINPro,arial;
+    font-weight: bold;
+  }
 
-/*-----------------------
--------LOGIN TOOLTIP-----
------------------------*/
+  #small_blue_arrow {
+    display:inline-block;
+    width: 12px;
+    height: 12px;
+    transform: translateY(70%);
 
-.right_element:hover .login_tooltip {
+    background: url(http://media.ldlc.com/v3/img/general/ico-fleche.svg) no-repeat 0 top;
+    background-size: 12px 12px;
+  }
+
+  .element_text {
+    margin-left: 19%;
+
+    font-size: 12px;
+    color: #cbd5e4;
+  }
+
+
+  /*------------------------------
+  --------------------------------
+  -----------LOGIN TOOLTIP--------
+  --------------------------------
+  ------------------------------*/
+
+
+  .right_element:hover .login_tooltip {
     display: block;
-}
+  }
 
-.right_element:hover #header {
-    height: 200px;
-}
-
-.right_element:hover {
+  .right_element:hover {
     color: #000000 !important;
 
     background-color: #ddebf4;
-}
+  }
 
-.right_element:hover .element_text {
-  color: #000000;
-}
+  .right_element:hover .element_text {
+    color: #000000;
+  }
 
-.login_tooltip {
+  .login_tooltip {
     display: none;
-
-
-
-    transform: translateY(-1%);
+    transform: translateY(-4%);
+    position: absolute;
+    width:200px;
+    padding: 10px;
+    text-align: center;
 
     background-color: #ddebf4;
+  }
+
+    /*-----------------------------------
+    -------LOGIN TOOLTIP INPUT FIELD-----
+    -----------------------------------*/
+
+    .login_tooltip_input_field {
+      width: 100%;
+      padding-left: 2px;
+
+      color: #646464;
+      font-style: italic;
+      font-size: 11px;
+    }
 
 
+    /*--------------------------------------
+    ----------------------------------------
+    -----------LOGIN TOOLTIP BUTTONS--------
+    ----------------------------------------
+    --------------------------------------*/
 
-    border: 1px solid #000;
-    border-radius: 4px;
-    margin-left: 28px;
-    padding: 10px;
-    position: absolute;
-    z-index: 99999;
-    width:200px;
-    height:100px;
-}
+
+      .login_tooltip_inscription_button, .login_tooltip_connexion_button,
+      #login_tooltip_access_member_zone_button {
+        -moz-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+        box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7189bd), color-stop(1, #012875));
+        background:-moz-linear-gradient(top, #7189bd 5%, #012875 100%);
+        background:-webkit-linear-gradient(top, #7189bd 5%, #012875 100%);
+        background:-o-linear-gradient(top, #7189bd 5%, #012875 100%);
+        background:-ms-linear-gradient(top, #7189bd 5%, #012875 100%);
+        background:linear-gradient(to bottom, #7189bd 5%, #012875 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7189bd', endColorstr='#012875',GradientType=0);
+        background-color:#7189bd;
+        -moz-border-radius:6px;
+        -webkit-border-radius:6px;
+        border-radius:6px;
+        border:1px solid #314179;
+
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:12px;
+        font-weight:bold;
+        text-decoration:none;
+      }
+
+
+    /*----------------------------------------------------
+    ------------------------------------------------------
+    -----------LOGIN TOOLTIP NOT CONNECTED BUTTONS--------
+    ------------------------------------------------------
+    ----------------------------------------------------*/
+
+
+      /*----------------------------------------
+      -------LOGIN TOOLTIP CONNEXION BUTTON-----
+      ----------------------------------------*/    
+
+      .login_tooltip_connexion_button {
+        float: left;
+        margin-top: 6px;
+      }
+
+      /*------------------------------------------
+      -------LOGIN TOOLTIP INSCRIPTION BUTTON-----
+      ------------------------------------------*/    
+
+      .login_tooltip_inscription_button {
+        display: inline-block;
+        width: 80px;
+        height: 18px;
+        line-height: 18px;
+        margin-left: 16%;
+        text-align: center;
+
+        padding-left: 3px;
+      }    
+
+
+    /*----------------------------------------
+    ------------------------------------------
+    -----------LOGIN CONNECTED BUTTONS--------
+    ------------------------------------------
+    ----------------------------------------*/
+
+
+      /*-----------------------------------
+      -------ACCESS MEMBER ZONE BUTTON-----
+      -----------------------------------*/
+
+      #login_tooltip_access_member_zone_button {
+        padding: 2px;
+      }
+      /*---------------------
+      -------LOGOUT LINK-----
+      ---------------------*/
+
+      #logout_link {
+        color: #00288C;
+        font-weight: bold;
+        font-size: 12px;
+        text-decoration: none;
+      } 
 
 
 /*----------------------------------------

@@ -5,5 +5,5 @@
 	session_unset();
 	session_destroy();
 
-	echo 'Deconnexion. Redirection dans 2 secondes...';
-	header("refresh:2;url=../index.php");
+	require_once($_SERVER['DOCUMENT_ROOT'] . '/e_commerce/functions/redirect.php');
+	redirect('/e_commerce/index.php');

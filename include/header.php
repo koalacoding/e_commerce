@@ -1,19 +1,18 @@
-<span class="simple-tooltip" title="First tooltip">I have a tooltip</span>
-
-
-
 <div id="header_wrapper">
 	<div id="header">
 		<div id="logo_site">
-			<img src="http://media.ldlc.com/v3/img/general/logo-ldlc-anim.gif"
-			height="76" width="175">
+			<a href="<?php echo $path; ?>index.php">
+				<img src="http://media.ldlc.com/v3/img/general/logo-ldlc-anim.gif"
+				height="76" width="175">
+			</a>
 		</div>
 
 		<div id="search_bar">
 			<div id="search_bar_glass_container">
 				<img id="search_bar_glass" src="http://media.ldlc.com/v3/img/general/moteur/ico-loupe.svg" />
 			</div>
-			<input id="search_bar_field" type="search" name="search_field" value="Rechercher" onclick="this.value='';"/>
+			<input id="search_bar_field" type="search" name="search_field" value="Rechercher"
+				   onclick="this.value='';"/>
 			<div id="search_bar_ok">OK</div>
 		</div>
 
@@ -23,12 +22,31 @@
 
 				<span class="element_title">Mon compte</span>
 				<div id="small_blue_arrow">&nbsp;</div>
-				<div class="element_text" onmouseover="tooltip.pop(this, 'Lorem ipsum dolor...mauris')">Se connecter</div>
+				<div class="element_text">
+				<?php
+					require_once $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
+					require_once(__DIR__.'/header_functions.php'); 	
+
+					if (isset($_SESSION['email'])) {
+						echo_user_civility_and_lastname($bdd, $_SESSION['email']);
+					}
+
+					else {
+						echo 'Se connecter';
+					}
+				?>
+				</div>
 
 				<div class="login_tooltip">
-					<input type="text" name="password" />
-					<br />
-					<input type="password" name="password" />
+					<?php
+						if (isset($_SESSION['email'])) {
+							show_connected_login_tooltip();
+						}
+
+						else {
+							show_not_connected_login_tooltip();
+						}
+					?>
 				</div>
 			</div>
 
@@ -47,11 +65,7 @@
 		</div>
 
 		<div id="menu">
-			<?php
-				require_once $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
-				require_once(__DIR__.'/header_functions.php');
-				show_menu_elements($bdd);
-			?>
+			<?php show_menu_elements($bdd); ?>
 		</div>
 	</div>
 </div>

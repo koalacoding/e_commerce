@@ -1,14 +1,5 @@
 <?php
-	/*----------------------------------------
-	------------------------------------------
-	-----------------REDIRECT-----------------
-	------------------------------------------
-	----------------------------------------*/
-
-	function redirect($page_path) { // Redirect to a page.
-		header('Location: ' . $page_path);
-		die();
-	}
+	require_once('../functions/redirect.php');
 
 
 	/*----------------------------------------
@@ -111,7 +102,7 @@
 	function is_city_valid($city) {
 		/* Check if the city's name is between 1 and 30 characters,
 			and only contains letters or dashes. */
-		if (preg_match("#^[a-zA-Z-]{1,30}$#", $city)) {
+		if (preg_match("#^[a-zA-Z- éèàê']{1,30}$#", $city)) {
 			return TRUE;
 		}
 
@@ -129,7 +120,7 @@
 	function is_phone_number_valid($phone_number) {
 		/* Check if the phone number is between 4 and 14 numbers,
 			and only contains numbers or dashes. */
-		if (preg_match("#^[0-9-]{4,14}$#", $phone_number)) {
+		if (preg_match("#^[0-9- ]{4,14}$#", $phone_number)) {
 			return TRUE;
 		}
 
@@ -199,6 +190,26 @@
 	------------------------------------------
 	----------------------------------------*/
 
+	/*----------------------------------------------
+	------------CHECK IF THERE IS AN ERROR----------
+	----------------------------------------------*/
+
+	function check_if_error($array) {
+		$i = 0;
+
+		while ($i < 13) {
+			if (array_values($array)[$i] != '') { // If the field is not empty (i.e if there is an error).
+				return TRUE;
+			}
+			$i++;
+		}
+
+		return FALSE;
+	}
+
+	/*------------------------------------
+	------------REGISTER ACCOUNT----------
+	------------------------------------*/
 
 	/* Function to do all the necessary tasks to check the fields the user gave,
 		and if they are correct, to register the account into the database. */
@@ -217,7 +228,7 @@
 
 
 		if (!is_email_valid($email)) {
-			$error_message['email_invalid'] = '- Email invalide.';
+			$error_message['email_invalid'] = '- Email invalide. ';
 		}
 
 		if (check_if_email_already_taken($bdd, $email)) {
@@ -228,7 +239,7 @@
 			$error_message['emails_dont_match'] = '- Les deux emails ne sont pas identiques.';
 		}	
 
-		if ($civility != 'monsieur' && $civility != 'mademoiselle' && $civility != 'madame') {
+		if ($civility != 'M' && $civility != 'Mlle' && $civility != 'Mme') {
 			$error_message['civility'] = '- Civilité incorrecte.';
 		}
 
@@ -269,11 +280,13 @@
 			'- Les deux mots de passes ne sont pas identiques.';
 		}		
 
-		
-		if (count($error_message) == 0) { // If no error is raised, we insert the account into the DB.
+
+		// If no error is raised, we insert the account into the DB.
+		if (!check_if_error($error_message)) {
 			insert_account_in_db($bdd, $email, $civility, $firstname, $lastname, $adress, $country,
 								 $postal_code, $city, $phone_fixe, $phone_mobile, $password);
-			return 'Votre compte a été créé avec succès';
+			$_SESSION['email'] = $email;
+			redirect('../index.php');
 		}
 
 		else {
