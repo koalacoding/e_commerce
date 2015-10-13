@@ -387,7 +387,7 @@ input {
 }
 
 #core_core_top_bar_part1, #core_core_top_bar_part2 {
-  display: block;
+  display: inline-block;
   height: 30px;
   margin-top: 0.6%;
 
@@ -408,9 +408,10 @@ input {
 }
 
 #core_core {
-  width: 975px;
+  width: 994px;
+  min-height: 600px;
+
   background: #fff;
-  padding: 10px 10px 0;
 
   border-right: 1px solid #c8c8c8;
   border-left: 1px solid #c8c8c8;
@@ -444,6 +445,15 @@ input {
   color: #FF0000;
 }
 
+/*-----------------------------------------------------------
+-------------------------------------------------------------
+-------------CORE_CORE_MENU, CORE_CORE_CORE---------------
+-------------------------------------------------------------
+-----------------------------------------------------------*/
+
+  #core_core_menu, #core_core_core {
+    display: inline-block;
+  }
 
 /*----------------------------------------
 ------------------------------------------
@@ -452,10 +462,130 @@ input {
 ----------------------------------------*/
 
 
-#core_core_menu {
-  width: 24%;
+  #core_core_menu {
+    width: 20%;
+    padding-top: 1.5%;
+    float: left;
 
-  background: rgb(220, 235, 245);
+    background: rgb(220, 235, 245);
 
-  border: 5px solid rgb(234, 234, 234);
-}
+    border-right: 1px solid rgb(234, 234, 234);
+  }
+
+    /*---------------------------------
+    -------CORE_CORE_CORE_ELEMENT------
+    ---------------------------------*/  
+
+    .core_core_menu_element {
+      margin-top: 3%;
+      margin-left: 10%;
+      margin-bottom: 1%;
+
+      font-weight: normal;
+      font-size: 12px;
+    }
+
+    .core_core_menu_element a:link {
+      text-decoration: none;
+      color: #141414;
+    }
+
+    .core_core_menu_element a:hover {
+      text-decoration: underline;
+    }    
+
+    .core_core_menu_element_logos_accueil, .core_core_menu_element_logos_informations,
+    .core_core_menu_element_title {
+      display: inline-block;
+    }
+
+    /*----------------------------
+    -CORE_CORE_MENU_ELEMENT_LOGOS-
+    ----------------------------*/
+
+    .core_core_menu_element_logos_accueil {
+      width: 23px;
+      background: url(http://image.noelshack.com/fichiers-sm/2015/42/1444717354-untitled.png) no-repeat 0 0;
+    }
+
+    .core_core_menu_element_logos_informations {
+      width: 22px;
+      background: url(http://image.noelshack.com/fichiers/2015/42/1444764737-member-zone-informations-logo.png) no-repeat 0 0;
+    }
+
+    /*----------------------------
+    -CORE_CORE_MENU_ELEMENT_TITLE-
+    ----------------------------*/
+
+    .core_core_menu_element_title {
+      margin-left: 3%;
+    }
+
+    /*-----------------------------------
+    -------CORE_CORE_MENU_WHITE_BAR------
+    -----------------------------------*/
+
+    .core_core_menu_white_bar {
+      height: 1px;
+      width: 100%;
+
+      background: #FFFFFF;      
+    }
+
+
+/*----------------------------------------
+------------------------------------------
+-------------CORE_CORE_CORE---------------
+------------------------------------------
+----------------------------------------*/
+
+
+  #core_core_core {
+    float:left;
+    max-width: 70%;
+    margin-top: 3%;
+    margin-left: 3%;
+
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+    /*----------------------------------------------------------
+    -------CORE_CORE_CORE_TEXT AND CORE_CORE_CORE_GREY_BOX------
+    ----------------------------------------------------------*/
+
+    #core_core_core_text, #core_core_core_grey_box {
+      display: inline-block;
+    }
+
+    /*------------------------------
+    -------CORE_CORE_CORE_TEXT------
+    ------------------------------*/
+
+    #core_core_core_text {
+      max-width: 60%;
+    }
+
+    /*-------------------------
+    -CORE_CORE_CORE_TEXT_TITLE-
+    -------------------------*/
+
+    .core_core_core_text_title {
+      color: #103494;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /*----------------------------------
+    -------CORE_CORE_CORE_GREY_BOX------
+    ----------------------------------*/
+
+    #core_core_core_grey_box {
+      background: #EBEBEB;
+      float: right;
+      width: 240px;
+      padding: 10px;
+
+      border-radius: 5px;
+    }

@@ -24,11 +24,10 @@
 				<div id="small_blue_arrow">&nbsp;</div>
 				<div class="element_text">
 				<?php
-					require_once $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
 					require_once(__DIR__.'/header_functions.php'); 	
 
 					if (isset($_SESSION['email'])) {
-						echo_user_civility_and_lastname($bdd, $_SESSION['email']);
+						echo_user_civility_and_lastname($_SESSION['email']);
 					}
 
 					else {
@@ -58,14 +57,11 @@
 				<div class="element_text">0 article&nbsp&nbsp&nbsp
 					<span style="color: #ff0; font-weight: bold;">0,00 €</span>
 				</div>
-			</div>				
-
-			<div id="mon_panier">
 			</div>
 		</div>
 
 		<div id="menu">
-			<?php show_menu_elements($bdd); ?>
+			<?php show_menu_elements(); ?>
 		</div>
 	</div>
 </div>

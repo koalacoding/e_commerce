@@ -5,7 +5,9 @@
 	------------------------------------------------------------------------
 	----------------------------------------------------------------------*/
 
-	function echo_user_civility_and_lastname($bdd, $email) {
+	function echo_user_civility_and_lastname($email) {
+		require_once $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
+		
 		$request = $bdd->prepare("SELECT civility, lastname FROM users WHERE email=?");
 		$request->execute(array($email));
 
@@ -66,7 +68,9 @@
 	------------------------------------------
 	----------------------------------------*/
 
-	function show_menu_elements($bdd) {
+	function show_menu_elements() {
+		require ($_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php');
+
 		$request = $bdd->query("SELECT name FROM menu");
 
 	    while ($fetch = $request->fetch()) {
