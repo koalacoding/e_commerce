@@ -409,7 +409,7 @@ input {
 
 #core_core {
   width: 994px;
-  min-height: 600px;
+  overflow:auto; /* To make core_core height change according to children. */
 
   background: #fff;
 

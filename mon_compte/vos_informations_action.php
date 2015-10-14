@@ -1,9 +1,8 @@
 <?php
 	require_once $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/include/session.php';
-	require_once('register_action_functions.php');
 
 	// If not all the POST variables are set, we redirect to register.php.
-	if (count($_POST) != 13) {
+	if (count($_POST) != 9) {
 		redirect('register.php');
 	}
 

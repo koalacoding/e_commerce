@@ -25,7 +25,9 @@
 	-----IS EMAIL ALREADY TAKEN ?---
 	------------------------------*/
 
-	function check_if_email_already_taken($bdd, $email) {
+	function check_if_email_already_taken($email) {
+		require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
+		
 		$request = $bdd->prepare("SELECT email FROM users WHERE email=?");
 		$request->execute(array($email));
 
@@ -169,8 +171,10 @@
 	----------------------------------------*/
 
 
-	function insert_account_in_db($bdd, $email, $civility, $firstname, $lastname, $adress, $country,
+	function insert_account_in_db($email, $civility, $firstname, $lastname, $adress, $country,
 									$postal_code, $city, $phone_fixe, $phone_mobile, $password) {
+		require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
+
 		// Hashing password + salt to SHA-256;
 		$password = hash('sha256', 'er4t94e4r5' . $password);
 
@@ -213,7 +217,7 @@
 
 	/* Function to do all the necessary tasks to check the fields the user gave,
 		and if they are correct, to register the account into the database. */
-	function register_account($bdd, $email, $email_confirmation, $civility, $firstname, $lastname,
+	function register_account($email, $email_confirmation, $civility, $firstname, $lastname,
 							  $adress, $country, $postal_code, $city, $phone_fixe, $phone_mobile,
 							  $password, $password_confirmation) {
 		$error_message = array();
@@ -231,7 +235,7 @@
 			$error_message['email_invalid'] = '- Email invalide. ';
 		}
 
-		if (check_if_email_already_taken($bdd, $email)) {
+		if (check_if_email_already_taken($email)) {
 			$error_message['email_already_used'] = '- Cet email est déjà utilisé.';
 		}
 
@@ -283,7 +287,7 @@
 
 		// If no error is raised, we insert the account into the DB.
 		if (!check_if_error($error_message)) {
-			insert_account_in_db($bdd, $email, $civility, $firstname, $lastname, $adress, $country,
+			insert_account_in_db($email, $civility, $firstname, $lastname, $adress, $country,
 								 $postal_code, $city, $phone_fixe, $phone_mobile, $password);
 			$_SESSION['email'] = $email;
 			redirect('../index.php');

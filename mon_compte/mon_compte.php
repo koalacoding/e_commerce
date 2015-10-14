@@ -1,6 +1,6 @@
 <?php 
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/e_commerce/include/include.php');
-	include_pages('Mon compte', TRUE, array('Mon compte', '&nbsp;'), TRUE);
+	include_pages('Mon compte', TRUE, array('Mon compte', '&nbsp;'), TRUE, FALSE);
 	require_once('include/core_core_menu.php');
 ?>
 
