@@ -381,9 +381,11 @@ input {
   width: 995px;
   height: 30px;
 
-  background: url(http://image.noelshack.com/fichiers/2015/41/1444282525-core-core-top-bar.png) no-repeat 0 0;
+  background: url(http://image.noelshack.com/fichiers/2015/42/1444914137-core-core-top-bar.png) no-repeat 0 0;
 
   border: 1px solid #c8c8c8;
+
+  line-height: 100%;
 }
 
 #core_core_top_bar_part1, #core_core_top_bar_part2 {
@@ -396,7 +398,7 @@ input {
 
 #core_core_top_bar_part1 {
   
-  margin-left: 6%;
+  margin-left: 6.8%;
 
   text-decoration: underline;
 }
@@ -442,6 +444,8 @@ input {
 ----------------------------------------*/
 
 .error_message {
+  margin-left: 1%;
+
   color: #FF0000;
 }
 
@@ -469,7 +473,9 @@ input {
 
     background: rgb(220, 235, 245);
 
-    border-right: 1px solid rgb(234, 234, 234);
+    -webkit-box-shadow: 5px 1px 5px 0px rgba(235,235,235,1);
+    -moz-box-shadow: 5px 1px 5px 0px rgba(235,235,235,1);
+    box-shadow: 5px 1px 5px 0px rgba(235,235,235,1);
   }
 
     /*---------------------------------
@@ -494,8 +500,7 @@ input {
       text-decoration: underline;
     }    
 
-    .core_core_menu_element_logos_accueil, .core_core_menu_element_logos_informations,
-    .core_core_menu_element_title {
+    .core_core_menu_element_logo, .core_core_menu_element_title {
       display: inline-block;
     }
 
@@ -503,14 +508,8 @@ input {
     -CORE_CORE_MENU_ELEMENT_LOGOS-
     ----------------------------*/
 
-    .core_core_menu_element_logos_accueil {
+    .core_core_menu_element_logo {
       width: 23px;
-      background: url(http://image.noelshack.com/fichiers-sm/2015/42/1444717354-untitled.png) no-repeat 0 0;
-    }
-
-    .core_core_menu_element_logos_informations {
-      width: 22px;
-      background: url(http://image.noelshack.com/fichiers/2015/42/1444764737-member-zone-informations-logo.png) no-repeat 0 0;
     }
 
     /*----------------------------
@@ -564,7 +563,7 @@ input {
     ------------------------------*/
 
     #core_core_core_text {
-      max-width: 60%;
+      max-width: 60%; 
     }
 
     /*-------------------------

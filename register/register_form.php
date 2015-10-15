@@ -50,9 +50,9 @@
 		if ($show_email_fields) {
 			echo 'Votre adresse e-mail :<br />
 					<input type="text" name="email" style="width: 35%;"/>
-					<span class="error_message">' .
-						$error_message['email_invalid'] . $error_message['email_already_used'] .
-					'</span>
+					<span class="error_message" id="error_message_email"></span>
+					<span id="email_is_already_used"></span>
+					<span name="email_is_already_used" style="visibility: hidden;"></span>
 					<br />
 					Confirmez votre email :
 					<br />
@@ -78,7 +78,7 @@
 				<br />
 				<input type="text" name="firstname" value="' .
 					return_array_entry_if_isset($user_info, 'firstname') . '" />
-					<span class="error_message">' . $error_message['firstname'] . '</span>
+					<span class="error_message" id="error_message_firstname">Prénom invalide</span>
 				<br />
 
 				Votre nom :
@@ -154,7 +154,11 @@
 					<br />';
 		}
 
-			echo '<input type="submit" value="OK" />
-				  </form>';
+			echo '<input type="submit" value="OK" disabled/>
+				  </form>
+				  <script
+				  	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+				  </script>
+				  <script src="register_form.js"></script>';
 	}
 ?>
