@@ -38,7 +38,8 @@
 					<input type="password" name="login_tooltip_password"
 						   class="login_tooltip_input_field"
 						   value="xxxxxxxxxxx" onclick="this.value=\'\';">
-					<input type="submit" value="CONNEXION" class="login_tooltip_connexion_button" />
+					<input type="submit" value="CONNEXION"
+					 	   class="login_tooltip_connexion_button" />
 				  </form>
 
 				  <a href="/e_commerce/register/register.php"

@@ -19,7 +19,9 @@
   ------------------------------*/
 
   // Check if the password matches the email's password.
-  function check_password($bdd, $email, $password) {
+  function check_password($email, $password) {
+    require($_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php');
+    
     // Getting the email's password.
     $request = $bdd->prepare("SELECT password FROM users WHERE email=?");
     $request->execute(array($email));

@@ -58,41 +58,57 @@ function handle_email_is_already_used_error_message() {
 
 /*----------------------------------------------------------------------
 ------------------------------------------------------------------------
------------------HANDLE EMAILS DONT MATCH ERROR MESSAGE-----------------
+-----------------HANDLE STRINGS DONT MATCH ERROR MESSAGE----------------
 ------------------------------------------------------------------------
 ----------------------------------------------------------------------*/
-/*
-function handle_emails_dont_match_error_message() {
-	// When pressing a key in the "Email" or "Email confirmation" field.
-	$('[name="email"], [name="email_confirmation"]').keyup(function() {
-		// If what the user typed in "Email" and "Email confirmation" are not the same.
-		if ($('[name="email"]').val() != $('[name="email_confirmation"]').val()) {
-			$('#error_message_emails_dont_match').html('Les emails ne sont pas identiques');
+
+function handle_strings_dont_match_error_message(string) {
+	// When pressing a key in the target fields.
+	$('[name="'+string+'"], [name="'+string+'_confirmation"]').keyup(function() {
+		// If what the user typed in "string" and "string confirmation" are not the same.
+		if ($('[name="'+string+'"]').val() != $('[name="'+string+'_confirmation"]').val()) {
+			$('#error_message_'+string+'s_dont_match')
+				.html('Les '+string+'s ne sont pas identiques');
 		}
 
 		else {
-			$('#error_message_emails_dont_match').html('');
+			$('#error_message_'+string+'s_dont_match').html('');
 		}
 	});
-} */
+}
 
-/*----------------------------------------------------------------------
-------------------------------------------------------------------------
------------------HANDLE STRINGS DONT MATCH ERROR MESSAGE-----------------
-------------------------------------------------------------------------
-----------------------------------------------------------------------*/
+/*-----------------------------------------------------------------
+-------------------------------------------------------------------
+-----------------CHECK IF THERE IS ANY ERROR MESSAGE---------------
+-------------------------------------------------------------------
+-----------------------------------------------------------------*/
 
-function handle_strings_dont_match_error_message($string) {
-	// When pressing a key in the target fields.
-	$('[name="'+$string+'"], [name="'+$string+'_confirmation"]').keyup(function() {
-		// If what the user typed in "string" and "string confirmation" are not the same.
-		if ($('[name="'+$string+'"]').val() != $('[name="'+$string+'_confirmation"]').val()) {
-			$('#error_message_'+$string+'s_dont_match')
-				.html('Les '+$string+'s ne sont pas identiques');
+function check_if_there_is_any_error_message() {
+	var error = false;
+
+	$('.error_message').each(function() {
+		if ($(this).text() != '') {
+			error = true;
+		}
+	});
+
+	return error;
+}
+
+/*------------------------------------------------------------------------
+--------------------------------------------------------------------------
+-----------------ACTIVATE SUBMIT BUTTON IF NO ERROR MESSAGE---------------
+--------------------------------------------------------------------------
+------------------------------------------------------------------------*/
+
+function activate_submit_button_if_no_error() {
+	$(document).keyup(function() {
+		if (check_if_there_is_any_error_message() == false) {
+			$('#submit_button').prop('disabled', false);
 		}
 
-		else {
-			$('#error_message_'+$string+'s_dont_match').html('');
+		else { // If there is any error message.
+			$('#submit_button').prop('disabled', true);
 		}
 	});
 }
@@ -117,4 +133,6 @@ $(function() {
 	handle_error_message ('phone_mobile', "^[0-9- ]{4,14}$", 'Téléphone mobile invalide');
 	handle_error_message ('password', "^[a-zA-Z0-9-_]{2,30}$", 'Mot de passe invalide');
 	handle_strings_dont_match_error_message('password');
+
+	activate_submit_button_if_no_error();
 });

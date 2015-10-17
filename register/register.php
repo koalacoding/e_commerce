@@ -5,10 +5,8 @@
 				  FALSE, TRUE);
 
 	require_once 'register_form.php';
-	$error_message = initialize_error_message_array($_SESSION);
 
-	echo '<form action="register_action.php" method="post" style="padding: 3%;">';
-	echo_register_form(TRUE, TRUE, TRUE, $error_message, array(), TRUE);
+	echo_register_form('register_action.php', TRUE, TRUE, TRUE, array(), TRUE);
 
 	require_once('../include/footer.php');
 ?>
