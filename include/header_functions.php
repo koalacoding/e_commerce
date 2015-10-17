@@ -32,13 +32,13 @@
 
 		function show_not_connected_login_tooltip() {
 			echo '<form action="/e_commerce/login/login_action.php" method="post">
-					<input type="text" name="email" class="login_tooltip_input_field"
-						   value="Votre email" onclick="this.value=\'\';"/>
+					<input type="text" name="login_tooltip_email" class="login_tooltip_input_field"
+						   value="Votre email" onclick="this.value=\'\';">
 					<br />
-					<input type="password" name="password" class="login_tooltip_input_field"
-						   value="xxxxxxxxxxx" onclick="this.value=\'\';"/>
+					<input type="password" name="login_tooltip_password"
+						   class="login_tooltip_input_field"
+						   value="xxxxxxxxxxx" onclick="this.value=\'\';">
 					<input type="submit" value="CONNEXION" class="login_tooltip_connexion_button" />
-
 				  </form>
 
 				  <a href="/e_commerce/register/register.php"
@@ -76,7 +76,10 @@
 	    while ($fetch = $request->fetch()) {
 	    	echo '<div class="menu_element">
 					<div class="menu_element_title">' . $fetch['name'] . '</div>
-					<div class="menu_element_white_arrow"><img src="http://media.ldlc.com/v3/img/general/ico-triangle-bas.gif" /></div>
+					<div class="menu_element_white_arrow">
+						<img src="http://media.ldlc.com/v3/img/general/ico-triangle-bas.gif"
+							 alt="white_arrow" />
+					</div>
 				  </div>';
 	    }
 

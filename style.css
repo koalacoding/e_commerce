@@ -156,7 +156,7 @@ input {
     font-weight: bold;
   }
 
-  #small_blue_arrow {
+  .small_blue_arrow {
     display:inline-block;
     width: 12px;
     height: 12px;
@@ -430,7 +430,7 @@ input {
 ------------------------------------------
 ----------------------------------------*/
 
-#grey_bar {
+.grey_bar {
   height: 0px;
   width: 100%;
 

@@ -50,17 +50,17 @@
 		if ($show_email_fields) {
 			echo 'Votre adresse e-mail :<br />
 					<input type="text" name="email" style="width: 35%;"/>
-					<span class="error_message" id="error_message_email"></span>
-					<span id="email_is_already_used"></span>
-					<span name="email_is_already_used" style="visibility: hidden;"></span>
+					<span class="error_message" id="error_message_email">Email invalide</span>
+					<span class="error_message" id="error_message_email_already_used"></span>
+					<span id="email_is_already_used" style="visibility: hidden;"></span>
 					<br />
 					Confirmez votre email :
 					<br />
 					<input type="text" name="email_confirmation" style="width: 35%;"/>
-					<span class="error_message">' . $error_message['emails_dont_match'] . '</span>
+					<span class="error_message" id="error_message_emails_dont_match"></span>
 					<br />
 					<br />
-					<div id="grey_bar">&nbsp;</div>
+					<div class="grey_bar">&nbsp;</div>
 					<br />';
 		}
 
@@ -69,8 +69,7 @@
 					<br />
 					<input type="radio" name="civility" value="M" checked>M.
 					<input type="radio" name="civility" value="Mlle">Mlle
-					<input type="radio" name="civility" value="Mme">Mme
-					<span class="error_message">' . $error_message['civility'] . '</span>';
+					<input type="radio" name="civility" value="Mme">Mme';
 		}
 
 		  echo '<br />
@@ -85,20 +84,22 @@
 				<br />
 				<input type="text" name="lastname" value="' .
 					return_array_entry_if_isset($user_info, 'lastname') . '"/>
-					<span class="error_message">' . $error_message['lastname'] . '</span>
+					<span class="error_message" id="error_message_lastname">Nom invalide</span>
 				<br />
 				<br />
-				<div id="grey_bar">&nbsp;</div>
+				<div class="grey_bar">&nbsp;</div>
 				<br />
 				Votre adresse :
 				<br />
 				<input type="text" name="adress" value="' .
 					return_array_entry_if_isset($user_info, 'adress') . '"/>
-					<span class="error_message">' . $error_message['adress'] . '</span>		
+					<span class="error_message" id="error_message_adress">Adresse invalide</span>		
 				<br />';
 
 		if ($show_country_select_list) {
-			echo'<select name="country">
+			echo'Pays :
+				<br />
+				<select name="country">
 				    <option value="France" selected>France</option>
 				    <option value="Belgique">Belgique</option>
 				</select>	
@@ -109,14 +110,16 @@
 				<br />
 				<input type="text" name="postal_code" value="' .
 					return_array_entry_if_isset($user_info, 'postal_code') . '"/>
-					<span class="error_message">' . $error_message['postal_code'] . '</span>
+					<span class="error_message" id="error_message_postal_code">
+						Code postal invalide
+					</span>
 				<br />
 
 				Ville :
 				<br />
 				<input type="text" name="city" value="' .
 					return_array_entry_if_isset($user_info, 'city') . '"/>
-					<span class="error_message">' . $error_message['city'] . '</span>			
+					<span class="error_message" id="error_message_city">Ville invalide</span>			
 				<br />
 				<br />
 
@@ -126,30 +129,37 @@
 				<br />
 				<input type="text" name="phone_fixe" value="' .
 					return_array_entry_if_isset($user_info, 'phone_fixe') . '"/>
-					<span class="error_message">' . $error_message['phone_fixe'] . '</span>		
+					<span class="error_message" id="error_message_phone_fixe">
+						Téléphone fixe invalide
+					</span>		
 				<br />
 
 				Mobile :
 				<br />
 				<input type="text" name="phone_mobile" value="' .
 					return_array_entry_if_isset($user_info, 'phone_mobile') . '"/>
-					<span class="error_message">' . $error_message['phone_mobile'] . '</span>
+					<span class="error_message" id="error_message_phone_mobile">
+						Téléphone mobile invalide
+					</span>
 				<br />
 				<br />
-				<div id="grey_bar">&nbsp;</div>
+				<div class="grey_bar">&nbsp;</div>
 				<br />';
 
 		if ($show_password_fields) {
 			echo   'Votre mot de passe :
 					<br />
 					<input type="password" name="password" />
-					<span class="error_message">' . $error_message['password_invalid'] . '</span>
+					<span class="error_message" id="error_message_password">
+						Mot de passe invalide
+					</span>
 					<br />
 					Confirmation :
 					<br />
 					<input type="password" name="password_confirmation" />
-						<span class="error_message">' . $error_message['passwords_dont_match'] .
-						 '</span>		
+					<span class="error_message" id="error_message_passwords_dont_match">
+						Les passwords ne sont pas identiques
+					</span>		
 					<br />
 					<br />';
 		}

@@ -43,9 +43,9 @@ function handle_email_is_already_used_error_message() {
 		/* We get a string, 'TRUE' or 'FALSE',
 		   depending if the email the user entered is already used or not.
 		   We store the string in a hidden span. */
-		$('[name="email_is_already_used"]').load('check_if_email_is_already_used.php?email='
+		$('#email_is_already_used').load('check_if_email_is_already_used.php?email='
 												 + $(this).val(), function() {
-			if ($('[name="email_is_already_used"]').html() == 'TRUE') {
+			if ($('#email_is_already_used').html() == 'TRUE') {
 				$('#error_message_email_already_used').html('Email déjà utilisé');
 			}
 
@@ -53,6 +53,47 @@ function handle_email_is_already_used_error_message() {
 				$('#error_message_email_already_used').html('');
 			}
 		});
+	});
+}
+
+/*----------------------------------------------------------------------
+------------------------------------------------------------------------
+-----------------HANDLE EMAILS DONT MATCH ERROR MESSAGE-----------------
+------------------------------------------------------------------------
+----------------------------------------------------------------------*/
+/*
+function handle_emails_dont_match_error_message() {
+	// When pressing a key in the "Email" or "Email confirmation" field.
+	$('[name="email"], [name="email_confirmation"]').keyup(function() {
+		// If what the user typed in "Email" and "Email confirmation" are not the same.
+		if ($('[name="email"]').val() != $('[name="email_confirmation"]').val()) {
+			$('#error_message_emails_dont_match').html('Les emails ne sont pas identiques');
+		}
+
+		else {
+			$('#error_message_emails_dont_match').html('');
+		}
+	});
+} */
+
+/*----------------------------------------------------------------------
+------------------------------------------------------------------------
+-----------------HANDLE STRINGS DONT MATCH ERROR MESSAGE-----------------
+------------------------------------------------------------------------
+----------------------------------------------------------------------*/
+
+function handle_strings_dont_match_error_message($string) {
+	// When pressing a key in the target fields.
+	$('[name="'+$string+'"], [name="'+$string+'_confirmation"]').keyup(function() {
+		// If what the user typed in "string" and "string confirmation" are not the same.
+		if ($('[name="'+$string+'"]').val() != $('[name="'+$string+'_confirmation"]').val()) {
+			$('#error_message_'+$string+'s_dont_match')
+				.html('Les '+$string+'s ne sont pas identiques');
+		}
+
+		else {
+			$('#error_message_'+$string+'s_dont_match').html('');
+		}
 	});
 }
 
@@ -64,7 +105,16 @@ function handle_email_is_already_used_error_message() {
 
 $(function() {
 	handle_email_is_already_used_error_message();
+	handle_strings_dont_match_error_message('email');
 	handle_error_message ('email', "^[a-zA-Z0-9-_]{1,17}@[a-zA-Z0-9-_]{1,17}.[a-zA-Z]{1,7}$",
 						  'E-mail invalide');	
 	handle_error_message ('firstname', "^[a-zA-Z-éèàê' ]{2,30}$", 'Prénom invalide');
+	handle_error_message ('lastname', "^[a-zA-Z-éèàê' ]{2,30}$", 'Nom invalide');
+	handle_error_message ('adress', "^[a-zA-Z0-9-éèàê' ]{2,50}$", 'Adresse invalide');
+	handle_error_message ('postal_code', "^[0-9-]{3,10}$", 'Code postal invalide');
+	handle_error_message ('city', "^[a-zA-Z-éèàê' ]{2,30}$", 'Ville invalide');
+	handle_error_message ('phone_fixe', "^[0-9- ]{4,14}$", 'Téléphone fixe invalide');
+	handle_error_message ('phone_mobile', "^[0-9- ]{4,14}$", 'Téléphone mobile invalide');
+	handle_error_message ('password', "^[a-zA-Z0-9-_]{2,30}$", 'Mot de passe invalide');
+	handle_strings_dont_match_error_message('password');
 });
