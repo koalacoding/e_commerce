@@ -144,6 +144,8 @@ function CheckOrSelectUserCivilityAndCountry(userEmail, checkedOrSelected) {
 
 function main_register(userEmail) { // Main function used in register.php.
 	$(function() {
+		$('[value="M"]').prop('checked', true); // Auto-check the M. civility radio button.
+
 		handle_email_is_already_used_error_message();
 		handle_strings_dont_match_error_message('email');
 		handle_error_message ('email', "^[a-zA-Z0-9-_]{1,17}@[a-zA-Z0-9-_]{1,17}.[a-zA-Z]{1,7}$",

@@ -21,6 +21,10 @@
 
 	function echo_register_form($action_page, $show_email_fields, $user_info,
 								$show_password_fields) {
+		if (!isset($user_info['email'])) { // To prevent bug on the last lines of the function.
+			$user_info['email'] = '';
+		}
+
 		echo '<form action="'.$action_page.'" method="post" style="padding: 3%;">';
 
 		if ($show_email_fields) {
@@ -72,7 +76,7 @@
 			  <br />
 			  <select name="country">
 			  <option value="France">France</option>
-			  <option value="Belgique" selected>Belgique</option>
+			  <option value="Belgique">Belgique</option>
 			  </select>	
 			  <br />
 			  Code postal :
