@@ -8,6 +8,8 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 
 ## To do.
 
-* Add jQuery confirmation on civility buttons in register.php.
+* Add an interface using jQuery in the admin zone allowing to delete, add and modify the name of the header menu.
+
+Minimum number of menu buttons will be 0, and the maximum will be set to prevent a design break.
 
 ## To commit.
