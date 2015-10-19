@@ -5,11 +5,7 @@
 -------------------------------------------------------------*/
 
 function check_if_string_match_regex(regex, string) {
-	if (regex.test(string)) {
-		return true;
-	}
-
-	return false;
+		return regex.test(string);
 }
 
 /*----------------------------------------------------
@@ -103,36 +99,89 @@ function check_if_there_is_any_error_message() {
 
 function activate_submit_button_if_no_error() {
 	$(document).keyup(function() {
-		if (check_if_there_is_any_error_message() == false) {
-			$('#submit_button').prop('disabled', false);
+		if (check_if_there_is_any_error_message()) {
+			return $('#submit_button').prop('disabled', true);
 		}
 
-		else { // If there is any error message.
-			$('#submit_button').prop('disabled', true);
-		}
+		// If there is no error message, we activate the submit button.
+		$('#submit_button').prop('disabled', false);
 	});
 }
 
-/*------------------------------------
---------------------------------------
------------------MAIN-----------------
---------------------------------------
-------------------------------------*/
+/*----------------------------------------------------
+------------------------------------------------------
+-----------------CLEAR ERROR MESSAGES-----------------
+------------------------------------------------------
+----------------------------------------------------*/
 
-$(function() {
-	handle_email_is_already_used_error_message();
-	handle_strings_dont_match_error_message('email');
-	handle_error_message ('email', "^[a-zA-Z0-9-_]{1,17}@[a-zA-Z0-9-_]{1,17}.[a-zA-Z]{1,7}$",
-						  'E-mail invalide');	
-	handle_error_message ('firstname', "^[a-zA-Z-éèàê' ]{2,30}$", 'Prénom invalide');
-	handle_error_message ('lastname', "^[a-zA-Z-éèàê' ]{2,30}$", 'Nom invalide');
-	handle_error_message ('adress', "^[a-zA-Z0-9-éèàê' ]{2,50}$", 'Adresse invalide');
-	handle_error_message ('postal_code', "^[0-9-]{3,10}$", 'Code postal invalide');
-	handle_error_message ('city', "^[a-zA-Z-éèàê' ]{2,30}$", 'Ville invalide');
-	handle_error_message ('phone_fixe', "^[0-9- ]{4,14}$", 'Téléphone fixe invalide');
-	handle_error_message ('phone_mobile', "^[0-9- ]{4,14}$", 'Téléphone mobile invalide');
-	handle_error_message ('password', "^[a-zA-Z0-9-_]{2,30}$", 'Mot de passe invalide');
-	handle_strings_dont_match_error_message('password');
+function clear_error_messages() { // Clear any error message on the page.
+	$('.error_message').each(function() {
+		$(this).text('');
+	});
+}
 
-	activate_submit_button_if_no_error();
-});
+/*------------------------------------------------------------------------
+--------------------------------------------------------------------------
+-----------------CHECK / SELECT USER'S CIVILITY / COUNTRY-----------------
+--------------------------------------------------------------------------
+------------------------------------------------------------------------*/
+
+ // Checks the right civility radio button.
+function CheckOrSelectUserCivilityAndCountry(userEmail, checkedOrSelected) {
+	$.get('/e_commerce/register/getUserCivilityOrCountry.php?userEmail='+userEmail
+		  +'&checkedOrSelected='+checkedOrSelected, function (variable) {
+		  	// Sets the CSS property "checked" or "selected" to true.
+	      	$('[value="'+variable+'"]').prop(checkedOrSelected, true);
+		  }
+	);
+}
+
+/*-------------------------------------------------
+---------------------------------------------------
+-----------------MAIN REGISTER.PHP-----------------
+---------------------------------------------------
+-------------------------------------------------*/
+
+function main_register(userEmail) { // Main function used in register.php.
+	$(function() {
+		handle_email_is_already_used_error_message();
+		handle_strings_dont_match_error_message('email');
+		handle_error_message ('email', "^[a-zA-Z0-9-_]{1,17}@[a-zA-Z0-9-_]{1,17}.[a-zA-Z]{1,7}$",
+							  'E-mail invalide');	
+		handle_error_message ('firstname', "^[a-zA-Z-éèàê' ]{2,30}$", 'Prénom invalide');
+		handle_error_message ('lastname', "^[a-zA-Z-éèàê' ]{2,30}$", 'Nom invalide');
+		handle_error_message ('adress', "^[a-zA-Z0-9-éèàê' ]{2,50}$", 'Adresse invalide');
+		handle_error_message ('postal_code', "^[0-9-]{3,10}$", 'Code postal invalide');
+		handle_error_message ('city', "^[a-zA-Z-éèàê' ]{2,30}$", 'Ville invalide');
+		handle_error_message ('phone_fixe', "^[0-9- ]{4,14}$", 'Téléphone fixe invalide');
+		handle_error_message ('phone_mobile', "^[0-9- ]{4,14}$", 'Téléphone mobile invalide');
+		handle_error_message ('password', "^[a-zA-Z0-9-_]{2,30}$", 'Mot de passe invalide');
+		handle_strings_dont_match_error_message('password');
+
+		activate_submit_button_if_no_error();
+	});
+}
+
+/*---------------------------------------------------------
+-----------------------------------------------------------
+-----------------MAIN VOS_INFORMATIONS.PHP-----------------
+-----------------------------------------------------------
+---------------------------------------------------------*/
+
+function main_vos_informations(userEmail) { // Main function used in /mon_compte/vos_informations.php.
+	$(function() {
+		clear_error_messages();
+
+		CheckOrSelectUserCivilityAndCountry(userEmail, 'checked');
+		CheckOrSelectUserCivilityAndCountry(userEmail, 'selected');
+		handle_error_message ('firstname', "^[a-zA-Z-éèàê' ]{2,30}$", 'Prénom invalide');
+		handle_error_message ('lastname', "^[a-zA-Z-éèàê' ]{2,30}$", 'Nom invalide');
+		handle_error_message ('adress', "^[a-zA-Z0-9-éèàê' ]{2,50}$", 'Adresse invalide');
+		handle_error_message ('postal_code', "^[0-9-]{3,10}$", 'Code postal invalide');
+		handle_error_message ('city', "^[a-zA-Z-éèàê' ]{2,30}$", 'Ville invalide');
+		handle_error_message ('phone_fixe', "^[0-9- ]{4,14}$", 'Téléphone fixe invalide');
+		handle_error_message ('phone_mobile', "^[0-9- ]{4,14}$", 'Téléphone mobile invalide');
+
+		activate_submit_button_if_no_error();
+	});
+}

@@ -12,7 +12,7 @@
 		require_once('vos_informations_functions.php');
 		require_once($_SERVER['DOCUMENT_ROOT'] . '/e_commerce/register/register_form.php');
 		$user_info = get_user_info($_SESSION['email']);
-		echo_register_form('vos_informations_action.php', FALSE, FALSE, FALSE, $user_info, FALSE);
+		echo_register_form('vos_informations_action.php', FALSE, $user_info, FALSE);
 		?>
 	</div>
 </div>

@@ -6,4 +6,6 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 
 ## To do.
 
+* Add jQuery confirmation on civility buttons in register.php.
+
 ## To commit.

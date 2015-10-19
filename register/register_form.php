@@ -19,8 +19,8 @@
 	----------------------------------------------------
 	--------------------------------------------------*/
 
-	function echo_register_form($action_page, $show_email_fields, $show_civility_checkboxes,
-								$show_country_select_list, $user_info, $show_password_fields) {
+	function echo_register_form($action_page, $show_email_fields, $user_info,
+								$show_password_fields) {
 		echo '<form action="'.$action_page.'" method="post" style="padding: 3%;">';
 
 		if ($show_email_fields) {
@@ -42,7 +42,7 @@
 
 		echo 'Votre civilité :
 			  <br />
-			  <input type="radio" name="civility" value="M" checked>M.
+			  <input type="radio" name="civility" value="M">M.
 			  <input type="radio" name="civility" value="Mlle">Mlle
 			  <input type="radio" name="civility" value="Mme">Mme
 			  <br />
@@ -71,8 +71,8 @@
 			  Pays :
 			  <br />
 			  <select name="country">
-			  <option value="France" selected>France</option>
-			  <option value="Belgique">Belgique</option>
+			  <option value="France">France</option>
+			  <option value="Belgique" selected>Belgique</option>
 			  </select>	
 			  <br />
 			  Code postal :
@@ -135,6 +135,10 @@
 			  <script
 			  	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
 			  </script>
-			  <script src="register_form.js"></script>';
+			  <script src="/e_commerce/register/register_form.js"></script>'.
+			  /* Using explode() to separate the page name and ".php".
+			   Using this trick for either using main_register() or main_vos_informations().*/
+			  '<script>main_'.explode(".", basename($_SERVER['PHP_SELF']))[0].'(\''
+			  		   .$user_info['email'].'\');</script>';
 	}
 ?>
