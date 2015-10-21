@@ -72,12 +72,14 @@ function addNewProductToDBwhenSubmitted() {
 		var productName = $('[name="productName"]').val();
 		var productDescription = $('#productDescription').val();
 		var productPrice = $('[name="productPrice"]').val();
+		var productCategory = $("select option:selected").val();
 
     $.post("addNewProductAction.php",
     {
         productName: productName,
         productDescription: productDescription,
-        productPrice: productPrice
+        productPrice: productPrice,
+        productCategory: productCategory
     },
     function(data, status){
     	if (data == 1) {

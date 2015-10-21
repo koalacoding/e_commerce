@@ -12,22 +12,31 @@
 <div id="core_core_core">
 	<div id="core_core_core_text" style="white-space: nowrap;">
 		<span>Nom du produit :</span>
+		<br />
 		<input type="text" name="productName" style="width: 100%;"/>
 		<span id="productNameErrorMessage" class="error_message">Nom invalide</span>
 		<br />
-		<span>Description du produit :</span>
-		<textarea rows="4" cols="50" id="productDescription" form="addNewProductForm"
-				  style="transform: translateY(40%);">
-		</textarea>
 		<br />
+		<span>Description du produit :</span>
+		<br />
+		<textarea rows="4" cols="50" id="productDescription" form="addNewProductForm"></textarea>
 		<br />
 		<br />
 		<span>Prix du produit :</span>
+		<br />
 		<input type="text" name="productPrice" style="width: 30%;"/> €
 		<span id="productPriceErrorMessage" class="error_message">Prix invalide</span>
 		<br />
+		<br />
+		<span>Catégorie du produit :</span>
+		<br />
+		<?php
+			require_once 'addNewProductFunctions.php';
+			showMenuSelect();
+		?>
+		<br />
 		<br />		
-		<input id="submitFormButton" type="submit" value="Ajouter" style="margin-left:100%;"
+		<input id="submitFormButton" type="submit" value="Ajouter" style="margin-left:120%;"
 			   disabled/>
 	</div>
 </div>

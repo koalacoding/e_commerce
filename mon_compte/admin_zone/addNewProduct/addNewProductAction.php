@@ -6,18 +6,21 @@
 	   if the product name is not at least 1 character long,
 	   or if the product price is not numeric. */
 	if (!isset($_SESSION['email']) || !is_user_admin($_SESSION['email'])
-		|| !isset($_POST['productName'], $_POST['productPrice'], $_POST['productDescription'])
-		|| strlen($_POST['productName']) < 1 || !is_numeric($_POST['productPrice'])) {
+		  || !isset($_POST['productName'], $_POST['productPrice'], $_POST['productDescription']
+							  , $_POST['productCategory']) || strlen($_POST['productName']) < 1
+			|| !is_numeric($_POST['productPrice'])) {
 		header('Location: /e_commerce/index.php');
     	die(); 
 	}
 
 	else { // If there is no problem.
 		require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
-		$request = $bdd->prepare("INSERT INTO products(name, description, price) VALUES (?, ?, ?)");
+		$request = $bdd->prepare("INSERT INTO products(name, description, price, category)
+															VALUES (?, ?, ?, ?)");
 		$request->execute(array(htmlspecialchars($_POST['productName'])
 														, htmlspecialchars($_POST['productDescription'])
-														, htmlspecialchars($_POST['productPrice'])));
+														, htmlspecialchars($_POST['productPrice'])
+														, htmlspecialchars($_POST['productCategory'])));
 		$request->closeCursor();
 		echo 1;
 	}

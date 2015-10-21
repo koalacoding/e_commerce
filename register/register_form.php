@@ -75,8 +75,8 @@
 			  Pays :
 			  <br />
 			  <select name="country">
-			  <option value="France">France</option>
-			  <option value="Belgique">Belgique</option>
+				  <option value="France">France</option>
+				  <option value="Belgique">Belgique</option>
 			  </select>	
 			  <br />
 			  Code postal :
