@@ -1,5 +1,5 @@
 <?php
-	require_once('../functions/redirect.php');
+	require_once $_SERVER['DOCUMENT_ROOT'].'/e_commerce/functions/redirect.php';
 
 
 	/*----------------------------------------

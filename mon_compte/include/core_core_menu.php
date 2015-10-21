@@ -8,10 +8,12 @@
 			'/e_commerce/mon_compte/mon_compte.php', 'Accueil', TRUE);
 		echo_new_core_core_menu_element(
 		'http://image.noelshack.com/fichiers/2015/42/1444764737-member-zone-informations-logo.png',
-		'33px', '/e_commerce/mon_compte/vos_informations.php', 'Vos informations', TRUE);
-				echo_new_core_core_menu_element(
+		'33px', '/e_commerce/mon_compte/vos_informations/vos_informations.php', 'Vos informations',
+		TRUE);
+		echo_new_core_core_menu_element(
 		'http://image.noelshack.com/fichiers/2015/42/1444764737-member-zone-informations-logo.png',
-		'33px', '/e_commerce/mon_compte/vos_informations.php', 'Vos commandes', TRUE);
+		'33px', '/e_commerce/mon_compte/vos_informations/vos_informations.php', 'Vos commandes',
+		TRUE);
 
 		show_admin_zone_link_if_user_is_admin(is_user_admin($_SESSION['email']));
 	?>

@@ -16,7 +16,9 @@
 			require_once('mon_compte_functions.php');
 			echo_user_civility_and_name($_SESSION['email']);
 		?>
-		<a href="vos_informations.php" style="float: right; color: #103494;">modifier</a>
+		<a href="vos_informations/vos_informations.php" style="float: right; color: #103494;">
+			modifier
+		</a>
 
 		<p>
 		Vous êtes client depuis le <?php echo_since_when_is_user_registered($_SESSION['email']); ?>

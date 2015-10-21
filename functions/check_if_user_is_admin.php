@@ -12,9 +12,19 @@
     $fetch = $request->fetch();
     $request->closeCursor();
 
-    if ($fetch['user_is_admin'] == 1) { // If the user is admin.
-      return TRUE;
-    }
-
-    return FALSE;
+    return $fetch['user_is_admin'];
   }
+
+  /*---------------------------------------------------------
+  -----------------------------------------------------------
+  ---------------REDIRECT IF USER IS NOT ADMIN---------------
+  -----------------------------------------------------------
+  ---------------------------------------------------------*/
+
+  function redirect_if_user_not_admin($email) { // Redirect to /e_commerce/index.php.
+    if (!is_user_admin($email)) {
+      header('Location: /e_commerce/index.php');
+      die();    
+    }      
+  }  
+
