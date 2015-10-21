@@ -72,7 +72,7 @@ function updateMenu() {
 	        menuList: menuList
 	    },
 	    function(data, status){
-	    	if (data == 'ok') {
+	    	if (data == 1) {
 	    		alert('Menu actualisé avec succès');
 	    	}
 

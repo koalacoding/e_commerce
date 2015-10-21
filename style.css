@@ -10,6 +10,10 @@ body {
   color: #ffffff;
 }
 
+a:visited {
+  color: #141414;
+}
+
 input {
   height: 20px;
 
@@ -283,7 +287,11 @@ input {
         text-align: center;
 
         padding-left: 3px;
-      }    
+      }
+
+      .login_tooltip_inscription_button:visited {
+        color: #FFFFFF;
+      }
 
 
     /*----------------------------------------
@@ -567,11 +575,11 @@ input {
       max-width: 60%; 
     }
 
-    /*-------------------------
-    -CORE_CORE_CORE_TEXT_TITLE-
-    -------------------------*/
+    /*------------------------------------
+    -------CORE CORE CORE TEXT TITLE------
+    ------------------------------------*/
 
-    .core_core_core_text_title {
+    .coreCoreCoreTextTitle, .coreCoreCoreTextTitle:visited {
       color: #103494;
       font-size: 16px;
       font-weight: bold;

@@ -11,7 +11,6 @@
 
 <div id="core_core_core">
 	<div id="core_core_core_text" style="white-space: nowrap;">
-		<div class="core_core_core_text_title"></div>
 		<span>Nom du menu :</span>
 		<input type="text" name="menuNameAdd" style="width: 100%;"/>&nbsp;
 		<input id="submitButtonAdd" type="submit" value="Ajouter" />

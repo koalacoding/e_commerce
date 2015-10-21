@@ -14,8 +14,13 @@
 		<div class="core_core_core_text_title">Bienvenue dans la zone d'administration</div>
 		<p>Vous pouvez ici gérer différentes fonctionnalités du site.</p>
 		<br />
-		<a class="core_core_core_text_title"
-		   href="/e_commerce/mon_compte/admin_zone/manageheadermenu/manageheadermenu.php">
+		<a class="coreCoreCoreTextTitle"
+		   href="/e_commerce/mon_compte/admin_zone/addNewProduct/addNewProduct.php">
+			Ajouter un nouveau produit
+		</a>
+		<a class="coreCoreCoreTextTitle"
+		   href="/e_commerce/mon_compte/admin_zone/manageheadermenu/manageheadermenu.php"
+		   style="margin-left: 85%;">
 		   Gérer le menu du haut
 		</a>
 	</div>
