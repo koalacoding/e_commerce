@@ -1,5 +1,11 @@
 <?php 
-	include_once('include/include.php');
+	require_once('include/include.php');
 	include_pages('Accueil', FALSE, array(), FALSE, FALSE);
-	include_once('include/footer.php');
+?>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="getProducts/getProducts.js"></script>
+
+<?php
+	require_once('include/footer.php');
 ?>

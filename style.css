@@ -345,6 +345,8 @@ input {
 
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+
+    cursor: pointer; /* Making the pointer a hand when hovering. */
   }
 
     /*-----------------------
@@ -372,6 +374,14 @@ input {
       height: 4px;
     }
 
+
+/*----------------------------------------
+------------------------------------------
+-------------------CORE-------------------
+------------------------------------------
+----------------------------------------*/
+
+
 #core {
   padding-top: 20px;
   position:absolute;
@@ -381,69 +391,133 @@ input {
   background-color: #e5e5e5;
 }
 
-#core_core_top_bar, #core_core {
-  margin: 0 auto;
-}
+  /*--------------------
+  -------CORE CORE------
+  --------------------*/ 
 
-#core_core_top_bar {
-  width: 995px;
-  height: 30px;
+  #core_core {
+    width: 994px;
+    overflow: hidden;
 
-  background: url(http://image.noelshack.com/fichiers/2015/42/1444914137-core-core-top-bar.png) no-repeat 0 0;
+    background: #fff;
 
-  border: 1px solid #c8c8c8;
+    border-right: 1px solid #c8c8c8;
+    border-left: 1px solid #c8c8c8;
+    border-bottom: 1px solid #c8c8c8;
 
-  line-height: 100%;
-}
+    color: #141414;
+    font-size: 14px;
+    font-weight: bold;
+  }
 
-#core_core_top_bar_part1, #core_core_top_bar_part2 {
-  display: inline-block;
-  height: 30px;
-  margin-top: 0.6%;
+    /*------------------
+    -------PRODUCT------
+    ------------------*/
 
-  font: 14px arial,verdana,geneva,helvetica,sans-serif;
-}
+    .product {
+      overflow: hidden; /* Prevents the price div to exit the product div while floating right. */
+      padding: 10px;
+    }
 
-#core_core_top_bar_part1 {
-  
-  margin-left: 6.8%;
+    /*-----------------------
+    -------GREY PRODUCT------
+    -----------------------*/
 
-  text-decoration: underline;
-}
+    .greyProduct {
+      background: #F8F8F8;
+    }
 
-#core_core_top_bar_part2 {
-  margin-left: 3%;
+    /*-----------------------
+    -------PRODUCT NAME------
+    -----------------------*/
 
-  color: #000000;
-}
+    .productName {
+      font-size: 16px;
+      font-family: dinpro;
+    }
 
-#core_core {
-  width: 994px;
-  overflow:auto; /* To make core_core height change according to children. */
+    /*------------------------------
+    -------PRODUCT DESCRIPTION------
+    ------------------------------*/
 
-  background: #fff;
+    .productDescription {
+      color: #646464;
+      font-size: 12px;
+      font-weight: normal;
+    }
 
-  border-right: 1px solid #c8c8c8;
-  border-left: 1px solid #c8c8c8;
-  border-bottom: 1px solid #c8c8c8;
+    /*------------------------
+    -------PRODUCT PRICE------
+    ------------------------*/
 
-  color: #141414;
-  font-size: 14px;
-  font-weight: bold;
-}
+    .productPrice {
+      float: right;
+      transform: translateY(-80%);
 
-/*----------------------------------------
-------------------------------------------
------------------GREY BAR-----------------
-------------------------------------------
-----------------------------------------*/
+      font-family: dinpro;
+      font-size: 28px;
+      color: #00288C;
+    }
 
-.grey_bar {
-  height: 0px;
-  width: 100%;
+    /*--------------
+    -------SUP------
+    --------------*/
 
-  border-bottom: 1px solid #c8c8c8;
-}
+    /* <sup> is here used to pull up the decimal part of a price. */
+
+    sup {
+      font-size: 0.7em;
+      vertical-align: 0.35em;
+    }
+
+    #core_core_top_bar, #core_core {
+      margin: 0 auto;
+    }
+
+    #core_core_top_bar {
+      width: 995px;
+      height: 30px;
+
+      background: url(http://image.noelshack.com/fichiers/2015/42/1444914137-core-core-top-bar.png) no-repeat 0 0;
+
+      border: 1px solid #c8c8c8;
+
+      line-height: 100%;
+    }
+
+    #core_core_top_bar_part1, #core_core_top_bar_part2 {
+      display: inline-block;
+      height: 30px;
+      margin-top: 0.6%;
+
+      font: 14px arial,verdana,geneva,helvetica,sans-serif;
+    }
+
+    #core_core_top_bar_part1 {
+      
+      margin-left: 6.8%;
+
+      text-decoration: underline;
+    }
+
+    #core_core_top_bar_part2 {
+      margin-left: 3%;
+
+      color: #000000;
+    }
+
+  /*----------------------------------------
+  ------------------------------------------
+  -----------------GREY BAR-----------------
+  ------------------------------------------
+  ----------------------------------------*/
+
+  .grey_bar {
+    height: 0px;
+    width: 100%;
+
+    border-bottom: 1px solid #c8c8c8;
+  }
 
 /*----------------------------------------
 ------------------------------------------

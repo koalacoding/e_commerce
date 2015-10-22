@@ -9,9 +9,12 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Add an interface using jQuery in the admin zone allowing to delete and add a header menu. Minimum number of menu buttons will be 0, and the maximum will be set to prevent a design break.
 * Added an interface in the admin zone allowing an admin to add a new product.
 * Allow an admin to put a product in a specific menu.
+* When clicking on a menu, show all the products belonging to this menu.
 
 ## To do.
 
-* When clicking on a menu, show all the products belonging to this menu.
+* Enhance product listing design.
+* Changing variables, functions... names to the Javascript Google style.
+* Organize with a better style "style.css".
 
 ## To commit.
