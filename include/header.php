@@ -20,7 +20,7 @@
 
 		<div id="right_elements">
 			<div class="right_element">
-				<div class="element_logo">&nbsp;</div>
+				<div class="elementLogoAccount">&nbsp;</div>
 
 				<span class="element_title">Mon compte</span>
 				<div class="small_blue_arrow">&nbsp;</div>
@@ -52,12 +52,11 @@
 			</div>
 
 			<div class="right_element">
-				<div class="element_logo">&nbsp;</div>
-
+				<div class="elementLogoBasket">&nbsp;</div>
 				<span class="element_title">Mon panier</span>
 				<span class="small_blue_arrow">&nbsp;</span>
 				<div class="element_text">0 article&nbsp;&nbsp;&nbsp;
-					<span style="color: #ff0; font-weight: bold;">0,00 €</span>
+					<span id="basketPrice">0,00 €</span>
 				</div>
 			</div>
 		</div>

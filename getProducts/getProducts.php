@@ -39,18 +39,21 @@
 			   Otherwise, it will be white. */
 			($i % 2 == 0) ? $backgroundColor = 'grey' : $backgroundColor = 'white';
 
-			echo '<div class="product '.$backgroundColor.'Product">
+			echo '<div class="product '.$backgroundColor.'Product" id="'.$fetch['id'].'">
 						  <div class="productName">'.$fetch['name'].'</div>
 						  <div class="productDescription">'.$fetch['description'].'</div>
 						  <div class="productPriceAndAddToBasketFloater">
 							  <div class="productPrice">'.putEuroSymbolandSupTagDecimals($fetch['price']).'</div>
-							  <img class="addToBasket"
-							  		 src="http://image.noelshack.com/fichiers/2015/43/1445621396-addtobasket.png" />
+							  <div class="addToBasket">
+							  	<img src="http://image.noelshack.com/fichiers/2015/43/1445621396-addtobasket.png" />
+							  </div>
 						  </div>
 						</div>';
 
 			$i++;
 		}
+
+		$request->closeCursor();
 	}
 
 	/*------------------------------------

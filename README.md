@@ -14,6 +14,7 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 ## To do.
 
 * Add a basket system.
+* Number of items in the basket must be shown dynamically.
 * Changing variables, functions... names to the Javascript Google style.
 * Organize with a better style "style.css".
 
