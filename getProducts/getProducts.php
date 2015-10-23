@@ -42,7 +42,11 @@
 			echo '<div class="product '.$backgroundColor.'Product">
 						  <div class="productName">'.$fetch['name'].'</div>
 						  <div class="productDescription">'.$fetch['description'].'</div>
-						  <div class="productPrice">'.putEuroSymbolandSupTagDecimals($fetch['price']).'</div>
+						  <div class="productPriceAndAddToBasketFloater">
+							  <div class="productPrice">'.putEuroSymbolandSupTagDecimals($fetch['price']).'</div>
+							  <img class="addToBasket"
+							  		 src="http://image.noelshack.com/fichiers/2015/43/1445621396-addtobasket.png" />
+						  </div>
 						</div>';
 
 			$i++;

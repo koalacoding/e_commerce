@@ -446,29 +446,57 @@ input {
       font-weight: normal;
     }
 
-    /*------------------------
-    -------PRODUCT PRICE------
-    ------------------------*/
+    /*--------------------------------------------------
+    -------PRODUCT PRICE AND ADD TO BASKET FLOATER------
+    --------------------------------------------------*/
+    /*  DIV USED TO FLOAT TO THE RIGHT IN ORDER PRODUCT PRICE AND BASKET FLOAT */
 
-    .productPrice {
+    .productPriceAndAddToBasketFloater {
       float: right;
-      transform: translateY(-80%);
-
-      font-family: dinpro;
-      font-size: 28px;
-      color: #00288C;
+      width: 20%;
     }
 
-    /*--------------
-    -------SUP------
-    --------------*/
+      /*-----------------------------------------------
+      -------PRODUCT PRICE AND ADD TO BASKET LOGO------
+      -----------------------------------------------*/
 
-    /* <sup> is here used to pull up the decimal part of a price. */
+      .productPrice, .addToBasket{
+        display: inline-block;
+      }
 
-    sup {
-      font-size: 0.7em;
-      vertical-align: 0.35em;
-    }
+      /*------------------------
+      -------PRODUCT PRICE------
+      ------------------------*/
+
+      .productPrice {
+        transform: translateY(-80%);
+        margin-right: 5%;
+
+        font-family: dinpro;
+        font-size: 28px;
+        color: #00288C;
+      }
+
+      /*-----------------------------
+      -------ADD TO BASKET LOGO------
+      -----------------------------*/    
+
+      .addToBasket {
+        float: right;
+        margin-right: 5%;
+        transform: translateY(-75%);        
+      }
+
+      /*--------------
+      -------SUP------
+      --------------*/
+
+      /* <sup> is here used to pull up the decimal part of a price. */
+
+      sup {
+        font-size: 0.7em;
+        vertical-align: 0.35em;
+      }
 
     #core_core_top_bar, #core_core {
       margin: 0 auto;

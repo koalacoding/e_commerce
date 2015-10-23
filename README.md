@@ -13,7 +13,7 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 
 ## To do.
 
-* Enhance product listing design.
+* Add a basket system.
 * Changing variables, functions... names to the Javascript Google style.
 * Organize with a better style "style.css".
 
