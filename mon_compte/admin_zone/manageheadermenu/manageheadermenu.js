@@ -8,8 +8,7 @@ function addMenuElement() {
 	$('#submitButtonAdd').click(function() {
 		// If there are less than 10 members of the menu_element class.
 		if ($('.menu_element').length < 10) {
-			var htmlContent = "<div name='"+$('[name="menuNameAdd"]').val().toLowerCase()+"' \
-												  class='menu_element'> \
+			var htmlContent = "<div class='menu_element' id='"+$('[name="menuNameAdd"]').val().toLowerCase()+"'> \
 			   		<div class='menu_element_title'>"+$('[name="menuNameAdd"]').val().toLowerCase()+"</div> \
 					<div class='menu_element_white_arrow'> \
 						<img src='http://media.ldlc.com/v3/img/general/ico-triangle-bas.gif' \
@@ -38,7 +37,10 @@ function addMenuElement() {
 function removeMenuElement() {
 	$('#submitButtonRemove').click(function() {
 		var menuName = $('[name="menuNameRemove"]').val().toLowerCase();
-		$('[name="'+menuName+'"]').remove();
+
+		if ($.trim(menuName).length > 0) { // If menuName is longer than
+			$('#'+menuName).remove();
+		}
 	});
 }
 
@@ -56,8 +58,8 @@ function updateMenu() {
 		menuList = [];
 
 		$('.menu_element').each(function() {
-			// Pushing into the menuList array the name of every menu_element.
-			menuList.push($(this).attr('name'));
+			// Pushing into the menuList array the id of every menu_element.
+			menuList.push($(this).attr('id'));
 		});
 
 		if (menuList.length == 0) {
