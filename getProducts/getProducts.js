@@ -14,6 +14,7 @@ function handleMenuClick() {
     },
     function(data, status){
     	if (data != '') {
+            $('#core_core').empty(); // To clean the core_core is there are already shown products.
     		$('#core_core').append(data);
     	}
     });

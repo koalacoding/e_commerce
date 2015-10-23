@@ -16,7 +16,7 @@
 		}
 
  		// Return the number without any modification (except that we transformed it into a string).
-		return $number;
+		return $number.'€';
 	}
 
 	/*--------------------------------------------
