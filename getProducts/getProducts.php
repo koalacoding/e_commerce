@@ -47,6 +47,9 @@
 							  <div class="addToBasket">
 							  	<img src="http://image.noelshack.com/fichiers/2015/43/1445621396-addtobasket.png" />
 							  </div>
+							  <div class="productQuantitySpinner">
+							  	<input class="productQuantitySpinnerInput" value="1">
+							  </div>						  
 						  </div>
 						</div>';
 

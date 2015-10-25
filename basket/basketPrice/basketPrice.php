@@ -8,12 +8,14 @@
 	// Logged in users use the DB basket.
 	function calculateDbBasketPrice($userEmail) {
 		require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
-		$request = $bdd->prepare("SELECT products.price FROM products INNER JOIN basket ON products.id = basket.productId WHERE basket.user=?");
+		$request = $bdd->prepare("SELECT products.price, basket.quantity FROM products
+															INNER JOIN basket ON products.id = basket.productId
+															WHERE basket.user=?");
 		$request->execute(array($userEmail));
 
 		$basketPrice = 0;
 		while ($fetch = $request->fetch()) {
-			$basketPrice += $fetch['price'];
+			$basketPrice += ($fetch['price'] * $fetch['quantity']);
 		}
 
 		$request->closeCursor();
@@ -38,11 +40,11 @@
 			$basketPrice = 0;
 
 			// Getting the price of each product in the basket array.
-			foreach ($session['basket'] as $price) {
+			foreach ($session['basket'] as $productArray) {
 				$request = $bdd->prepare("SELECT price FROM products WHERE id=?");
-				$request->execute(array($price));
+				$request->execute(array($productArray[0]));
 				$fetch = $request->fetch();
-				$basketPrice += $fetch['price'];
+				$basketPrice += $fetch['price'] * $productArray[1];
 				$request->closeCursor();
 			}
 

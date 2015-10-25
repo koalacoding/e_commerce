@@ -51,11 +51,12 @@
 				</div>
 			</div>
 
-			<div class="right_element">
+			<div class="right_element" id="rightElementBasket" style="cursor: pointer;">
 				<div class="elementLogoBasket">&nbsp;</div>
 				<span class="element_title">Mon panier</span>
 				<span class="small_blue_arrow">&nbsp;</span>
-				<div class="element_text">0 article&nbsp;&nbsp;&nbsp;
+				<div class="element_text">
+					<span id="nbOfProductsInBasket">0 article</span><br />
 					<span id="basketPrice">0,00 €</span>
 				</div>
 			</div>
