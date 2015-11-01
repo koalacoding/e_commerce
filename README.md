@@ -13,6 +13,7 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Added a basket system.
 * Added a page to see basket details.
 * It is now possible to delete a single product from the basket.
+* Added pop-up confirmation when dumping the basket or a basket's product.
 
 ## To do.
 

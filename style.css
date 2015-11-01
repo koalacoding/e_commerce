@@ -20,6 +20,10 @@ input {
   border: 1px solid #c8c8c8;
 }
 
+.ui-dialog {
+  font-size: 12px !important;
+}
+
 #top_bar {
   height: 24px;
   background-color: rgb(0, 32, 84);
