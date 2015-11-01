@@ -26,7 +26,7 @@
 				<div class="small_blue_arrow">&nbsp;</div>
 				<div class="element_text">
 				<?php
-					require_once(__DIR__.'/header_functions.php'); 	
+					require_once(__DIR__.'/header_functions.php');
 
 					if (isset($_SESSION['email'])) {
 						echo_user_civility_and_lastname($_SESSION['email']);

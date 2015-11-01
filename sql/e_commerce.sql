@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.5.0.2
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2015 at 02:40 PM
--- Server version: 5.6.26
--- PHP Version: 5.6.12
+-- Generation Time: Nov 01, 2015 at 02:52 PM
+-- Server version: 10.0.17-MariaDB
+-- PHP Version: 5.6.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `accueil_menu`
 --
 
-CREATE TABLE IF NOT EXISTS `accueil_menu` (
+CREATE TABLE `accueil_menu` (
   `element_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -40,13 +40,35 @@ INSERT INTO `accueil_menu` (`element_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `basket`
+--
+
+CREATE TABLE `basket` (
+  `id` int(11) NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `productId` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `basket`
+--
+
+INSERT INTO `basket` (`id`, `user`, `productId`, `quantity`) VALUES
+(1, 'admin@root.fr', 1, 2),
+(2, 'admin@root.fr', 2, 1),
+(3, 'admin@root.fr', 3, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `countries`
 --
 
-CREATE TABLE IF NOT EXISTS `countries` (
+CREATE TABLE `countries` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `countries`
@@ -62,7 +84,8 @@ INSERT INTO `countries` (`id`, `name`) VALUES
 -- Table structure for table `menu`
 --
 
-CREATE TABLE IF NOT EXISTS `menu` (
+CREATE TABLE `menu` (
+  `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -70,10 +93,33 @@ CREATE TABLE IF NOT EXISTS `menu` (
 -- Dumping data for table `menu`
 --
 
-INSERT INTO `menu` (`name`) VALUES
-('menu1'),
-('menu1'),
-('menu2');
+INSERT INTO `menu` (`id`, `name`) VALUES
+(1, 'menu1'),
+(2, 'menu2'),
+(3, 'menu3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `price` int(11) NOT NULL,
+  `category` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `description`, `price`, `category`) VALUES
+(1, 'Samsung SSD 840 EVO 500 Go mSATA', 'Le 840 EVO mSATA offre des performances plus élevées que jamais grâce à la technologie MLC 3 bits de 2e génération et une fiabilité exemplaire avec fonctions d''auto-monitoring.', 251, 'menu1'),
+(2, 'Matrox DualHead2Go Digital ME (Mac Edition)', 'Connectez 2 moniteurs externes à votre Mac ou votre MacBook.', 185, 'menu1'),
+(3, 'Canon EOS 100D + EF-S 18-55mm f/3,5-5,6 IS STM + Tamron AF 70-300mm F/4-5,6 Di LD MACRO 1:2', 'Le Canon EOS 100D est un reflex numérique compact de 18 millions de pixels doté d''un processeur DIGIC 5. Appareil complet et dôté de fonctions multiples, il sera idéal pour les portraits et les photos souvenir de voyage. Doté d''un viseur optique et de commandes intuitives sur l''écran tactile, l''EOS 100D offre de magnifiques photos et vidéos. \n\nObjectif télézoom compact avec fonction macro 1:2, ce téléobjectif Tamron AF 70-300mm F/4-5,6 Di LD MACRO 1:2 se caractérise par une excellente qualité mécanique associée à des qualités optiques remarquables. Cet objectif Di peut être utilisé monté sur un boîtier numérique APS-C ou un boîtier plein format. Il est le complément idéal des objectifs standard fournis avec le boîtier.\n\nPoints forts :\n\nCapteur CMOS 22.3 x 14.9 mm de 18.5 millions de pixels\nDesign léger et robuste\nÉcran LCD tactile de 7,5 cm (3 pouces)\nVidéo FULL HD avec sortie HDMI\nProfitez de prises de vues faciles et rapides avec le mode Scène intelligente auto.\nLivré avec le zoom standard EF-S 18-55mm f/3,5-5,6 IS STM', 550, 'menu1');
 
 -- --------------------------------------------------------
 
@@ -81,7 +127,7 @@ INSERT INTO `menu` (`name`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `users` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
   `civility` varchar(255) NOT NULL,
@@ -96,7 +142,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) NOT NULL,
   `subscription_date` datetime NOT NULL,
   `user_is_admin` tinyint(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -117,9 +163,27 @@ INSERT INTO `users` (`id`, `email`, `civility`, `firstname`, `lastname`, `adress
 --
 
 --
+-- Indexes for table `basket`
+--
+ALTER TABLE `basket`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `countries`
 --
 ALTER TABLE `countries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -133,15 +197,30 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `basket`
+--
+ALTER TABLE `basket`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

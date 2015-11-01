@@ -40,16 +40,19 @@
 			($i % 2 == 0) ? $backgroundColor = 'grey' : $backgroundColor = 'white';
 
 			echo '<div class="product '.$backgroundColor.'Product" id="'.$fetch['id'].'">
-						  <div class="productName">'.$fetch['name'].'</div>
-						  <div class="productDescription">'.$fetch['description'].'</div>
-						  <div class="productPriceAndAddToBasketFloater">
+							<div class="productLeftFloater">
+							  <div class="productName">'.$fetch['name'].'</div>
+							  <div class="productDescription">'.$fetch['description'].'</div>
+							</div>
+
+						  <div class="productRightFloater">
 							  <div class="productPrice">'.putEuroSymbolandSupTagDecimals($fetch['price']).'</div>
 							  <div class="addToBasket">
 							  	<img src="http://image.noelshack.com/fichiers/2015/43/1445621396-addtobasket.png" />
 							  </div>
 							  <div class="productQuantitySpinner">
 							  	<input class="productQuantitySpinnerInput" value="1">
-							  </div>						  
+							  </div>
 						  </div>
 						</div>';
 

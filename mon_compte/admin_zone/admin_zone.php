@@ -18,9 +18,10 @@
 		   href="/e_commerce/mon_compte/admin_zone/addNewProduct/addNewProduct.php">
 			Ajouter un nouveau produit
 		</a>
+		<br />
+		<br />
 		<a class="coreCoreCoreTextTitle"
-		   href="/e_commerce/mon_compte/admin_zone/manageheadermenu/manageheadermenu.php"
-		   style="margin-left: 85%;">
+		   href="/e_commerce/mon_compte/admin_zone/manageheadermenu/manageheadermenu.php">
 		   Gérer le menu du haut
 		</a>
 	</div>

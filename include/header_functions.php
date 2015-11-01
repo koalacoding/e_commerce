@@ -7,7 +7,7 @@
 
 	function echo_user_civility_and_lastname($email) {
 		require_once $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
-		
+
 		$request = $bdd->prepare("SELECT civility, lastname FROM users WHERE email=?");
 		$request->execute(array($email));
 
@@ -32,24 +32,22 @@
 
 		function show_not_connected_login_tooltip() {
 			echo '<form action="/e_commerce/login/login_action.php" method="post">
-					<input type="text" name="login_tooltip_email" class="login_tooltip_input_field"
+							<input type="text" name="login_tooltip_email" class="login_tooltip_input_field"
 						   value="Votre email" onclick="this.value=\'\';">
-					<br />
-					<input type="password" name="login_tooltip_password"
-						   class="login_tooltip_input_field"
-						   value="xxxxxxxxxxx" onclick="this.value=\'\';">
-					<input type="submit" value="CONNEXION"
-					 	   class="login_tooltip_connexion_button" />
-				  </form>
+							<br />
+							<input type="password" name="login_tooltip_password" class="login_tooltip_input_field"
+								   value="xxxxxxxxxxx" onclick="this.value=\'\';">
+							<input type="submit" value="CONNEXION" class="login_tooltip_connexion_button" />
+				  	</form>
 
-				  <a href="/e_commerce/register/register.php"
-				  	 class="login_tooltip_inscription_button">INSCRIPTION</a>
-				  ';
+						<a href="/e_commerce/register/register.php" class="login_tooltip_inscription_button">
+							INSCRIPTION
+						</a>';
 		}
 
 		/*----------------------------------------------------
 		------------SHOW CONNECTED LOGIN TOOLTIP----------
-		----------------------------------------------------*/	
+		----------------------------------------------------*/
 
 		function show_connected_login_tooltip() {
 			echo '<a href="/e_commerce/mon_compte/mon_compte.php"

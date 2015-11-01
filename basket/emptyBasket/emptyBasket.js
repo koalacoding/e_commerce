@@ -15,7 +15,7 @@ function emptyBasketOnClick() {
 		  	else {
 		  		updateBasketPrice();
           updateNbOfProductsInBasket();
-          
+
 					$.post("/e_commerce/basket/showBasket/showBasket.php",
 					  function(data, status) {
 			        $('#core_core').empty(); // To clean the core_core is there are already shown content.
