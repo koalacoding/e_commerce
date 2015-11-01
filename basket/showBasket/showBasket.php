@@ -27,8 +27,8 @@
 					 			.$productDetails['price'] * $productQuantity.
 					 		'€</div>
 					  	<div class="deleteProductFromBasketLogo">
-						  	<img src="http://media.ldlc.com/v3/img/panier/ico-supprimer.png"
-						 				 width="15" height="15">
+						  	<img id="'.$productDetails['id'].'" class="deleteBasketProduct"
+										 src="http://media.ldlc.com/v3/img/panier/ico-supprimer.png" width="15" height="15">
 					 		</div>
 					  </div>
 

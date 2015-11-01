@@ -14,7 +14,7 @@
 			$request->closeCursor();
 			return TRUE;
 		}
-		
+
 		$request->closeCursor();
 		return FALSE;
 	}
@@ -64,7 +64,7 @@
 				else { // The user has no basket set in his $_SESSION.
 					return FALSE;
 				}
-			}			
+			}
 
 
 	/*----------------------------------------------------------------------
@@ -76,7 +76,7 @@
 
     /*-----------------------------------------------
     -------UPDATE PRODUCT QUANTITY IN DB BASKET------
-    -----------------------------------------------*/	
+    -----------------------------------------------*/
 
     function updateProductQuantityInDbBasket($userEmail, $productId, $quantity) {
     	require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
@@ -95,7 +95,7 @@
 
     /*----------------------------------------------------
     -------UPDATE PRODUCT QUANTITY IN SESSION BASKET------
-    ----------------------------------------------------*/	
+    ----------------------------------------------------*/
 
     function updateProductQuantityInSessionBasket($sessionBasket, $productId, $quantity) {
     	for ($i = 0; $i < count($sessionBasket); $i++) {

@@ -10,8 +10,9 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Added an interface in the admin zone allowing an admin to add a new product.
 * Allow an admin to put a product in a specific menu.
 * When clicking on a menu, show all the products belonging to this menu.
-* Add a basket system.
-* Add a page to see basket details.
+* Added a basket system.
+* Added a page to see basket details.
+* It is now possible to delete a single product from the basket.
 
 ## To do.
 
