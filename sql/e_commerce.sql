@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 01, 2015 at 02:52 PM
+-- Generation Time: Nov 02, 2015 at 08:47 AM
 -- Server version: 10.0.17-MariaDB
 -- PHP Version: 5.6.14
 
@@ -55,9 +55,9 @@ CREATE TABLE `basket` (
 --
 
 INSERT INTO `basket` (`id`, `user`, `productId`, `quantity`) VALUES
-(1, 'admin@root.fr', 1, 2),
-(2, 'admin@root.fr', 2, 1),
-(3, 'admin@root.fr', 3, 1);
+(7, 'admin@root.fr', 1, 1),
+(8, 'admin@root.fr', 4, 1),
+(9, 'admin@root.fr', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -108,7 +108,7 @@ CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `price` int(11) NOT NULL,
+  `price` decimal(7,2) NOT NULL,
   `category` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -117,9 +117,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `description`, `price`, `category`) VALUES
-(1, 'Samsung SSD 840 EVO 500 Go mSATA', 'Le 840 EVO mSATA offre des performances plus élevées que jamais grâce à la technologie MLC 3 bits de 2e génération et une fiabilité exemplaire avec fonctions d''auto-monitoring.', 251, 'menu1'),
-(2, 'Matrox DualHead2Go Digital ME (Mac Edition)', 'Connectez 2 moniteurs externes à votre Mac ou votre MacBook.', 185, 'menu1'),
-(3, 'Canon EOS 100D + EF-S 18-55mm f/3,5-5,6 IS STM + Tamron AF 70-300mm F/4-5,6 Di LD MACRO 1:2', 'Le Canon EOS 100D est un reflex numérique compact de 18 millions de pixels doté d''un processeur DIGIC 5. Appareil complet et dôté de fonctions multiples, il sera idéal pour les portraits et les photos souvenir de voyage. Doté d''un viseur optique et de commandes intuitives sur l''écran tactile, l''EOS 100D offre de magnifiques photos et vidéos. \n\nObjectif télézoom compact avec fonction macro 1:2, ce téléobjectif Tamron AF 70-300mm F/4-5,6 Di LD MACRO 1:2 se caractérise par une excellente qualité mécanique associée à des qualités optiques remarquables. Cet objectif Di peut être utilisé monté sur un boîtier numérique APS-C ou un boîtier plein format. Il est le complément idéal des objectifs standard fournis avec le boîtier.\n\nPoints forts :\n\nCapteur CMOS 22.3 x 14.9 mm de 18.5 millions de pixels\nDesign léger et robuste\nÉcran LCD tactile de 7,5 cm (3 pouces)\nVidéo FULL HD avec sortie HDMI\nProfitez de prises de vues faciles et rapides avec le mode Scène intelligente auto.\nLivré avec le zoom standard EF-S 18-55mm f/3,5-5,6 IS STM', 550, 'menu1');
+(1, 'Samsung SSD 840 EVO 500 Go mSATA', 'Le 840 EVO mSATA offre des performances plus élevées que jamais grâce à la technologie MLC 3 bits de 2e génération et une fiabilité exemplaire avec fonctions d''auto-monitoring.', '251.00', 'menu1'),
+(2, 'Matrox DualHead2Go Digital ME (Mac Edition)', 'Connectez 2 moniteurs externes à votre Mac ou votre MacBook.', '185.00', 'menu1'),
+(3, 'Canon EOS 100D + EF-S 18-55mm f/3,5-5,6 IS STM + Tamron AF 70-300mm F/4-5,6 Di LD MACRO 1:2', 'Le Canon EOS 100D est un reflex numérique compact de 18 millions de pixels doté d''un processeur DIGIC 5. Appareil complet et dôté de fonctions multiples, il sera idéal pour les portraits et les photos souvenir de voyage. Doté d''un viseur optique et de commandes intuitives sur l''écran tactile, l''EOS 100D offre de magnifiques photos et vidéos. \n\nObjectif télézoom compact avec fonction macro 1:2, ce téléobjectif Tamron AF 70-300mm F/4-5,6 Di LD MACRO 1:2 se caractérise par une excellente qualité mécanique associée à des qualités optiques remarquables. Cet objectif Di peut être utilisé monté sur un boîtier numérique APS-C ou un boîtier plein format. Il est le complément idéal des objectifs standard fournis avec le boîtier.\n\nPoints forts :\n\nCapteur CMOS 22.3 x 14.9 mm de 18.5 millions de pixels\nDesign léger et robuste\nÉcran LCD tactile de 7,5 cm (3 pouces)\nVidéo FULL HD avec sortie HDMI\nProfitez de prises de vues faciles et rapides avec le mode Scène intelligente auto.\nLivré avec le zoom standard EF-S 18-55mm f/3,5-5,6 IS STM', '550.00', 'menu1'),
+(4, 'AMD A10-6790K (4.0 GHz) Black Edition AMD A10-7700K (3.5 GHz) Black Edition AMD A10-7700K (3.5 GHz) Black Edition AMD A10-7700K (3.5 GHz) Black Edition', '', '146.00', 'menu1'),
+(5, 'AMD A4-4000 (3.0 GHz)', 'La nouvelle génération de processeurs accélérés série-A d''AMD : Obtenez d''excellentes performances pour un prix absolument incroyable grâce aux processeurs accélérés AMD série A de 2nd génération.', '33.99', 'menu2');
 
 -- --------------------------------------------------------
 
@@ -200,7 +202,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `basket`
 --
 ALTER TABLE `basket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `countries`
 --
@@ -215,7 +217,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `users`
 --
