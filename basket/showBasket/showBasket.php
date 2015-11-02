@@ -19,17 +19,20 @@
 
 			$productQuantity = $productsIdAndQuantity[$i][1];
 
-			echo '<div class="basketProduct">
-					  	<div class="basketProductName">'.$productDetails['name'].'</div>
-				  		<div class="basketProductPrice">'.$productDetails['price']. '€</div>
-					 		<div class="basketProductQuantity">'.$productQuantity.'</div>
-					 		<div class="basketProductTotal">'
-					 			.$productDetails['price'] * $productQuantity.
-					 		'€</div>
-					  	<div class="deleteProductFromBasketLogo">
-						  	<img id="'.$productDetails['id'].'" class="deleteBasketProduct"
-										 src="http://media.ldlc.com/v3/img/panier/ico-supprimer.png" width="15" height="15">
-					 		</div>
+			echo '<div class="basket_product">
+					  	<div class="basket_product_name">'.$productDetails['name'].'</div>
+
+							<div class="basket_product_right_floater">
+					  		<div class="basket_product_price">'.$productDetails['price']. '€</div>
+						 		<div class="basket_product_quantity">'.$productQuantity.'</div>
+						 		<div class="basket_product_total">'
+						 			.$productDetails['price'] * $productQuantity.
+						 		'€</div>
+						  	<div class="delete_product_from_basket_logo">
+							  	<img id="'.$productDetails['id'].'" class="delete_basket_product"
+											 src="http://media.ldlc.com/v3/img/panier/ico-supprimer.png" width="15" height="15">
+						 		</div>
+							</div>
 					  </div>
 
 					  <hr width="100%" style="opacity: 0.3;">';
@@ -103,12 +106,13 @@
 						<span>vider le panier</span>
 					</div>
 
-					<div id="productsTitles">
+					<div id="products_titles">
 						<span style="margin-left: 10%;">nom</span>
 						<span style="margin-left: 55%;">prix</span>
 						<span style="margin-left: 6%;">quantité</span>
 						<span style="margin-left: 6%;">total</span>
-					</div>';
+					</div>
+					<hr width="100%" style="opacity: 0.3;">';
 
 	require_once($_SERVER['DOCUMENT_ROOT'] . '/e_commerce/include/session.php');
 

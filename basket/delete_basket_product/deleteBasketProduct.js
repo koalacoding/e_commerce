@@ -5,7 +5,7 @@
 ----------------------------------------------------*/
 
 function deleteBasketProduct() {
-  $(document).on('click', '.deleteBasketProduct', function() {
+  $(document).on('click', '.delete_basket_product', function() {
     function confirmDump() {
       $.post("/e_commerce/basket/delete_basket_product/delete_basket_product.php",
         { productId: $(this).attr('id') },

@@ -670,7 +670,7 @@ input {
 
   #core_core_menu {
     width: 20%;
-    height: 300px;
+    height: 400px;
     padding-top: 1.5%;
     float: left;
 
@@ -855,12 +855,10 @@ input {
     -------PRODUCTS TITLES------
     --------------------------*/
 
-    #productsTitles {
+    #products_titles {
       width: 100%;
       height: 22px;
       margin-top: 1.5%;
-
-      border-bottom: 1px solid rgb(225, 225, 225);
 
       color: #3c3c3c;
       font-size: 13px;
@@ -872,60 +870,71 @@ input {
     -------BASKET PRODUCT------
     -------------------------*/
 
-    .basketProduct {
-      padding-bottom: 2.5%;
-      padding-top: 3.2%;
+    .basket_product {
     }
 
-      .basketProductName, .basketProductPrice, .basketProductQuantity, .basketProductTotal
-      , .deleteProductFromBasketLogo {
+      .basket_product_name, .basket_product_right_floater {
         display: inline-block;
-        text-align: center;
+        vertical-align:middle;
       }
+
+      .basket_product_price, .basket_product_quantity, .basket_product_total,
+      .delete_product_from_basket_logo {
+        display: inline-block;
+      }
+
       /*------------------------------
       -------BASKET PRODUCT NAME------
       ------------------------------*/
 
-      .basketProductName {
-        width: 23%;
+      .basket_product_name {
+        width: 60%;
 
         font-family: arial;
         font-size: 12px;
       }
 
-      /*-------------------------------
-      -------BASKET PRODUCT PRICE------
-      -------------------------------*/
 
-      .basketProductPrice {
-        width: 17%;
-        margin-left: 38.1%;
+      /*---------------------------------------
+      -------BASKET PRODUCT RIGHT FLOATER------
+      ---------------------------------------*/
 
-        font-weight: normal;
-        font-size: 12px;
+      .basket_product_right_floater {
+        width: 31%;
+        margin-left: 8.5%;
       }
 
-      /*----------------------------------
-      -------BASKET PRODUCT QUANTITY------
-      ----------------------------------*/
 
-      .basketProductQuantity {
-        width: 5%;
-      }
+        /*-------------------------------
+        -------BASKET PRODUCT PRICE------
+        -------------------------------*/
 
-      /*----------------------------------
-      -------BASKET PRODUCT QUANTITY------
-      ----------------------------------*/
+        .basket_product_price {
+          font-weight: normal;
+          font-size: 12px;
+        }
 
-      .basketProductTotal {
-        margin-left: 3.5%;
-        width: 10%;
-      }
+        /*----------------------------------
+        -------BASKET PRODUCT QUANTITY------
+        ----------------------------------*/
 
-      /*------------------------------------------
-      -------DELETE PRODUCT FROM BASKET LOGO------
-      ------------------------------------------*/
+        .basket_product_quantity {
+          margin-left: 30%;
+        }
 
-      .deleteProductFromBasketLogo {
-        transform: translateY(6%);
-      }
+        /*-------------------------------
+        -------BASKET PRODUCT TOTAL------
+        -------------------------------*/
+
+        .basket_product_total {
+          margin-left: 30%;
+        }
+
+        /*------------------------------------------
+        -------DELETE PRODUCT FROM BASKET LOGO------
+        ------------------------------------------*/
+
+        .delete_product_from_basket_logo {
+          margin-left: 7%;
+          transform: translateY(8%);
+        }
