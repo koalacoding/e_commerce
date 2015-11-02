@@ -4,7 +4,6 @@
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<!-- Used for the "add product in basket" spinner. -->
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 <script src="getProducts/getProducts.js"></script>
@@ -15,5 +14,6 @@
 <script src="/e_commerce/basket/showBasket/showBasket.js"></script>
 <script src="/e_commerce/basket/emptyBasket/emptyBasket.js"></script>
 <script src="/e_commerce/basket/delete_basket_product/deleteBasketProduct.js"></script>
+<script src="/e_commerce/search_bar/searchBar.js"></script>
 
 <?php require_once('include/footer.php');
