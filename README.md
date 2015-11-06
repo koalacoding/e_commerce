@@ -20,6 +20,8 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
   through the account's pages.
 * Admins can now add pictures to products.
 * Users can now click on a search bar result to see its details.
+* The search bar only starts to show results after at least 3 characters have been typed
+  in the bar.
 
 ## To do.
 * Better organization of "style.css".
