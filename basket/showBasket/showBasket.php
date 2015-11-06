@@ -20,7 +20,10 @@
 			$productQuantity = $productsIdAndQuantity[$i][1];
 
 			echo '<div class="basket_product">
-					  	<div class="basket_product_name">'.$productDetails['name'].'</div>
+							<div class="basket_product_left_floater">
+								<div class="product_image"><img src="'.$productDetails['image_link'].'" /></div>
+								<div class="basket_product_name">'.$productDetails['name'].'</div>
+							</div>
 
 							<div class="basket_product_right_floater">
 					  		<div class="basket_product_price">'.$productDetails['price']. '€</div>

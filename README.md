@@ -26,9 +26,12 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * The user can now go on a product's page by clicking on a product's image or name
   in the products list.
 * Fixed a design problem in /basket/showBasket/showBasket.php.
+* Fixed #login_tooltip_access_member_zone_button design.
+* Fixed "productQuantitySpinner" margin-right.
+* After clicking on a search bar result, the search bar value is now reinitialized.
 
 ## To do.
-* Fix "Acceder à mon compte" button design.
-* Fix "productQuantitySpinner" margin-right.
-* After clicking on a search bar result, reinitialize the search bar value.
+* Add the product's image in showBasket.
+* Add the basket total in a bar in the bottom of showBasket.
+* Add a button to confirm the command in the bottom of showBasket.
 * Add a system to confirm a command, and eventually to pay it.
