@@ -1168,7 +1168,7 @@
       ------------------------------*/
 
       .basket_product_name {
-        width: 60%;
+        width: 58%;
 
         font-family: arial;
         font-size: 12px;
@@ -1180,16 +1180,22 @@
       ---------------------------------------*/
 
       .basket_product_right_floater {
-        width: 31%;
-        margin-left: 8.5%;
+        width: 35%;
+        margin-left: 60px;
       }
 
+      .basket_product_price, .basket_product_quantity, .basket_product_total {
+        text-align: center;
+      }
 
         /*-------------------------------
         -------BASKET PRODUCT PRICE------
         -------------------------------*/
 
         .basket_product_price {
+          width: 70px;
+          margin-left: 21px;
+
           font-weight: normal;
           font-size: 12px;
         }
@@ -1199,7 +1205,8 @@
         ----------------------------------*/
 
         .basket_product_quantity {
-          margin-left: 30%;
+          width: 30px;
+          margin-left: 39px;
         }
 
         /*-------------------------------
@@ -1207,7 +1214,8 @@
         -------------------------------*/
 
         .basket_product_total {
-          margin-left: 30%;
+          width: 70px;
+          margin-left: 40px;
         }
 
         /*------------------------------------------
@@ -1215,6 +1223,6 @@
         ------------------------------------------*/
 
         .delete_product_from_basket_logo {
-          margin-left: 7%;
+          margin-left: 20px;
           transform: translateY(8%);
         }

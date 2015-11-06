@@ -25,9 +25,10 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Improved "style.css" organization.
 * The user can now go on a product's page by clicking on a product's image or name
   in the products list.
+* Fixed a design problem in /basket/showBasket/showBasket.php.
 
 ## To do.
-* Fix a design problem in the "showBasket" page.
 * Fix "Acceder à mon compte" button design.
 * Fix "productQuantitySpinner" margin-right.
 * After clicking on a search bar result, reinitialize the search bar value.
+* Add a system to confirm a command, and eventually to pay it.

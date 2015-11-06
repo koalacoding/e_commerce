@@ -109,8 +109,8 @@
 					<div id="products_titles">
 						<span style="margin-left: 10%;">nom</span>
 						<span style="margin-left: 55%;">prix</span>
-						<span style="margin-left: 6%;">quantité</span>
-						<span style="margin-left: 6%;">total</span>
+						<span style="margin-left: 4%;">quantité</span>
+						<span style="margin-left: 4%;">total</span>
 					</div>
 					<hr width="100%" style="opacity: 0.3;">';
 
