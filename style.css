@@ -695,6 +695,10 @@
             display: inline-block;
           }
 
+          .product_image:hover, .productName:hover {
+            cursor: pointer;
+          }
+
           .product_left_floater_right_floater {
             float: right;
             width: 82%;
@@ -1281,7 +1285,7 @@
     /*------------------------------------------
     ----------CORE CORE COMMAND BASKET----------
     ------------------------------------------*/
-    
+
     #core_core_command_basket_wrapper {
       margin: 15px 0;
       text-align: center;
