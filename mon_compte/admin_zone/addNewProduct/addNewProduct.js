@@ -14,7 +14,7 @@ function handleProductNameErrorMessage() {
 		else { // If the named entered is at least 1 character long.
 			$('#productNameErrorMessage').text('');
 		}
-	});	
+	});
 }
 
 /*------------------------------------------------------------------
@@ -48,7 +48,7 @@ function handleSubmitFormButtonActivation() {
 
 	$(document).keyup(function() {
 		error = false;
-		
+
 		$('.error_message').each(function() {
 			if ($(this).text().length > 0) { // If there is any error message.
 				error = true;
@@ -71,6 +71,7 @@ function addNewProductToDBwhenSubmitted() {
 	$('#submitFormButton').click(function() {
 		var productName = $('[name="productName"]').val();
 		var productDescription = $('#productDescription').val();
+		var product_image_link = $('[name="product_image_link"]').val();
 		var productPrice = $('[name="productPrice"]').val();
 		var productCategory = $("select option:selected").val();
 
@@ -78,6 +79,7 @@ function addNewProductToDBwhenSubmitted() {
     {
         productName: productName,
         productDescription: productDescription,
+				product_image_link: product_image_link,
         productPrice: productPrice,
         productCategory: productCategory
     },

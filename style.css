@@ -576,25 +576,36 @@
       }
 
 
-        /*-------------------------------
-        -------PRODUCT LEFT FLOATER------
-        -------------------------------*/
+        /*--------------------------------------------------------
+        ----------------------------------------------------------
+        -------------------PRODUCT LEFT FLOATER-------------------
+        ----------------------------------------------------------
+        --------------------------------------------------------*/
 
         .productLeftFloater {
           width: 60%;
         }
 
-        /*--------------------------------
-        -------PRODUCT RIGHT FLOATER------
-        --------------------------------*/
-        /*  DIV USED TO FLOAT TO THE RIGHT IN ORDER PRODUCT PRICE AND BASKET FLOAT */
-
-        .productRightFloater {
-          width: 30%;
-          margin-top: 18px;
-          margin-left: 9%;
+        .product_image, .productName, .productDescription {
+          display: inline-block;
         }
 
+        .product_left_floater_right_floater {
+          float: right;
+          width: 82%;
+        }
+
+
+          /*------------------------
+          -------PRODUCT IMAGE------
+          ------------------------*/
+
+          .product_image img {
+            margin-top: 10px;
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+          }
 
           /*-----------------------
           -------PRODUCT NAME------
@@ -614,6 +625,19 @@
             font-size: 12px;
             font-weight: normal;
           }
+
+
+        /*--------------------------------
+        -------PRODUCT RIGHT FLOATER------
+        --------------------------------*/
+        /*  DIV USED TO FLOAT TO THE RIGHT IN ORDER PRODUCT PRICE AND BASKET FLOAT */
+
+        .productRightFloater {
+          width: 30%;
+          margin-top: 18px;
+          margin-left: 9%;
+        }
+
 
           /*-----------------------------------------------
           -------PRODUCT PRICE AND ADD TO BASKET LOGO------
@@ -658,7 +682,6 @@
 
           .addToBasket {
             float: right;
-
           }
 
         /*--------------
@@ -752,7 +775,7 @@
 
   #core_core_menu {
     width: 20%;
-    height: 400px;
+    height: 450px;
     padding-top: 1.5%;
     float: left;
 

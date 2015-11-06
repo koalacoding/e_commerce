@@ -20,12 +20,10 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Show decimals of prices in getProducts.
 * Basket price and number of products is now correctly displayed while navigating
   through the account's pages.
+* Admins can now add pictures to products.
 
 ## To do.
 
 * Better organization of "style.css".
-* Allow admins to add pictures to products.
 * Modify the search bar results design, and allow the user to click on a search bar result
   to see a product's details.
-
-## To commit.

@@ -22,6 +22,11 @@
 		<textarea rows="4" cols="50" id="productDescription" form="addNewProductForm"></textarea>
 		<br />
 		<br />
+		<span>Lien de l'image du produit (facultatif) :</span>
+		<br />
+		<input type="text" name="product_image_link" style="width: 100%;"/>
+		<br />
+		<br />
 		<span>Prix du produit :</span>
 		<br />
 		<input type="text" name="productPrice" style="width: 30%;"/> €
@@ -35,7 +40,7 @@
 			showMenuSelect();
 		?>
 		<br />
-		<br />		
+		<br />
 		<input id="submitFormButton" type="submit" value="Ajouter" style="margin-left:120%;"
 			   disabled/>
 	</div>

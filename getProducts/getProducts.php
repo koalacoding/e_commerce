@@ -39,10 +39,21 @@
 			   Otherwise, it will be white. */
 			($i % 2 == 0) ? $backgroundColor = 'grey' : $backgroundColor = 'white';
 
+			if (strlen($fetch['description']) > 150) { // If the description is longer than 78 characters.
+				// We only keep its first 78 characters.
+				$fetch['description'] = substr($fetch['description'], 0, 150) . ' ...';
+			}
+
 			echo '<div class="product '.$backgroundColor.'Product" id="'.$fetch['id'].'">
 							<div class="productLeftFloater">
-							  <div class="productName">'.$fetch['name'].'</div>
-							  <div class="productDescription">'.$fetch['description'].'</div>
+								<div class="product_image">
+									<img src="'.$fetch['image_link'].'" />
+								</div>
+
+								<div class="product_left_floater_right_floater">
+									<div class="productName">'.$fetch['name'].'</div>
+								  <div class="productDescription">'.$fetch['description'].'</div>
+								</div>
 							</div>
 
 						  <div class="productRightFloater">

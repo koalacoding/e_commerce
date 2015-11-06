@@ -12,11 +12,12 @@ function handleMenuClick() {
         {
             menu: menuName
         },
-        function(data, status){
+        function(data, status) {
             $('#core_core').empty(); // To clean the core_core is there are already shown products.
-    		$('#core_core').append(data);
+    				$('#core_core').append(data);
             $('.productQuantitySpinnerInput').spinner({min: 1, max: 999});
-        });
+        }
+		);
 	});
 }
 
