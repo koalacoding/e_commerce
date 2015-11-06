@@ -8,12 +8,12 @@ function handleMenuClick() {
 	$('.menu_element').click(function() {
 		var menuName = $(this).attr('id');
 
-		$.post("/e_commerce/getProducts/getProducts.php",
+		$.post("/e_commerce/products/show_products_list/show_products_list.php",
         {
             menu: menuName
         },
         function(data, status) {
-            $('#core_core').empty(); // To clean the core_core is there are already shown products.
+            $('#core_core').empty(); // To clean the core_core is there is content in it.
     				$('#core_core').append(data);
             $('.productQuantitySpinnerInput').spinner({min: 1, max: 999});
         }

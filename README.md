@@ -1,9 +1,7 @@
 # e_commerce
-
 E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 
 ## Steps finished.
-
 * Added jQuery auto-complete civility and country in /mon_compte/vos_informations.php.
 * Only allow users that are admins in the admin zone.
 * Add an interface using jQuery in the admin zone allowing to delete and add a header menu.
@@ -17,13 +15,17 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Added pop-up confirmation when dumping the basket or a basket's product.
 * Handle a design problem in the basket view where the name of the product get on multiple lines.
 * Code the search bar to dynamically display results using jQuery.
-* Show decimals of prices in getProducts.
+* Show decimals of prices in "show_products_list".
 * Basket price and number of products is now correctly displayed while navigating
   through the account's pages.
 * Admins can now add pictures to products.
+* Users can now click on a search bar result to see its details.
 
 ## To do.
-
 * Better organization of "style.css".
-* Modify the search bar results design, and allow the user to click on a search bar result
-  to see a product's details.
+* Modify the search bar results design.
+* Allow the user to go on a product's page when clicking on a product in the products list.
+* Fix a design problem in the "showBasket" page.
+* Fix "Acceder à mon compte" button design.
+* Fix "productQuantitySpinner" margin-right.
+* After clicking on a search bar result, reinitialize the search bar value.

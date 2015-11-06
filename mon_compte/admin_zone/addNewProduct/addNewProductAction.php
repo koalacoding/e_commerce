@@ -15,7 +15,7 @@
 
 	else { // If there is no problem.
 		require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
-		$request = $bdd->prepare("INSERT INTO products(name, description, image_link, price, category)
+		$request = $bdd->prepare("INSERT INTO products(name, mini_description, image_link, price, category)
 															VALUES (?, ?, ?, ?, ?)");
 		$request->execute(array(htmlspecialchars($_POST['productName'])
 														, htmlspecialchars($_POST['productDescription'])

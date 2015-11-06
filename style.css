@@ -47,6 +47,31 @@
   }
 
 
+/*---------------------------------
+-----------------------------------
+--------------JQUERY UI------------
+-----------------------------------
+---------------------------------*/
+
+
+  /*--------------------
+  -------UI SPINNER-----
+  --------------------*/
+
+  .ui-spinner {
+    height: 33px;
+    width: 49px;
+  }
+
+  /*--------------------
+  -------UI DIALOG------ Used for the pop-ups when emptying the basket or deleting a product.
+  --------------------*/
+
+  .ui-dialog {
+    font-size: 12px !important;
+  }
+
+
 /*------------------------
 --------------------------
 -----------TOP BAR--------
@@ -352,9 +377,8 @@
       ----------------------------------------
       --------------------------------------*/
 
-
       .login_tooltip_inscription_button, .login_tooltip_connexion_button,
-      #login_tooltip_access_member_zone_button {
+      #login_tooltip_access_member_zone_button, #product_details_add_to_basket_button {
         -moz-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
         -webkit-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
         box-shadow:inset 0px 1px 0px 0px #7a8eb9;
@@ -548,152 +572,288 @@
     font-weight: bold;
   }
 
-    /*------------------
-    -------PRODUCT------
-    ------------------*/
 
-    .product {
-      overflow: hidden; /* Prevents the price div to exit the product div while floating right. */
-      padding: 10px;
+  /*--------------------------------------------
+  ----------------------------------------------
+  -------------------PRODUCTS-------------------
+  ----------------------------------------------
+  --------------------------------------------*/
+
+
+    /*--------------
+    -------SUP------
+    --------------*/
+
+    /* <sup> is here used to pull up the decimal part of a price. */
+
+    sup {
+      font-size: 0.7em;
+      vertical-align: 0.35em;
     }
 
-      /*-----------------------
-      -------GREY PRODUCT------
-      -----------------------*/
 
-      .greyProduct {
-        background: #F8F8F8;
+    /*-------------------------------------------------
+    ---------------------------------------------------
+    -------------------PRODUCTS LIST-------------------
+    ---------------------------------------------------
+    -------------------------------------------------*/
+
+      .product {
+        overflow: hidden; /* Prevents the price div to exit the product div while floating right. */
+        padding: 10px;
       }
 
 
-      /*---------------------------
-      -------PRODUCT FLOATERS------
-      ---------------------------*/
+        /*-----------------------
+        -------GREY PRODUCT------
+        -----------------------*/
 
-      .productLeftFloater, .productRightFloater {
-        display: inline-block;
-        vertical-align:middle;
-      }
-
-
-        /*--------------------------------------------------------
-        ----------------------------------------------------------
-        -------------------PRODUCT LEFT FLOATER-------------------
-        ----------------------------------------------------------
-        --------------------------------------------------------*/
-
-        .productLeftFloater {
-          width: 60%;
+        .greyProduct {
+          background: #F8F8F8;
         }
 
-        .product_image, .productName, .productDescription {
+
+        /*---------------------------
+        -------PRODUCT FLOATERS------
+        ---------------------------*/
+
+        .productLeftFloater, .productRightFloater {
           display: inline-block;
-        }
-
-        .product_left_floater_right_floater {
-          float: right;
-          width: 82%;
+          vertical-align:middle;
         }
 
 
-          /*------------------------
-          -------PRODUCT IMAGE------
-          ------------------------*/
+          /*--------------------------------------------------------
+          ----------------------------------------------------------
+          -------------------PRODUCT LEFT FLOATER-------------------
+          ----------------------------------------------------------
+          --------------------------------------------------------*/
 
-          .product_image img {
-            margin-top: 10px;
-            width: 80px;
-            height: 80px;
-            overflow: hidden;
+          .productLeftFloater {
+            width: 60%;
           }
 
-          /*-----------------------
-          -------PRODUCT NAME------
-          -----------------------*/
-
-          .productName {
-            font-size: 16px;
-            font-family: dinpro;
-          }
-
-          /*------------------------------
-          -------PRODUCT DESCRIPTION------
-          ------------------------------*/
-
-          .productDescription {
-            color: #646464;
-            font-size: 12px;
-            font-weight: normal;
-          }
-
-
-        /*--------------------------------
-        -------PRODUCT RIGHT FLOATER------
-        --------------------------------*/
-        /*  DIV USED TO FLOAT TO THE RIGHT IN ORDER PRODUCT PRICE AND BASKET FLOAT */
-
-        .productRightFloater {
-          width: 30%;
-          margin-top: 18px;
-          margin-left: 9%;
-        }
-
-
-          /*-----------------------------------------------
-          -------PRODUCT PRICE AND ADD TO BASKET LOGO------
-          -----------------------------------------------*/
-
-          .productPrice, .productQuantitySpinner, .addToBasket{
+          .product_image, .productName, .productDescription {
             display: inline-block;
           }
 
-          /*------------------------
-          -------PRODUCT PRICE------
-          ------------------------*/
-
-          .productPrice {
-            float: left;
-
-            font-family: dinpro;
-            font-size: 28px;
-            color: #00288C;
-          }
-
-          /*-----------------------------------
-          -------PRODUCT QUANTITY SPINNER------
-          -----------------------------------*/
-
-          .productQuantitySpinner {
+          .product_left_floater_right_floater {
             float: right;
-            margin: 1% 3%;
+            width: 82%;
           }
 
-            /*-----------------------------------------
-            -------PRODUCT QUANTITY SPINNER INPUT------
-            -----------------------------------------*/
 
-            .productQuantitySpinnerInput {
-              width: 30px;
+            /*------------------------
+            -------PRODUCT IMAGE------
+            ------------------------*/
+
+            .product_image img {
+              margin-top: 10px;
+              width: 80px;
+              height: 80px;
+              overflow: hidden;
             }
 
-          /*-----------------------------
-          -------ADD TO BASKET LOGO------
-          -----------------------------*/
+            /*-----------------------
+            -------PRODUCT NAME------
+            -----------------------*/
 
-          .addToBasket {
-            float: right;
+            .productName {
+              font-size: 16px;
+              font-family: dinpro;
+            }
+
+            /*------------------------------
+            -------PRODUCT DESCRIPTION------
+            ------------------------------*/
+
+            .productDescription {
+              color: #646464;
+              font-size: 12px;
+              font-weight: normal;
+            }
+
+
+          /*--------------------------------
+          -------PRODUCT RIGHT FLOATER------
+          --------------------------------*/
+          /*  DIV USED TO FLOAT TO THE RIGHT IN ORDER PRODUCT PRICE AND BASKET FLOAT */
+
+          .productRightFloater {
+            width: 30%;
+            margin-top: 18px;
+            margin-left: 9%;
           }
 
-        /*--------------
-        -------SUP------
-        --------------*/
 
-        /* <sup> is here used to pull up the decimal part of a price. */
+            /*-----------------------------------------------
+            -------PRODUCT PRICE AND ADD TO BASKET LOGO------
+            -----------------------------------------------*/
 
-        sup {
-          font-size: 0.7em;
-          vertical-align: 0.35em;
+            .productPrice, .er, .addToBasket{
+              display: inline-block;
+            }
+
+            /*------------------------
+            -------PRODUCT PRICE------
+            ------------------------*/
+
+            .productPrice {
+              float: left;
+
+              font-family: dinpro;
+              font-size: 28px;
+              color: #00288C;
+            }
+
+            /*-----------------------------------
+            -------PRODUCT QUANTITY SPINNER------
+            -----------------------------------*/
+
+            .productQuantitySpinner {
+              float: right;
+              margin: 1% 3%;
+            }
+
+              /*-----------------------------------------
+              -------PRODUCT QUANTITY SPINNER INPUT------
+              -----------------------------------------*/
+
+              .productQuantitySpinnerInput {
+                width: 25px;
+              }
+
+            /*-----------------------------
+            -------ADD TO BASKET LOGO------
+            -----------------------------*/
+
+            .addToBasket {
+              float: right;
+            }
+
+
+    /*---------------------------------------------------
+    -----------------------------------------------------
+    -------------------PRODUCT DETAILS-------------------
+    -----------------------------------------------------
+    ---------------------------------------------------*/
+
+    #product_details_left_floater, #product_details_right_floater {
+      display: inline-block;
+    }
+
+
+      /*----------------------------------------------------
+      ------------------------------------------------------
+      --------------PRODUCT DETAILS LEFT FLOATER------------
+      ------------------------------------------------------
+      ----------------------------------------------------*/
+
+      #product_details_left_floater {
+        width: 70%;
+        padding: 15px;
+      }
+
+
+        /*-------------------------------
+        -------PRODUCT DETAILS NAME------
+        -------------------------------*/
+
+        #product_details_name {
+          font-size: 18px;
         }
+
+        /*--------------------------------------
+        -------PRODUCT DETAILS DESCRIPTION------
+        --------------------------------------*/
+
+        #product_details_mini_description {
+          margin-bottom: 30px;
+
+          line-height: 13px;
+          font-size: 11px;
+          font-weight: normal;
+          color: #808080;
+        }
+
+        /*--------------------------------
+        -------PRODUCT DETAILS IMAGE------
+        --------------------------------*/
+
+        #product_details_image {
+          margin-left: 5px;
+          margin-right: 8px;
+          float: left;
+        }
+
+        /*--------------------------------------
+        -------PRODUCT DETAILS DESCRIPTION------
+        --------------------------------------*/
+
+        #product_details_description {
+          float: right;
+          margin-top: 5px;
+          margin-bottom: 25px;
+          width: 55%;
+
+          font-size: 12px;
+          font-weight: normal;
+          line-height: 18px;
+        }
+
+
+      /*-----------------------------------------------------
+      -------------------------------------------------------
+      --------------PRODUCT DETAILS RIGHT FLOATER------------
+      -------------------------------------------------------
+      -----------------------------------------------------*/
+
+      #product_details_right_floater {
+        float: right;
+        width: 230px;
+        height: 400px;
+        text-align: center;
+        padding-top: 20px;
+
+        background: rgb(237, 237, 237);
+      }
+
+      #product_details_right_floater hr {
+        border: 1px solid #FFFFFF;
+      }
+
+
+        /*--------------------------------
+        -------PRODUCT DETAILS PRICE------
+        --------------------------------*/
+
+        #product_details_price {
+          margin-bottom: 20px;
+
+          font-size: 32px;
+          color: rgb(0, 40, 140);
+        }
+
+        /*-------------------------------------------------
+        -------PRODUCT DETAILS ADD TO BASKET QUANTITY------
+        -------------------------------------------------*/
+
+        #product_details_add_to_basket_quantity {
+          margin-top: 20px;
+
+          font-size: 12px;
+          font-weight: normal;
+        }
+
+        /*-----------------------------------------------
+        -------PRODUCT DETAILS ADD TO BASKET BUTTON------
+        -----------------------------------------------*/
+
+        #product_details_add_to_basket_button {
+          margin-top: 20px;
+          padding: 5px;
+        }
+
 
     #core_core_top_bar, #core_core {
       margin: 0 auto;
@@ -956,13 +1116,6 @@
         margin-right: 5%;
       }
 
-    /*--------------------
-    -------UI-DIALOG------ Used for the pop-ups when emptying the basket or deleting a product.
-    --------------------*/
-
-    .ui-dialog {
-      font-size: 12px !important;
-    }
 
     /*--------------------------
     -------PRODUCTS TITLES------

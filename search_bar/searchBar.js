@@ -14,13 +14,16 @@ function searchBarAutocomplete() {
         data = JSON.parse(data);
 
         for (var i = 0; i < data.length; i++) {
-          result.push(data[i][1]);
+          result.push({value: data[i][0], label: data[i][1]});
         }
       }
     );
 
     $( "#search_bar_field" ).autocomplete({
-      source: result
+      source: result,
+      select: function( event, ui ) { // When we click on the specific result.
+        showProductDetails(ui.item.value);
+      }
     });
   }
 
