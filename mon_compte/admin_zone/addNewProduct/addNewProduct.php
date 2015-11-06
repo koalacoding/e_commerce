@@ -17,9 +17,14 @@
 		<span id="productNameErrorMessage" class="error_message">Nom invalide</span>
 		<br />
 		<br />
+		<span>Courte description du produit :</span>
+		<br />
+		<textarea rows="4" cols="50" id="product_mini_description"></textarea>
+		<br />
+		<br />
 		<span>Description du produit :</span>
 		<br />
-		<textarea rows="4" cols="50" id="productDescription" form="addNewProductForm"></textarea>
+		<textarea rows="4" cols="50" id="product_description"></textarea>
 		<br />
 		<br />
 		<span>Lien de l'image du produit (facultatif) :</span>

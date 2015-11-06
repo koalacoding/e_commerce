@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2015 at 07:56 PM
+-- Generation Time: Nov 07, 2015 at 12:42 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -51,16 +51,6 @@ CREATE TABLE IF NOT EXISTS `basket` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
---
--- Dumping data for table `basket`
---
-
-INSERT INTO `basket` (`id`, `user`, `productId`, `quantity`) VALUES
-(7, 'admin@root.fr', 1, 1),
-(8, 'admin@root.fr', 4, 1),
-(9, 'admin@root.fr', 5, 101),
-(10, 'admin@root.fr', 6, 16);
-
 -- --------------------------------------------------------
 
 --
@@ -91,16 +81,17 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `menu`
 --
 
 INSERT INTO `menu` (`id`, `name`) VALUES
-(1, 'menu1'),
-(2, 'menu2'),
-(3, 'menu3');
+(8, 'disque dur'),
+(9, 'carte mere'),
+(10, 'carte graphique'),
+(11, 'memoire vive');
 
 -- --------------------------------------------------------
 
@@ -117,19 +108,20 @@ CREATE TABLE IF NOT EXISTS `products` (
   `price` decimal(7,2) NOT NULL,
   `category` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `name`, `mini_description`, `description`, `image_link`, `price`, `category`) VALUES
-(1, 'Samsung SSD 840 EVO 500 Go mSATA', 'Le 840 EVO mSATA offre des performances plus élevées que jamais grâce à la technologie MLC 3 bits de 2e génération et une fiabilité exemplaire avec fonctions d''auto-monitoring.', '', '', '251.00', 'menu1'),
-(2, 'Matrox DualHead2Go Digital ME (Mac Edition)', 'Connectez 2 moniteurs externes à votre Mac ou votre MacBook.', '', '', '185.00', 'menu1'),
-(3, 'Canon EOS 100D + EF-S 18-55mm', 'Le Canon EOS 100D est un reflex numérique compact de 18 millions de pixels doté d''un processeur DIGIC 5. Appareil complet et dôté de fonctions multiples, il sera idéal pour les portraits et les photos souvenir de voyage. Doté d''un viseur optique et de commandes intuitives sur l''écran tactile, l''EOS 100D offre de magnifiques photos et vidéos. \n\nObjectif télézoom compact avec fonction macro 1:2, ce téléobjectif Tamron AF 70-300mm F/4-5,6 Di LD MACRO 1:2 se caractérise par une excellente qualité mécanique associée à des qualités optiques remarquables. Cet objectif Di peut être utilisé monté sur un boîtier numérique APS-C ou un boîtier plein format. Il est le complément idéal des objectifs standard fournis avec le boîtier.\n\nPoints forts :\n\nCapteur CMOS 22.3 x 14.9 mm de 18.5 millions de pixels\nDesign léger et robuste\nÉcran LCD tactile de 7,5 cm (3 pouces)\nVidéo FULL HD avec sortie HDMI\nProfitez de prises de vues faciles et rapides avec le mode Scène intelligente auto.\nLivré avec le zoom standard EF-S 18-55mm f/3,5-5,6 IS STM', '', '', '550.00', 'menu1'),
-(4, 'AMD A10-6790K (4.0 GHz) Black Edition', '', '', '', '146.00', 'menu1'),
-(5, 'AMD A4-4000 (3.0 GHz)', 'La nouvelle génération de processeurs accélérés série-A d''AMD : Obtenez d''excellentes performances pour un prix absolument incroyable grâce aux processeurs accélérés AMD série A de 2nd génération.', '', '', '33.99', 'menu2'),
-(6, 'ASRock 2Core1333-2.66G', 'ASRock 2Core1333-2.66G (Intel 945GC Express) - Micro ATX + Processeur Intel Pentium Dual-Core E2140.', 'Au format Micro ATX et équipée du jeu de composants Intel 865G, la carte mère ASRock 775i65G R3.0 représente une solution idéale pour l''assemblage d''une petite configuration performante, peu encombrante et optimisée pour la pratique de l''informatique au quotidien.', 'http://media.ldlc.com/ld3/300/2007/LD0000596380.jpg', '54.95', 'menu3');
+(8, 'Hitachi Deskstar 7K4000 4 To SATA 6Gb/s', 'Disque dur 3.5&quot; 4 To 7200 RPM 64 Mo Serial ATA 6Gb/s (bulk)', 'Grâce à son immense capacité de 4 To, le disque dur Hitachi Deskstar 7K4000 repousse les limites du stockage de masse. Avec une vitesse de rotation de 7200 tpm et les performances octroyées par l''interface Serial-ATA 6 Gb/s, il se montre rapide, fiable et efficace.', 'http://media.ldlc.com/ld/products/00/00/93/78/LD0000937814_1_0001128494.jpg', '189.95', 'disque dur'),
+(9, 'Lenovo ThinkServer HDD 1 To 3.5&quot; (67Y2614)', 'Disque dur serveur 3.5&quot; 1 To 7200 RPM 32 Mo Serial ATA II (bulk)', 'Le disque dur Lenovo ThinkServer 67Y2614 est conçu pour le serveur Lenovo ThinkServer TS130. Ce disque dur SATA offre d''excellentes performances avec 7200 RPM (rotations par minute) et un fonctionnement à la fois très fiable et économique.', 'http://media.ldlc.com/ld/products/00/01/37/67/LD0001376754_1_0001376801.jpg', '239.95', 'disque dur'),
+(10, 'Lenovo ThinkServer HDD 500 Go 2.5&quot; (0C19495)', 'Disque dur serveur 2.5&quot; 500 Go 7200 RPM SATA 6Gb/s pour ThinkServer', 'Ce disque dur remplaçable à chaud SATA ThinkServer 7,2 K de 2,5 pouces 6 Gbits/s pour entreprise offre aux utilisateurs la plus grande capacité de stockage de données pour un prix très réduit. C''est la solution idéale pour les applications de lecture séquentielle gourmandes en capacité.', 'http://media.ldlc.com/ld/products/00/02/99/13/LD0002991307_1_0002991588_0003040375.jpg', '339.95', 'disque dur'),
+(11, 'ASRock 775i65G R3.0', 'Carte mère Micro ATX Socket 775 Intel 865G - SATA 3 Gbps - USB 2.0 - 1x AGP 8x', 'Au format Micro ATX et équipée du jeu de composants Intel 865G, la carte mère ASRock 775i65G R3.0 représente une solution idéale pour l''assemblage d''une petite configuration performante, peu encombrante et optimisée pour la pratique de l''informatique au quotidien.', 'http://media.ldlc.com/ld/products/00/01/15/88/LD0001158870_1.jpg', '64.95', 'carte mere'),
+(12, 'MSI GeForce 210 N210-MD1GD3H/LP 1 Go', '1024 Mo HDMI/DVI - PCI Express (NVIDIA GeForce avec CUDA 210)', 'Grâce à la MSI N210-MD1GD3H/LP 1 Go vous bénéficierez d''une carte peu onéreuse que vous pourrez facilement intégrer dans une configuration bureautique ou multimédia. Une solution idoine pour un affichage de qualité ou la vidéo HD à petit prix.', 'http://media.ldlc.com/ld/products/00/01/13/18/LD0001131843_1.jpg', '31.96', 'carte graphique'),
+(13, 'Kingston 1 Go DDR2 533 MHz', 'Kingston 1 Go DDR2-SDRAM PC4200 - KTH-XW4300/1G (garantie 10 ans par Kingston)', 'Votre serveur commence de fatiguer ? Donnez lui une seconde jeunesse grâce à ce kit de mémoire DDR3 de qualité créé par Kingston. Constitué d''une barrette certifiée, il redonnera une seconde jeunesse à votre serveur Dell.', 'http://media.ldlc.com/ld/products/00/01/72/32/LD0001723264_1_0001723297.jpg', '19.90', 'memoire vive'),
+(14, 'Kingston HyperX Fury 4 Go DDR3 1600 MHz CL10', 'RAM DDR3 PC12800 - HX316C10FR/4 (garantie à vie par Kingston)', 'Dominez le jeu avec l''HyperX FURY. Même les débutants peuvent bénéficier des meilleures vitesses, puisque FURY reconnaît la plateforme hôte et sélectionne automatiquement la plus haute fréquence de surcadençage annoncée.', 'http://media.ldlc.com/ld/products/00/01/54/54/LD0001545469_1.jpg', '28.35', 'memoire vive');
 
 -- --------------------------------------------------------
 

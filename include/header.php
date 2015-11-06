@@ -2,7 +2,7 @@
 	<div id="header">
 		<div id="logo_site">
 			<a href="/e_commerce/index.php">
-				<img src="http://media.ldlc.com/v3/img/general/logo-ldlc-anim.gif"
+				<img src="http://image.noelshack.com/fichiers/2015/45/1446852143-logo.png"
 				height="76" width="175" alt="logo">
 			</a>
 		</div>

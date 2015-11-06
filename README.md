@@ -37,3 +37,4 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Enhanced the ui-spinner margin-right in /products/show_products_list/show_products_list.php.
 
 ## To do.
+* Allow admins to delete a product.

@@ -70,7 +70,8 @@ function handleSubmitFormButtonActivation() {
 function addNewProductToDBwhenSubmitted() {
 	$('#submitFormButton').click(function() {
 		var productName = $('[name="productName"]').val();
-		var productDescription = $('#productDescription').val();
+		var productMiniDescription = $('#product_mini_description').val();
+		var productDescription = $('#product_description').val();
 		var product_image_link = $('[name="product_image_link"]').val();
 		var productPrice = $('[name="productPrice"]').val();
 		var productCategory = $("select option:selected").val();
@@ -78,7 +79,8 @@ function addNewProductToDBwhenSubmitted() {
     $.post("addNewProductAction.php",
     {
         productName: productName,
-        productDescription: productDescription,
+				product_mini_description: productMiniDescription,
+        product_description: productDescription,
 				product_image_link: product_image_link,
         productPrice: productPrice,
         productCategory: productCategory
