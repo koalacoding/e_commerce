@@ -17,14 +17,14 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Added pop-up confirmation when dumping the basket or a basket's product.
 * Handle a design problem in the basket view where the name of the product get on multiple lines.
 * Code the search bar to dynamically display results using jQuery.
+* Show decimals of prices in getProducts.
+* Basket price and number of products is now correctly displayed while navigating
+  through the account's pages.
 
 ## To do.
 
 * Better organization of "style.css".
-* Show decimals of prices in getProducts.
-* Basket price and number of products is not correctly displayed while navigating
-  through the account's pages.
-* Allow admins to put pictures for products.
+* Allow admins to add pictures to products.
 * Modify the search bar results design, and allow the user to click on a search bar result
   to see a product's details.
 

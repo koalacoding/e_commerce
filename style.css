@@ -1,135 +1,207 @@
+/*--------------------------
+----------------------------
+-----------FONT-FACE--------
+----------------------------
+--------------------------*/
+
 @font-face {
     font-family: dinpro;
     src: url('dinpro.ttf');
 }
 
-body {
-  margin: 0px;
 
-  font: 1.2em/1.5em arial,verdana,geneva,helvetica,sans-serif;
-  color: #ffffff;
-}
+/*--------------------------
+----------------------------
+-----------HTML TAGS--------
+----------------------------
+--------------------------*/
 
-a:visited {
-  color: #141414;
-}
 
-input {
-  height: 20px;
+  /*--------------
+  -------BODY-----
+  --------------*/
 
-  border: 1px solid #c8c8c8;
-}
+  body {
+    margin: 0px;
 
-.ui-dialog {
-  font-size: 12px !important;
-}
+    font: 1.2em/1.5em arial,verdana,geneva,helvetica,sans-serif;
+    color: #ffffff;
+  }
+
+  /*---------------------
+  -------A : VISITED-----
+  ---------------------*/
+
+  a:visited {
+    color: #141414;
+  }
+
+  /*---------------
+  -------INPUT-----
+  ---------------*/
+
+  input {
+    height: 20px;
+
+    border: 1px solid #c8c8c8;
+  }
+
+
+/*------------------------
+--------------------------
+-----------TOP BAR--------
+--------------------------
+------------------------*/
 
 #top_bar {
   height: 24px;
   background-color: rgb(0, 32, 84);
 }
 
-#header_wrapper {
-  background-color: #002E78;
-}
-
-#header {
-  position: relative;
-  height: 180px;
-  margin: auto;
-  width: 995px;
-
-  color: #ffffff;
-}
-
-#logo_site, #search_bar, #right_elements {
-  display: inline-block;
-}
-
-#logo_site {
-  width: 175px;
-  height: 76px;
-  transform: translateY(60%);
-
-  line-height: 1.2;
-  font-size: 40px;
-  font-weight: 300;
-}
-
-#search_bar {
-  margin-left: 4.5%;
-  transform: translateY(60%);
-
-  text-align: center;
-}
-
-#search_bar_glass_container {
-  height: 30px;
-  width: 30px;
-  float: left;
-  background: #fff;
-
-  -webkit-border-top-right-radius: 0px;
-  -webkit-border-bottom-right-radius: 0px;
-  -moz-border-radius-topright: 0px;
-  -moz-border-radius-bottomright: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-bottom-left-radius: 3px;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-bottomleft: 3px;
-}
-
-#search_bar_glass {
-  height: 22px;
-  width: 22px;
-  margin-top: 4px;
-}
-
-#search_bar_field {
-  vertical-align: top;
-  width: 306px;
-  height: 30px;
-  left: -2px;
-  padding: 0 2px;
-
-  border: 0 none;
-
-  line-height: 30px;
-  color: #646464;
-  font-style: italic;
-}
-
-#search_bar_ok {
-  display: inline-block;
-  height: 30px;
-  width: 40px;
-  left: -5px;
-  position: relative;
-  vertical-align: top;
-
-  background: #0096CA;
-
-  -webkit-border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 3px;
-  -moz-border-radius-topright: 3px;
-  -moz-border-radius-bottomright: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 3px;
-
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 31px;
-  text-align: center;
-}
+/*-----------------------
+-------------------------
+-----------HEADER--------
+-------------------------
+-----------------------*/
 
 
-/*----------------------------------------
-------------------------------------------
------------HEADER - RIGHT ELEMENTS--------
-------------------------------------------
-----------------------------------------*/
+  #logo_site, #search_bar, #right_elements {
+    display: inline-block;
+  }
+
+  /*------------------------
+  -------HEADER WRAPPER-----
+  ------------------------*/
+
+  #header_wrapper {
+    background-color: #002E78;
+  }
+
+  /*----------------
+  -------HEADER-----
+  ----------------*/
+
+  #header {
+    position: relative;
+    height: 180px;
+    margin: auto;
+    width: 995px;
+
+    color: #ffffff;
+  }
+
+  /*-------------------
+  -------LOGO SITE-----
+  -------------------*/
+
+  #logo_site {
+    width: 175px;
+    height: 76px;
+    transform: translateY(60%);
+
+    line-height: 1.2;
+    font-size: 40px;
+    font-weight: 300;
+  }
+
+
+  /*---------------------------
+  -----------------------------
+  -----------SEARCH BAR--------
+  -----------------------------
+  ---------------------------*/
+
+
+  #search_bar {
+    margin-left: 4.5%;
+    transform: translateY(60%);
+
+    text-align: center;
+  }
+
+    /*------------------------------------
+    -------SEARCH BAR GLASS CONTAINER-----
+    ------------------------------------*/
+
+    #search_bar_glass_container {
+      height: 30px;
+      width: 30px;
+      float: left;
+      background: #fff;
+
+      -webkit-border-top-right-radius: 0px;
+      -webkit-border-bottom-right-radius: 0px;
+      -moz-border-radius-topright: 0px;
+      -moz-border-radius-bottomright: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      -webkit-border-top-left-radius: 3px;
+      -webkit-border-bottom-left-radius: 3px;
+      -moz-border-radius-topleft: 3px;
+      -moz-border-radius-bottomleft: 3px;
+    }
+
+    /*--------------------------
+    -------SEARCH BAR GLASS-----
+    --------------------------*/
+
+    #search_bar_glass {
+      height: 22px;
+      width: 22px;
+      margin-top: 4px;
+    }
+
+    /*--------------------------
+    -------SEARCH BAR FIELD-----
+    --------------------------*/
+
+    #search_bar_field {
+      vertical-align: top;
+      width: 306px;
+      height: 30px;
+      left: -2px;
+      padding: 0 2px;
+
+      border: 0 none;
+
+      line-height: 30px;
+      color: #646464;
+      font-style: italic;
+    }
+
+    /*-----------------------
+    -------SEARCH BAR OK-----
+    -----------------------*/
+
+    #search_bar_ok {
+      display: inline-block;
+      height: 30px;
+      width: 40px;
+      left: -5px;
+      position: relative;
+      vertical-align: top;
+
+      background: #0096CA;
+
+      -webkit-border-top-right-radius: 3px;
+      -webkit-border-bottom-right-radius: 3px;
+      -moz-border-radius-topright: 3px;
+      -moz-border-radius-bottomright: 3px;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
+
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 31px;
+      text-align: center;
+    }
+
+
+  /*----------------------------------------
+  ------------------------------------------
+  -----------HEADER - RIGHT ELEMENTS--------
+  ------------------------------------------
+  ----------------------------------------*/
 
 
   #right_elements {
@@ -137,159 +209,148 @@ input {
   }
 
 
-  /*-----------------------
-  -------RIGHT ELEMENT-----
-  -----------------------*/
-
-  .right_element {
-    display: inline-block;
-    margin-left: 49px;
-    padding-right: 5px;
-  }
-
-  .right_element, .login_tooltip {
-    border-radius: 4px;
-  }
-
-
     /*------------------------------
-    -------RIGHT ELEMENT BASKET-----
+    --------------------------------
+    -----------RIGHT ELEMENT--------
+    --------------------------------
     ------------------------------*/
 
-    #rightElementBasket {
-      transform: translateY(35%);
+
+    .header_right_element {
+      display: inline-block;
+      margin-left: 49px;
+      padding-right: 5px;
     }
 
-      /*------------------------------------
-      -------RIGHT ELEMENT BASKET PRICE-----
-      ------------------------------------*/
-
-      #basketPrice {
-        font-weight: bold;
-        color: #94B0C5;
-      }
-
-
-    /*------------------------------
-    -------RIGHT ELEMENT LOGOS-----
-    ------------------------------*/
-
-    .elementLogoAccount, .elementLogoBasket {
-      display:inline-block;
-      transform: translateY(17%);
-      height: 20px;
-      width: 22px;
+    .header_right_element, .login_tooltip {
+      border-radius: 4px;
     }
 
-
-      /*------------------------------------
-      -------RIGHT ELEMENT LOGO ACCOUNT-----
-      ------------------------------------*/
-
-      .elementLogoAccount {
-        background: url(http://media.ldlc.com/v3/img/general/ico-compte.png) no-repeat 0 top;
-        background-size: 20px 20px;
-      }
 
       /*-----------------------------------
-      -------RIGHT ELEMENT LOGO BASKET-----
+      -------------------------------------
+      -----------RIGHT ELEMENT LOGO--------
+      -------------------------------------
       -----------------------------------*/
 
-      .elementLogoBasket {
-        background: url(https://media.ldlc.com/v3/img/general/ico-panier.png) no-repeat 0 top;
-        background-size: 20px 20px;
+
+      .elementLogoAccount, .elementLogoBasket {
+        display:inline-block;
+        transform: translateY(17%);
+        height: 20px;
+        width: 22px;
       }
 
 
-    /*-----------------------------
-    -------RIGHT ELEMENT TITLE-----
-    -----------------------------*/
+        /*--------------------------------------
+        -------RIGHT ELEMENT LOGO : ACCOUNT-----
+        --------------------------------------*/
 
-    .element_title {
-      font-style: normal;
-      font-size: 17px;
-      font-family: DINPro,arial;
-      font-weight: bold;
+        .elementLogoAccount {
+          background: url(http://media.ldlc.com/v3/img/general/ico-compte.png) no-repeat 0 top;
+          background-size: 20px 20px;
+        }
+
+        /*-------------------------------------
+        -------RIGHT ELEMENT LOGO : BASKET-----
+        -------------------------------------*/
+
+        .elementLogoBasket {
+          background: url(https://media.ldlc.com/v3/img/general/ico-panier.png) no-repeat 0 top;
+          background-size: 20px 20px;
+        }
+
+
+      /*-----------------------------
+      -------RIGHT ELEMENT TITLE-----
+      -----------------------------*/
+
+      .element_title {
+        font-style: normal;
+        font-size: 17px;
+        font-family: DINPro,arial;
+        font-weight: bold;
+      }
+
+      /*----------------------------------------
+      -------RIGHT ELEMENT SMALL BLUE ARROW-----
+      ----------------------------------------*/
+
+      .small_blue_arrow {
+        display:inline-block;
+        width: 12px;
+        height: 12px;
+        transform: translateY(70%);
+
+        background: url(http://media.ldlc.com/v3/img/general/ico-fleche.svg) no-repeat 0 top;
+        background-size: 12px 12px;
+      }
+
+      /*----------------------------
+      -------RIGHT ELEMENT TEXT-----
+      ----------------------------*/
+
+      .element_text {
+        margin-left: 19%;
+
+        font-size: 12px;
+        color: #cbd5e4;
+      }
+
+
+    /*------------------------------------------------
+    --------------------------------------------------
+    -----------RIGHT ELEMENT : LOGIN : TOOLTIP--------
+    --------------------------------------------------
+    ------------------------------------------------*/
+
+
+    .header_right_element:hover .login_tooltip {
+      display: block;
     }
 
-    /*----------------------------------------
-    -------RIGHT ELEMENT SMALL BLUE ARROW-----
-    ----------------------------------------*/
+    .header_right_element:hover {
+      color: #000000 !important;
 
-    .small_blue_arrow {
-      display:inline-block;
-      width: 12px;
-      height: 12px;
-      transform: translateY(70%);
-
-      background: url(http://media.ldlc.com/v3/img/general/ico-fleche.svg) no-repeat 0 top;
-      background-size: 12px 12px;
+      background-color: #ddebf4;
     }
 
-    /*----------------------------
-    -------RIGHT ELEMENT TEXT-----
-    ----------------------------*/
+    .header_right_element:hover .element_text {
+      color: #000000;
+    }
 
-    .element_text {
-      margin-left: 19%;
+    .login_tooltip {
+      display: none;
+      transform: translateY(-4%);
+      position: absolute;
+      z-index: 1000;
+      width:200px;
+      padding: 10px;
+      text-align: center;
 
-      font-size: 12px;
-      color: #cbd5e4;
+      background-color: #ddebf4;
     }
 
 
-  /*------------------------------
-  --------------------------------
-  -----------LOGIN TOOLTIP--------
-  --------------------------------
-  ------------------------------*/
+      /*-----------------------------------
+      -------LOGIN TOOLTIP INPUT FIELD-----
+      -----------------------------------*/
+
+      .login_tooltip_input_field {
+        width: 100%;
+        padding-left: 2px;
+
+        color: #646464;
+        font-style: italic;
+        font-size: 11px;
+      }
 
 
-  .right_element:hover .login_tooltip {
-    display: block;
-  }
-
-  .right_element:hover {
-    color: #000000 !important;
-
-    background-color: #ddebf4;
-  }
-
-  .right_element:hover .element_text {
-    color: #000000;
-  }
-
-  .login_tooltip {
-    display: none;
-    transform: translateY(-4%);
-    position: absolute;
-    z-index: 1000;
-    width:200px;
-    padding: 10px;
-    text-align: center;
-
-    background-color: #ddebf4;
-  }
-
-    /*-----------------------------------
-    -------LOGIN TOOLTIP INPUT FIELD-----
-    -----------------------------------*/
-
-    .login_tooltip_input_field {
-      width: 100%;
-      padding-left: 2px;
-
-      color: #646464;
-      font-style: italic;
-      font-size: 11px;
-    }
-
-
-    /*--------------------------------------
-    ----------------------------------------
-    -----------LOGIN TOOLTIP BUTTONS--------
-    ----------------------------------------
-    --------------------------------------*/
+      /*--------------------------------------
+      ----------------------------------------
+      -----------LOGIN TOOLTIP BUTTONS--------
+      ----------------------------------------
+      --------------------------------------*/
 
 
       .login_tooltip_inscription_button, .login_tooltip_connexion_button,
@@ -319,61 +380,82 @@ input {
       }
 
 
-    /*----------------------------------------------------
-    ------------------------------------------------------
-    -----------LOGIN TOOLTIP NOT CONNECTED BUTTONS--------
-    ------------------------------------------------------
-    ----------------------------------------------------*/
+        /*----------------------------------------------------
+        ------------------------------------------------------
+        -----------LOGIN TOOLTIP NOT CONNECTED BUTTONS--------
+        ------------------------------------------------------
+        ----------------------------------------------------*/
 
 
-      /*----------------------------------------
-      -------LOGIN TOOLTIP CONNEXION BUTTON-----
-      ----------------------------------------*/
+          /*----------------------------------------
+          -------LOGIN TOOLTIP CONNEXION BUTTON-----
+          ----------------------------------------*/
 
-      .login_tooltip_connexion_button {
-        margin-top: 10px;
+          .login_tooltip_connexion_button {
+            margin-top: 10px;
+          }
+
+          /*------------------------------------------
+          -------LOGIN TOOLTIP INSCRIPTION BUTTON-----
+          ------------------------------------------*/
+
+          .login_tooltip_inscription_button {
+            text-align: center;
+
+            padding: 3px 5px;
+          }
+
+          .login_tooltip_inscription_button:visited {
+            color: #FFFFFF;
+          }
+
+
+        /*----------------------------------------
+        ------------------------------------------
+        -----------LOGIN CONNECTED BUTTONS--------
+        ------------------------------------------
+        ----------------------------------------*/
+
+
+          /*-----------------------------------
+          -------ACCESS MEMBER ZONE BUTTON-----
+          -----------------------------------*/
+
+          #login_tooltip_access_member_zone_button {
+            padding: 2px;
+          }
+
+          /*---------------------
+          -------LOGOUT LINK-----
+          ---------------------*/
+
+          #logout_link {
+            color: #00288C;
+            font-weight: bold;
+            font-size: 12px;
+            text-decoration: none;
+          }
+
+
+      /*---------------------------------------
+      -----------------------------------------
+      -----------RIGHT ELEMENT : BASKET--------
+      -----------------------------------------
+      ---------------------------------------*/
+
+
+      #rightElementBasket {
+        transform: translateY(35%);
       }
 
-      /*------------------------------------------
-      -------LOGIN TOOLTIP INSCRIPTION BUTTON-----
-      ------------------------------------------*/
+        /*------------------------------------
+        -------RIGHT ELEMENT BASKET PRICE-----
+        ------------------------------------*/
 
-      .login_tooltip_inscription_button {
-        text-align: center;
-
-        padding: 3px 5px;
-      }
-
-      .login_tooltip_inscription_button:visited {
-        color: #FFFFFF;
-      }
-
-
-    /*----------------------------------------
-    ------------------------------------------
-    -----------LOGIN CONNECTED BUTTONS--------
-    ------------------------------------------
-    ----------------------------------------*/
-
-
-      /*-----------------------------------
-      -------ACCESS MEMBER ZONE BUTTON-----
-      -----------------------------------*/
-
-      #login_tooltip_access_member_zone_button {
-        padding: 2px;
-      }
-
-      /*---------------------
-      -------LOGOUT LINK-----
-      ---------------------*/
-
-      #logout_link {
-        color: #00288C;
-        font-weight: bold;
-        font-size: 12px;
-        text-decoration: none;
-      }
+        #basketPrice {
+          font-weight: bold;
+          color: #0096CA;
+        }
 
 
 /*----------------------------------------
@@ -850,6 +932,14 @@ input {
         transform: translateY(7%);
         margin-right: 5%;
       }
+
+    /*--------------------
+    -------UI-DIALOG------ Used for the pop-ups when emptying the basket or deleting a product.
+    --------------------*/
+
+    .ui-dialog {
+      font-size: 12px !important;
+    }
 
     /*--------------------------
     -------PRODUCTS TITLES------

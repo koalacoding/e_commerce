@@ -19,7 +19,7 @@
 		</div>
 
 		<div id="right_elements">
-			<div class="right_element">
+			<div class="header_right_element">
 				<div class="elementLogoAccount">&nbsp;</div>
 
 				<span class="element_title">Mon compte</span>
@@ -51,7 +51,7 @@
 				</div>
 			</div>
 
-			<div class="right_element" id="rightElementBasket" style="cursor: pointer;">
+			<div class="header_right_element" id="rightElementBasket" style="cursor: pointer;">
 				<div class="elementLogoBasket">&nbsp;</div>
 				<span class="element_title">Mon panier</span>
 				<span class="small_blue_arrow">&nbsp;</span>

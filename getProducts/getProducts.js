@@ -8,7 +8,7 @@ function handleMenuClick() {
 	$('.menu_element').click(function() {
 		var menuName = $(this).attr('id');
 
-		$.post("getProducts/getProducts.php",
+		$.post("/e_commerce/getProducts/getProducts.php",
         {
             menu: menuName
         },
