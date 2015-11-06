@@ -7,22 +7,23 @@
 function addMenuElement() {
 	$('#submitButtonAdd').click(function() {
 		// If there are less than 10 members of the menu_element class.
-		if ($('.menu_element').length < 10) {
-			var htmlContent = "<div class='menu_element' id='"+$('[name="menuNameAdd"]').val().toLowerCase()+"'> \
-			   		<div class='menu_element_title'>"+$('[name="menuNameAdd"]').val().toLowerCase()+"</div> \
-					<div class='menu_element_white_arrow'> \
-						<img src='http://media.ldlc.com/v3/img/general/ico-triangle-bas.gif' \
-							 alt='white_arrow' /> \
-					</div> \
-			   	</div>";
+		if ($('.header_menu_element').length < 10) {
+			var htmlContent =
+				"<div class='header_menu_element' id='"+$('[name="menuNameAdd"]').val().toLowerCase()+"'> \
+			     <div class='header_menu_element_title'>"+$('[name="menuNameAdd"]').val().toLowerCase()+"</div> \
+					 <div class='header_menu_element_white_arrow'> \
+				   	<img src='http://media.ldlc.com/v3/img/general/ico-triangle-bas.gif' \
+							   alt='white_arrow' /> \
+					 </div> \
+				 </div>";
 
-			if ($('.menu_element').length > 0) { // If there is at least one menu element.
+			if ($('.header_menu_element').length > 0) { // If there is at least one menu element.
 				// Add the new menu element after the last one already existing.
-				$('.menu_element').last().after(htmlContent);
+				$('.header_menu_element').last().after(htmlContent);
 			}
 
 			else { // If there is no menu element.
-				$('#menu').append(htmlContent);
+				$('#header_menu').append(htmlContent);
 			}
 		}
 	});
@@ -57,7 +58,7 @@ function updateMenu() {
 	$("#submitModifications").click(function(){
 		menuList = [];
 
-		$('.menu_element').each(function() {
+		$('.header_menu_element').each(function() {
 			// Pushing into the menuList array the id of every menu_element.
 			menuList.push($(this).attr('id'));
 		});
@@ -82,7 +83,7 @@ function updateMenu() {
 	    		alert('Erreur.');
 	    	}
 	    });
-	});	
+	});
 }
 
 /*------------------------------------
@@ -96,4 +97,3 @@ $(function() {
 	removeMenuElement();
 	updateMenu();
 });
-

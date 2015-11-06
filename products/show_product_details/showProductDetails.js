@@ -26,7 +26,7 @@ function showProductDetails(productId) {
 /* When we either click on the product's image / name,
   or on the product's name in the search bar results. */
 function handleProductClick() {
-	//$('.menu_element').click(showProductDetails());
+	//$('.header_menu_element').click(showProductDetails());
 }
 
 /*------------------------------------

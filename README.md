@@ -22,9 +22,9 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Users can now click on a search bar result to see its details.
 * The search bar only starts to show results after at least 3 characters have been typed
   in the bar.
+* Improved "style.css" organization.
 
 ## To do.
-* Better organization of "style.css".
 * Modify the search bar results design.
 * Allow the user to go on a product's page when clicking on a product in the products list.
 * Fix a design problem in the "showBasket" page.

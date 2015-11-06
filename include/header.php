@@ -62,7 +62,7 @@
 			</div>
 		</div>
 
-		<div id="menu">
+		<div id="header_menu">
 			<?php show_menu_elements(); ?>
 		</div>
 	</div>

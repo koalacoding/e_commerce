@@ -72,27 +72,28 @@
   }
 
 
-/*------------------------
---------------------------
------------TOP BAR--------
---------------------------
-------------------------*/
+/*-------------------------------------------
+---------------------------------------------
+-------------------TOP BAR-------------------
+---------------------------------------------
+-------------------------------------------*/
 
 #top_bar {
   height: 24px;
   background-color: rgb(0, 32, 84);
 }
 
-/*-----------------------
--------------------------
------------HEADER--------
--------------------------
------------------------*/
 
+/*------------------------------------------
+--------------------------------------------
+-------------------HEADER-------------------
+--------------------------------------------
+------------------------------------------*/
 
   #logo_site, #search_bar, #right_elements {
     display: inline-block;
   }
+
 
   /*------------------------
   -------HEADER WRAPPER-----
@@ -234,11 +235,11 @@
   }
 
 
-    /*------------------------------
-    --------------------------------
-    -----------RIGHT ELEMENT--------
-    --------------------------------
-    ------------------------------*/
+    /*--------------------------------------------------------
+    ----------------------------------------------------------
+    -------------------HEADER RIGHT ELEMENT-------------------
+    ----------------------------------------------------------
+    --------------------------------------------------------*/
 
 
     .header_right_element {
@@ -482,59 +483,61 @@
         }
 
 
-/*----------------------------------------
-------------------------------------------
--------------------MENU-------------------
-------------------------------------------
-----------------------------------------*/
+  /*-----------------------------------------------
+  -------------------------------------------------
+  -------------------HEADER MENU-------------------
+  -------------------------------------------------
+  -----------------------------------------------*/
 
-#menu {
-  position: absolute;
-  bottom: 0;
-}
-  /*-----------------------
-  -------MENU ELEMENT------
-  -----------------------*/
-
-  .menu_element {
-    display: inline-block;
-    height: 30px;
-    margin-right: 8px;
-    padding-right: 20px;
-    padding-left: 20px;
-
-    background: #0096CA;
-
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-
-    cursor: pointer; /* Making the pointer a hand when hovering. */
+  #header_menu {
+    position: absolute;
+    bottom: 0;
   }
 
-    /*-----------------------
-    ---MENU ELEMENT TITLE----
-    -----------------------*/
 
-    .menu_element_title {
+    /*------------------------------
+    -------HEADER MENU ELEMENT------
+    ------------------------------*/
+
+    .header_menu_element {
       display: inline-block;
+      height: 30px;
+      margin-right: 8px;
+      padding-right: 20px;
+      padding-left: 20px;
 
-      font-family: dinpro;
-      font-size: 12px;
-      font-weight: bold;
-      text-transform: uppercase;
+      background: #0096CA;
+
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+
+      cursor: pointer; /* Making the pointer a hand when hovering. */
     }
 
-    /*------------------------
-    -MENU ELEMENT WHITE ARROW-
-    ------------------------*/
+      /*------------------------------------
+      -------HEADER MENU ELEMENT TITLE------
+      ------------------------------------*/
 
-    .menu_element_white_arrow {
-      display: inline-block;
-      top: -8%;
-      position: relative;
+      .header_menu_element_title {
+        display: inline-block;
 
-      height: 4px;
-    }
+        font-family: dinpro;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      /*------------------------------------------
+      -------HEADER MENU ELEMENT WHITE ARROW------
+      ------------------------------------------*/
+
+      .header_menu_element_white_arrow {
+        display: inline-block;
+        top: -8%;
+        position: relative;
+
+        height: 4px;
+      }
 
 
 /*----------------------------------------
@@ -542,7 +545,6 @@
 -------------------CORE-------------------
 ------------------------------------------
 ----------------------------------------*/
-
 
 #core {
   padding-top: 20px;
@@ -553,9 +555,12 @@
   background-color: #e5e5e5;
 }
 
-  /*--------------------
-  -------CORE CORE------
-  --------------------*/
+
+  /*---------------------------------
+  -----------------------------------
+  --------------CORE CORE------------
+  -----------------------------------
+  ---------------------------------*/
 
   #core_core {
     width: 994px;
@@ -571,6 +576,58 @@
     font-size: 14px;
     font-weight: bold;
   }
+
+  #core_core_top_bar, #core_core {
+    margin: 0 auto;
+  }
+
+
+    /*-----------------------------------------
+    -------------------------------------------
+    --------------CORE CORE TOP BAR------------
+    -------------------------------------------
+    -----------------------------------------*/
+
+    #core_core_top_bar {
+      width: 995px;
+      height: 30px;
+
+      background: url(http://image.noelshack.com/fichiers/2015/42/1444914137-core-core-top-bar.png) no-repeat 0 0;
+
+      border: 1px solid #c8c8c8;
+
+      line-height: 100%;
+    }
+
+    #core_core_top_bar_part1, #core_core_top_bar_part2 {
+      display: inline-block;
+      height: 30px;
+
+      font: 13px arial,verdana,geneva,helvetica,sans-serif;
+    }
+
+
+      /*-----------------------------------------
+      ----------CORE CORE TOP BAR PART1----------
+      -----------------------------------------*/
+
+      #core_core_top_bar_part1 {
+        margin-top: 0.5%;
+        margin-left: 7%;
+
+        text-decoration: underline;
+      }
+
+      /*-----------------------------------------
+      ----------CORE CORE TOP BAR PART2----------
+      -----------------------------------------*/
+
+      #core_core_top_bar_part2 {
+        margin-left: 3%;
+        margin-top: 0.7%;
+
+        color: #000000;
+      }
 
 
   /*--------------------------------------------
@@ -855,266 +912,223 @@
         }
 
 
-    #core_core_top_bar, #core_core {
-      margin: 0 auto;
+    /*--------------------------
+    ----------GREY BAR----------
+    --------------------------*/
+
+    .grey_bar {
+      height: 0px;
+      width: 100%;
+
+      border-bottom: 1px solid #c8c8c8;
     }
 
-    #core_core_top_bar {
-      width: 995px;
-      height: 30px;
+    /*-------------------------------
+    ----------ERROR MESSAGE----------
+    -------------------------------*/
 
-      background: url(http://image.noelshack.com/fichiers/2015/42/1444914137-core-core-top-bar.png) no-repeat 0 0;
+    .error_message {
+      margin-left: 1%;
 
-      border: 1px solid #c8c8c8;
-
-      line-height: 100%;
+      color: #FF0000;
     }
 
-    #core_core_top_bar_part1, #core_core_top_bar_part2 {
+
+    /*----------------------------------------
+    ------------------------------------------
+    --------------CORE CORE MENU--------------
+    ------------------------------------------
+    ----------------------------------------*/
+
+    #core_core_menu {
+      width: 20%;
+      height: 450px;
+      padding-top: 1.5%;
+      float: left;
+
+      background: rgb(220, 235, 245);
+
+      -webkit-box-shadow: 5px 1px 5px 0px rgba(235,235,235,1);
+      -moz-box-shadow: 5px 1px 5px 0px rgba(235,235,235,1);
+      box-shadow: 5px 1px 5px 0px rgba(235,235,235,1);
+    }
+
+    #core_core_menu, #core_core_core {
       display: inline-block;
-      height: 30px;
-
-      font: 13px arial,verdana,geneva,helvetica,sans-serif;
     }
 
-    #core_core_top_bar_part1 {
-      margin-top: 0.5%;
-      margin-left: 7%;
 
-      text-decoration: underline;
-    }
+      /*------------------------------------------------
+      --------------------------------------------------
+      --------------CORE CORE MENU ELEMENT--------------
+      --------------------------------------------------
+      ------------------------------------------------*/
 
-    #core_core_top_bar_part2 {
-      margin-left: 3%;
-      margin-top: 0.7%;
+      .core_core_menu_element {
+        margin-top: 3%;
+        margin-left: 10%;
+        margin-bottom: 1%;
 
-      color: #000000;
-    }
+        font-weight: normal;
+        font-size: 12px;
+      }
 
-  /*----------------------------------------
-  ------------------------------------------
-  -----------------GREY BAR-----------------
-  ------------------------------------------
-  ----------------------------------------*/
+      .core_core_menu_element a:link {
+        text-decoration: none;
+        color: #141414;
+      }
 
-  .grey_bar {
-    height: 0px;
-    width: 100%;
-
-    border-bottom: 1px solid #c8c8c8;
-  }
-
-/*----------------------------------------
-------------------------------------------
--------------ERROR MESSAGE----------------
-------------------------------------------
-----------------------------------------*/
-
-.error_message {
-  margin-left: 1%;
-
-  color: #FF0000;
-}
-
-/*-----------------------------------------------------------
--------------------------------------------------------------
--------------CORE_CORE_MENU, CORE_CORE_CORE---------------
--------------------------------------------------------------
------------------------------------------------------------*/
-
-  #core_core_menu, #core_core_core {
-    display: inline-block;
-  }
-
-/*----------------------------------------
-------------------------------------------
--------------CORE_CORE_MENU---------------
-------------------------------------------
-----------------------------------------*/
+      .core_core_menu_element a:hover {
+        text-decoration: underline;
+      }
 
 
-  #core_core_menu {
-    width: 20%;
-    height: 450px;
-    padding-top: 1.5%;
-    float: left;
+        /*---------------------------------------------
+        ----------CORE CORE MENU ELEMENT LOGO----------
+        ---------------------------------------------*/
 
-    background: rgb(220, 235, 245);
+        .core_core_menu_element_logo, .core_core_menu_element_title {
+          display: inline-block;
+        }
 
-    -webkit-box-shadow: 5px 1px 5px 0px rgba(235,235,235,1);
-    -moz-box-shadow: 5px 1px 5px 0px rgba(235,235,235,1);
-    box-shadow: 5px 1px 5px 0px rgba(235,235,235,1);
-  }
+        .core_core_menu_element_logo {
+          width: 23px;
+        }
 
-    /*---------------------------------
-    -------CORE_CORE_MENU_ELEMENT------
-    ---------------------------------*/
+        /*----------------------------------------------
+        ----------CORE CORE MENU ELEMENT TITLE----------
+        ----------------------------------------------*/
 
-    .core_core_menu_element {
+        .core_core_menu_element_title {
+          margin-left: 3%;
+        }
+
+
+      /*------------------------------------------
+      ----------CORE CORE MENU WHITE BAR----------
+      ------------------------------------------*/
+
+      .core_core_menu_white_bar {
+        height: 1px;
+        width: 100%;
+
+        background: #FFFFFF;
+      }
+
+
+    /*----------------------------------------
+    ------------------------------------------
+    -------------CORE CORE CORE---------------
+    ------------------------------------------
+    ----------------------------------------*/
+
+    #core_core_core {
+      float:left;
+      max-width: 70%;
       margin-top: 3%;
-      margin-left: 10%;
       margin-bottom: 1%;
+      margin-left: 3%;
 
       font-weight: normal;
       font-size: 12px;
-    }
-
-    .core_core_menu_element a:link {
-      text-decoration: none;
-      color: #141414;
-    }
-
-    .core_core_menu_element a:hover {
-      text-decoration: underline;
-    }
-
-    .core_core_menu_element_logo, .core_core_menu_element_title {
-      display: inline-block;
-    }
-
-    /*----------------------------
-    -CORE_CORE_MENU_ELEMENT_LOGOS-
-    ----------------------------*/
-
-    .core_core_menu_element_logo {
-      width: 23px;
-    }
-
-    /*----------------------------
-    -CORE_CORE_MENU_ELEMENT_TITLE-
-    ----------------------------*/
-
-    .core_core_menu_element_title {
-      margin-left: 3%;
-    }
-
-    /*-----------------------------------
-    -------CORE_CORE_MENU_WHITE_BAR------
-    -----------------------------------*/
-
-    .core_core_menu_white_bar {
-      height: 1px;
-      width: 100%;
-
-      background: #FFFFFF;
+      line-height: 20px;
     }
 
 
-/*----------------------------------------
-------------------------------------------
--------------CORE_CORE_CORE---------------
-------------------------------------------
-----------------------------------------*/
+      /*------------------------------
+      -------CORE_CORE_CORE_TEXT------
+      ------------------------------*/
 
-
-  #core_core_core {
-    float:left;
-    max-width: 70%;
-    margin-top: 3%;
-    margin-bottom: 1%;
-    margin-left: 3%;
-
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 20px;
-  }
-
-    /*----------------------------------------------------------
-    -------CORE_CORE_CORE_TEXT AND CORE_CORE_CORE_GREY_BOX------
-    ----------------------------------------------------------*/
-
-    #core_core_core_text, #core_core_core_grey_box {
-      display: inline-block;
-    }
-
-    /*------------------------------
-    -------CORE_CORE_CORE_TEXT------
-    ------------------------------*/
-
-    #core_core_core_text {
-      max-width: 60%;
-    }
-
-    /*------------------------------------
-    -------CORE CORE CORE TEXT TITLE------
-    ------------------------------------*/
-
-    .coreCoreCoreTextTitle, .coreCoreCoreTextTitle:visited {
-      color: #103494;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    /*----------------------------------
-    -------CORE_CORE_CORE_GREY_BOX------
-    ----------------------------------*/
-
-    #core_core_core_grey_box {
-      background: #EBEBEB;
-      float: right;
-      width: 240px;
-      padding: 10px;
-
-      border-radius: 5px;
-    }
-
-/*-------------------------------------
----------------------------------------
--------------SHOW BASKET---------------
----------------------------------------
--------------------------------------*/
-
-  /*---------------------------
-  -------CORE CORE BASKET------
-  ---------------------------*/
-
-  #coreCoreBasket {
-    padding: 10px;
-  }
-
-    /*-----------------------
-    -------BASKET TITLE------
-    -----------------------*/
-
-    #basketTitle {
-      font-family: dinpro, arial;
-      font-weight: normal;
-      font-size: 18px;
-    }
-
-    /*------------------------------
-    -------EMPTY BASKET BUTTON------
-    ------------------------------*/
-
-    #emptyBasketButton {
-      margin: auto;
-      text-align: center;
-      margin-top: 1%;
-      width: 125px;
-      padding: 0.2% 4%;
-      overflow-y: hidden;
-
-      cursor:pointer; /* Modify the mouse cursor to pointer when hovering over. */
-
-      background: rgb(225, 225, 225);
-
-      border-radius: 7px;
-
-      text-transform: uppercase;
-      font-weight: normal;
-      font-size: 11px;
-      letter-spacing: 0.1px;
-    }
-
-      /*-----------------------------------
-      -------EMPTY BASKET BUTTON LOGO------
-      -----------------------------------*/
-
-      #emptyBasketButtonLogo {
-        display: inline-block;
-        transform: translateY(7%);
-        margin-right: 5%;
+      #core_core_core_text {
+        max-width: 60%;
       }
+
+      #core_core_core_text, #core_core_core_grey_box {
+        display: inline-block;
+      }
+
+      /*------------------------------------
+      -------CORE CORE CORE TEXT TITLE------
+      ------------------------------------*/
+
+      .coreCoreCoreTextTitle, .coreCoreCoreTextTitle:visited {
+        color: #103494;
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      /*----------------------------------
+      -------CORE_CORE_CORE_GREY_BOX------
+      ----------------------------------*/
+
+      #core_core_core_grey_box {
+        background: #EBEBEB;
+        float: right;
+        width: 240px;
+        padding: 10px;
+
+        border-radius: 5px;
+      }
+
+
+  /*-------------------------------------
+  ---------------------------------------
+  -------------SHOW BASKET---------------
+  ---------------------------------------
+  -------------------------------------*/
+
+
+    /*---------------------------
+    -------CORE CORE BASKET------
+    ---------------------------*/
+
+    #coreCoreBasket {
+      padding: 10px;
+    }
+
+      /*-----------------------
+      -------BASKET TITLE------
+      -----------------------*/
+
+      #basketTitle {
+        font-family: dinpro, arial;
+        font-weight: normal;
+        font-size: 18px;
+      }
+
+      /*------------------------------
+      -------EMPTY BASKET BUTTON------
+      ------------------------------*/
+
+      #emptyBasketButton {
+        margin: auto;
+        text-align: center;
+        margin-top: 1%;
+        width: 125px;
+        padding: 0.2% 4%;
+        overflow-y: hidden;
+
+        cursor:pointer; /* Modify the mouse cursor to pointer when hovering over. */
+
+        background: rgb(225, 225, 225);
+
+        border-radius: 7px;
+
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: 11px;
+        letter-spacing: 0.1px;
+      }
+
+        /*-----------------------------------
+        -------EMPTY BASKET BUTTON LOGO------
+        -----------------------------------*/
+
+        #emptyBasketButtonLogo {
+          display: inline-block;
+          transform: translateY(7%);
+          margin-right: 5%;
+        }
 
 
     /*--------------------------

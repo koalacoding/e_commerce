@@ -73,9 +73,9 @@
 		$request = $bdd->query("SELECT name FROM menu");
 
 	    while ($fetch = $request->fetch()) {
-	    	echo '<div class="menu_element" id="'.$fetch['name'].'">
-					<div class="menu_element_title">'.$fetch['name'].'</div>
-					<div class="menu_element_white_arrow">
+	    	echo '<div class="header_menu_element" id="'.$fetch['name'].'">
+					<div class="header_menu_element_title">'.$fetch['name'].'</div>
+					<div class="header_menu_element_white_arrow">
 						<img src="http://media.ldlc.com/v3/img/general/ico-triangle-bas.gif"
 							 alt="white_arrow" />
 					</div>

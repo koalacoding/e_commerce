@@ -5,7 +5,7 @@
 -------------------------------------------------*/
 
 function handleMenuClick() {
-	$('.menu_element').click(function() {
+	$('.header_menu_element').click(function() {
 		var menuName = $(this).attr('id');
 
 		$.post("/e_commerce/products/show_products_list/show_products_list.php",
