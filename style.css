@@ -478,7 +478,7 @@
         -------RIGHT ELEMENT BASKET PRICE-----
         ------------------------------------*/
 
-        #basketPrice {
+        .basketPrice {
           font-weight: bold;
           color: #01B3F1;
         }
@@ -1079,13 +1079,16 @@
   -------------------------------------*/
 
 
-    /*---------------------------
-    -------CORE CORE BASKET------
-    ---------------------------*/
+    /*------------------------------------------
+    --------------------------------------------
+    --------------CORE CORE BASKET--------------
+    --------------------------------------------
+    ------------------------------------------*/
 
     #coreCoreBasket {
       padding: 10px;
     }
+
 
       /*-----------------------
       -------BASKET TITLE------
@@ -1245,3 +1248,67 @@
           margin-left: 20px;
           transform: translateY(8%);
         }
+
+
+      /*------------------------------------------------------
+      --------------------------------------------------------
+      --------------CORE CORE BASKET TOTAL PRICE--------------
+      --------------------------------------------------------
+      ------------------------------------------------------*/
+
+      #core_core_total_price {
+        text-align: right;
+        background: rgb(221, 235, 246);
+
+        font-size: 16px;
+        color: rgb(1, 40, 143);
+      }
+
+      #core_core_total_price span {
+        color: rgb(1, 40, 143);
+      }
+
+        /*---------------------------------------------------
+        ----------CORE CORE BASKET TOTAL PRICE TEXT----------
+        ---------------------------------------------------*/
+
+        #core_core_total_price_text {
+          margin-right: 10px;
+          padding: 5px;
+        }
+
+
+    /*------------------------------------------
+    ----------CORE CORE COMMAND BASKET----------
+    ------------------------------------------*/
+    
+    #core_core_command_basket_wrapper {
+      margin: 15px 0;
+      text-align: center;
+    }
+
+    #core_core_command_basket {
+      align-content: center;
+      padding: 15px;
+
+      -moz-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+      -webkit-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+      box-shadow:inset 0px 1px 0px 0px #7a8eb9;
+      background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7189bd), color-stop(1, #012875));
+      background:-moz-linear-gradient(top, #7189bd 5%, #012875 100%);
+      background:-webkit-linear-gradient(top, #7189bd 5%, #012875 100%);
+      background:-o-linear-gradient(top, #7189bd 5%, #012875 100%);
+      background:-ms-linear-gradient(top, #7189bd 5%, #012875 100%);
+      background:linear-gradient(to bottom, #7189bd 5%, #012875 100%);
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7189bd', endColorstr='#012875',GradientType=0);
+      background-color:#7189bd;
+      border-radius:2px;
+      border:1px solid #314179;
+
+      cursor:pointer;
+      color:#ffffff;
+      font-family:Arial;
+      font-size:16px;
+      font-weight:bold;
+      text-decoration:none;
+      }

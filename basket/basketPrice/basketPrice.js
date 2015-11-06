@@ -7,7 +7,9 @@
 function updateBasketPrice() {
 	$.post("/e_commerce/basket/basketPrice/basketPrice.php",
     function(data, status) {
-    	$('#basketPrice').text(data + '€');
+    	$('.basketPrice').each(function() {
+				$(this).text(data + '€');
+			});
    	}
   );
 }

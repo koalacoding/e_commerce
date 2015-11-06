@@ -41,7 +41,16 @@
 					  <hr width="100%" style="opacity: 0.3;">';
 		}
 
-		echo '</div>'; // Closing #coreCoreBasket.
+		echo '</div>'  // Closing #coreCoreBasket.
+				.'<div id="core_core_total_price">
+						<div id="core_core_total_price_text">
+							TOTAL DE VOTRE PANIER : <span class="basketPrice"></span>
+						</div>
+					</div>
+
+					<div id="core_core_command_basket_wrapper">
+						<button id="core_core_command_basket">COMMANDER</button>
+					</div>';
 	}
 
 

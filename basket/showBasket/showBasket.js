@@ -10,6 +10,7 @@ function showBasket() {
 		  function(data, status) {
         $('#core_core').empty(); // To clean the core_core is there is already shown content.
     		$('#core_core').append(data);
+				updateBasketPrice();
 		 	}
 		);
 	});

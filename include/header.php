@@ -57,7 +57,7 @@
 				<span class="small_blue_arrow">&nbsp;</span>
 				<div class="element_text">
 					<span id="nbOfProductsInBasket">0 article</span><br />
-					<span id="basketPrice">0,00 €</span>
+					<span class="basketPrice">0,00 €</span>
 				</div>
 			</div>
 		</div>

@@ -29,9 +29,10 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Fixed #login_tooltip_access_member_zone_button design.
 * Fixed "productQuantitySpinner" margin-right.
 * After clicking on a search bar result, the search bar value is now reinitialized.
+* Added the product's image in showBasket.
+* Added a button to confirm the command in the bottom of showBasket.
 
 ## To do.
-* Add the product's image in showBasket.
+* Add a mouse pointer when hovering over product's image or name in the products list.
+* When deleting a product in the basket, also update the bottom total basket price.
 * Add the basket total in a bar in the bottom of showBasket.
-* Add a button to confirm the command in the bottom of showBasket.
-* Add a system to confirm a command, and eventually to pay it.
