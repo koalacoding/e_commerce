@@ -791,6 +791,8 @@
 
             .addToBasket {
               float: right;
+              margin-top: 1px;
+              margin-left: 10px;
             }
 
 
