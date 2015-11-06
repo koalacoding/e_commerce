@@ -23,10 +23,10 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * The search bar only starts to show results after at least 3 characters have been typed
   in the bar.
 * Improved "style.css" organization.
+* The user can now go on a product's page by clicking on a product's image or name
+  in the products list.
 
 ## To do.
-* Modify the search bar results design.
-* Allow the user to go on a product's page when clicking on a product in the products list.
 * Fix a design problem in the "showBasket" page.
 * Fix "Acceder à mon compte" button design.
 * Fix "productQuantitySpinner" margin-right.

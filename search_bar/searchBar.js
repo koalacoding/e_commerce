@@ -16,7 +16,7 @@ function searchBarAutocomplete() {
             data = JSON.parse(data);
 
             for (var i = 0; i < data.length; i++) {
-              result.push({value: data[i][0], label: data[i][1]});
+              result.push({value: data[i][0], label: '- ' + data[i][1]});
             }
 
             response(result);
