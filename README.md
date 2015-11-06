@@ -32,8 +32,8 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Added the product's image in showBasket.
 * Added a button to confirm the command in the bottom of showBasket.
 * Added the basket total in a bar in the bottom of /basket/showBasket/showBasket.php.
+* Added a mouse pointer when hovering over product's image or name in the products list.
+* When deleting a product in the basket, the bottom total basket price is now updated.
 
 ## To do.
-* Add a mouse pointer when hovering over product's image or name in the products list.
-* When deleting a product in the basket, also update the bottom total basket price.
 * Enhance the ui-spinner margin-right in /products/show_products_list/show_products_list.php.

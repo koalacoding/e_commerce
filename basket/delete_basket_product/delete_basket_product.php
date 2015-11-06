@@ -41,12 +41,14 @@
 
 require_once($_SERVER['DOCUMENT_ROOT'] . '/e_commerce/include/session.php');
 
-if (isset($_SESSION['email'])) { // If the user is connected.
-	delete_db_basket_product($_SESSION['email'], $_POST['productId']);
-}
+if (isset($_POST['productId'])) {
+  if (isset($_SESSION['email'])) { // If the user is connected.
+  	delete_db_basket_product($_SESSION['email'], $_POST['productId']);
+  }
 
-else if (isset($_SESSION)) {
-	$_SESSION['basket'] = delete_session_basket_product($_SESSION['basket'], $_POST['productId']);
+  else if (isset($_SESSION['basket'])) {
+  	$_SESSION['basket'] = delete_session_basket_product($_SESSION['basket'], $_POST['productId']);
+  }
 }
 
 else {
