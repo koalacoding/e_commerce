@@ -1,5 +1,6 @@
 # e_commerce
 E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
+Tested with Google Chrome Version 46.0.2490.80 m.
 
 ## Steps finished.
 * Added jQuery auto-complete civility and country in /mon_compte/vos_informations.php.
@@ -41,6 +42,6 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Admins can now delete a product.
 * When an admin deletes a product, if an user had the product in his basket,
   the number of items in his basket is now updated.
+* Admins can now modify a product dynamically on a product's details page.
 
 ## To do.
-* Allow admins to modify a product.

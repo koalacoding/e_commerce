@@ -380,7 +380,9 @@
 
       .login_tooltip_inscription_button, .login_tooltip_connexion_button,
       #login_tooltip_access_member_zone_button, #product_details_add_to_basket_button
-      , .product_details_delete_product_button {
+      , .product_details_delete_product_button, .product_details_modify_product_button,
+      .product_details_validate_modify_product_button,
+      .product_details_cancel_modify_product_button  {
         -moz-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
         -webkit-box-shadow:inset 0px 1px 0px 0px #7a8eb9;
         box-shadow:inset 0px 1px 0px 0px #7a8eb9;
@@ -570,9 +572,7 @@
 
     background: #fff;
 
-    border-right: 1px solid #c8c8c8;
-    border-left: 1px solid #c8c8c8;
-    border-bottom: 1px solid #c8c8c8;
+    border: 1px solid #c8c8c8;
 
     color: #141414;
     font-size: 14px;
@@ -596,7 +596,9 @@
 
       background: url(http://image.noelshack.com/fichiers/2015/42/1444914137-core-core-top-bar.png) no-repeat 0 0;
 
-      border: 1px solid #c8c8c8;
+      border-top: 1px solid #c8c8c8;
+      border-right: 1px solid #c8c8c8;
+      border-left: 1px solid #c8c8c8;
 
       line-height: 100%;
     }
@@ -819,6 +821,13 @@
         padding: 15px;
       }
 
+      #product_details_mini_description, #product_details_category {
+        line-height: 13px;
+        font-size: 11px;
+        font-weight: normal;
+        color: #808080;
+      }
+
 
         /*-------------------------------
         -------PRODUCT DETAILS NAME------
@@ -828,17 +837,13 @@
           font-size: 18px;
         }
 
-        /*--------------------------------------
-        -------PRODUCT DETAILS DESCRIPTION------
-        --------------------------------------*/
+        /*-----------------------------------
+        -------PRODUCT DETAILS CATEGORY------
+        -----------------------------------*/
 
-        #product_details_mini_description {
-          margin-bottom: 30px;
-
-          line-height: 13px;
-          font-size: 11px;
-          font-weight: normal;
-          color: #808080;
+        #product_details_category {
+          margin-top: 2px;
+          margin-bottom: 15px;
         }
 
         /*--------------------------------
@@ -876,7 +881,7 @@
       #product_details_right_floater {
         float: right;
         width: 230px;
-        height: 400px;
+        height: 420px;
         text-align: center;
         padding-top: 20px;
 
@@ -887,7 +892,9 @@
         border: 1px solid #FFFFFF;
       }
 
-      #product_details_add_to_basket_button, .product_details_delete_product_button {
+      #product_details_add_to_basket_button, .product_details_delete_product_button
+      , .product_details_modify_product_button, .product_details_validate_modify_product_button,
+      .product_details_cancel_modify_product_button  {
         margin-top: 10px;
         padding: 5px;
       }

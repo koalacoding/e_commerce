@@ -20,6 +20,9 @@ function show_product_details($product_id, $session) {
             <div id="product_details_left_floater">
               <div id="product_details_name">'.$fetch['name'].'</div>
               <div id="product_details_mini_description">'.$fetch['mini_description'].'</div>
+              <div id="product_details_category">
+                Catégorie : <span>'.ucfirst($fetch['category']).'</span>
+              </div>
 
               <div id="product_details_image"><img src="'.$fetch['image_link'].'" /></div>
               <div id="product_details_description">'.$fetch['description'].'</div>
@@ -39,7 +42,8 @@ function show_product_details($product_id, $session) {
               <button id="product_details_add_to_basket_button">Ajouter au panier</button>
               <br />
               <br />';
-              show_delete_product_button_if_user_is_admin($session, $fetch['id']);
+              show_delete_product_and_modify_product_buttons_if_user_is_admin($session,
+                                                                              $fetch['id']);
         echo '<div id="dialog-confirm"><p></p></div>
               </div>
           </div>
@@ -47,16 +51,21 @@ function show_product_details($product_id, $session) {
 }
 
 
-  /*-------------------------------------------------------------
-  ----------SHOW DELETE PRODUCT BUTTON IF USER IS ADMIN----------
-  -------------------------------------------------------------*/
+  /*----------------------------------------------------------------------------------
+  ----------SHOW DELETE PRODUCT AND MODIFY PRODUCTS BUTTONS IF USER IS ADMIN----------
+  ----------------------------------------------------------------------------------*/
 
-  function show_delete_product_button_if_user_is_admin($session, $productId) {
+  function show_delete_product_and_modify_product_buttons_if_user_is_admin($session, $productId) {
     require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/functions/check_if_user_is_admin.php';
 
     // If the user is connected, and if he is an admin.
     if (isset($session['email']) && is_user_admin($session['email'])) {
-      echo '<button id="'.$productId.'" class="product_details_delete_product_button">
+      echo '<button class="product_details_modify_product_button">
+              Modifier produit
+            </button>
+            <br />
+            <br />
+            <button id="'.$productId.'" class="product_details_delete_product_button">
               Supprimer produit
             </button>';
     }

@@ -5,6 +5,7 @@
 
 				<script src="/e_commerce/products/show_products_list/showProductsList.js"></script>
 				<script src="/e_commerce/products/show_product_details/showProductDetails.js"></script>
+				<script src="/e_commerce/products/modify_product/modifyProduct.js"></script>
 				<script src="/e_commerce/products/delete_product/deleteProduct.js"></script>
 
 				<script src="/e_commerce/basket/addToBasket/addToBasket.js"></script>

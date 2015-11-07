@@ -11,8 +11,8 @@
 		require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
 
 		$request = $bdd->prepare("UPDATE users SET civility=?, firstname=?, lastname=?, adress=?,
-												   country=?, postal_code=?, city=?, phone_fixe=?,
-												   phone_mobile=? WHERE email=?");
+																						   country=?, postal_code=?, city=?, phone_fixe=?,
+																						   phone_mobile=? WHERE email=?");
 
 		$request->execute(array($civility, $firstname, $lastname, $adress, $country, $postal_code,
 								$city, $phone_fixe, $phone_mobile, $email));
@@ -63,7 +63,7 @@
 
 		if (!is_phone_number_valid($phone_mobile)) {
 			$error_message['phone_mobile'] = '- Téléphone mobile incorrect.';
-		}	
+		}
 
 
 		// If no error is raised, we update the account.
