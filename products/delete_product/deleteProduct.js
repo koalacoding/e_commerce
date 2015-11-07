@@ -12,8 +12,11 @@ function deleteProduct() {
       $.post("/e_commerce/products/delete_product/delete_product.php",
         { product_id: productId },
         function(data, status) {
-          // If there is no error, core_core gets cleaned.
-          if (data == 'ok') $('#core_core').empty();
+          if (data == 'ok') { // If there is no error
+            $('#core_core').empty(); // core_core gets cleaned.
+            updateBasketPrice();
+            updateNbOfProductsInBasket();            
+          }
         }
       );
     }

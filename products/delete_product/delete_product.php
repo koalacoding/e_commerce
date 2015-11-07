@@ -11,7 +11,24 @@ function delete_product($product_id) {
   $request = $bdd->prepare("DELETE FROM products WHERE id=?");
   $request->execute(array($product_id));
   $request->closeCursor();
+
+  delete_product_from_baskets($product_id);
 }
+
+
+  /*---------------------------------------------
+  ----------DELETE PRODUCT FROM BASKETS----------
+  ---------------------------------------------*/
+
+  // If an user had the deleted product in his basket, this function will remove it.
+  function delete_product_from_baskets($product_id) {
+    require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
+
+    $request = $bdd->prepare("DELETE FROM basket WHERE productId=?");
+    $request->execute(array($product_id));
+    $request->closeCursor();
+  }
+
 
 /*------------------------------
 --------------------------------
