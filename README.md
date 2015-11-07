@@ -35,6 +35,9 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * Added a mouse pointer when hovering over product's image or name in the products list.
 * When deleting a product in the basket, the bottom total basket price is now updated.
 * Enhanced the ui-spinner margin-right in /products/show_products_list/show_products_list.php.
+* All the core's content (even a top bar) is now emptied when showing the basket
+  or the products list.
+* Core's content is now also emptied when showing a product's details.
 
 ## To do.
 * Allow admins to delete a product.
