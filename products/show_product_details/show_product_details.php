@@ -5,7 +5,7 @@
 ------------------------------------------------------
 ----------------------------------------------------*/
 
-function show_product_details($product_id) {
+function show_product_details($product_id, $session) {
   require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/products/common_functions.php';
   require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/sql/sql_connexion.php';
 
@@ -35,11 +35,33 @@ function show_product_details($product_id) {
                 <span>Quantité :</span>
                 <input class="productQuantitySpinnerInput" value="1">
               </div>
+              <br />
               <button id="product_details_add_to_basket_button">Ajouter au panier</button>
-            </div>
+              <br />
+              <br />';
+              show_delete_product_button_if_user_is_admin($session, $fetch['id']);
+        echo '<div id="dialog-confirm"><p></p></div>
+              </div>
           </div>
         </div>';
 }
+
+
+  /*-------------------------------------------------------------
+  ----------SHOW DELETE PRODUCT BUTTON IF USER IS ADMIN----------
+  -------------------------------------------------------------*/
+
+  function show_delete_product_button_if_user_is_admin($session, $productId) {
+    require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/functions/check_if_user_is_admin.php';
+
+    // If the user is connected, and if he is an admin.
+    if (isset($session['email']) && is_user_admin($session['email'])) {
+      echo '<button id="'.$productId.'" class="product_details_delete_product_button">
+              Supprimer produit
+            </button>';
+    }
+  }
+
 
 /*------------------------------------
 --------------------------------------
@@ -47,6 +69,8 @@ function show_product_details($product_id) {
 --------------------------------------
 ------------------------------------*/
 
+require $_SERVER['DOCUMENT_ROOT'] . '/e_commerce/include/session.php';
+
 if (isset($_POST['product_id'])) {
-  show_product_details($_POST['product_id']);
+  show_product_details($_POST['product_id'], $_SESSION);
 }

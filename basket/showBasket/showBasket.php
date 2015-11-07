@@ -107,12 +107,7 @@
             <span id="basketTitle">VOTRE PANIER :</span>
             <hr width="85%" style="opacity: 0.3; float: right; margin-top: 2.3%;">
 
-            <div id="dialog-confirm" style="display: none;">
-              <p>
-                <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
-                Tous les produits de votre panier seront supprimés. Êtes-vous sûr ?
-              </p>
-            </div>
+            <div id="dialog-confirm" style="display: none;"><p></p></div>
 
             <div id="emptyBasketButton">
               <div id="emptyBasketButtonLogo">

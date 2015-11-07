@@ -38,6 +38,9 @@ E-commerce interface coded with HTML5, CSS3, PHP and jQuery.
 * All the core's content (even a top bar) is now emptied when showing the basket
   or the products list.
 * Core's content is now also emptied when showing a product's details.
+* Admins can now delete a product.
 
 ## To do.
-* Allow admins to delete a product.
+* Allow admins to modify a product.
+* To fix : when an admin deletes a product, if an user had the product in his basket,
+  the number of items in his basket is not updated.

@@ -21,7 +21,8 @@ function deleteBasketProduct() {
 
   					$.post("/e_commerce/basket/showBasket/showBasket.php",
   					  function(data, status) {
-  			        $('#core_core').empty(); // To clean the core_core is there is already shown content.
+                // To clean core_core if there is already shown content in it.
+  			        $('#core_core').empty();
   			    		$('#core_core').append(data);
                 updateBasketPrice();
   					 	}
@@ -31,8 +32,8 @@ function deleteBasketProduct() {
   		);
     }
 
-    $( "#dialog-confirm" ).attr('title', 'Supprimer produit');
-    $( ".ui-dialog-title" ).text('Supprimer produit');
+    $( "#dialog-confirm" ).attr('title', 'Supprimer produit du panier');
+    $( ".ui-dialog-title" ).text('Supprimer produit du panier');
     $( "#dialog-confirm p" ).text('Ce produit sera supprimé de votre panier. Êtes-vous sûr ?');
     $( "#dialog-confirm" ).dialog({
 			resizable: false,
