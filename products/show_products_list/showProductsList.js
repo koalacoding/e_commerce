@@ -13,7 +13,7 @@ function handleMenuClick() {
             menu: menuName
         },
         function(data, status) {
-            $('#core').empty(); // To clean the core_core is there is content in it.
+            $('#core').empty(); // To clean the core_core if there is content in it.
     				$('#core').append(data);
             $('.productQuantitySpinnerInput').spinner({min: 1, max: 999});
         }

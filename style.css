@@ -125,6 +125,8 @@
     height: 76px;
     transform: translateY(60%);
 
+    cursor: pointer;
+
     line-height: 1.2;
     font-size: 40px;
     font-weight: 300;
@@ -582,6 +584,93 @@
   #core_core_top_bar, #core_core {
     margin: 0 auto;
   }
+
+    /*-----------------------------------------
+    -------------------------------------------
+    --------------SHOW NEW PRODUCTS------------
+    -------------------------------------------
+    -----------------------------------------*/
+
+
+      /*------------------------------------
+      -------SHOW NEW PRODUCTS : TITLE------
+      ------------------------------------*/
+
+      #show_new_products_title {
+        display: inline-block;
+        padding: 10px;
+      }
+
+
+      /*-------------------------------------------------
+      ---------------------------------------------------
+      --------------SHOW NEW PRODUCTS WRAPPER------------
+      ---------------------------------------------------
+      -------------------------------------------------*/
+
+      #show_new_products_wrapper {
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+
+        /*---------------------------------------------------
+        -----------------------------------------------------
+        --------------SHOW NEW PRODUCTS : PRODUCT------------
+        -----------------------------------------------------
+        ---------------------------------------------------*/
+
+        .show_new_products_product {
+          display: inline-block;
+          width: 225px;
+          margin: 0 50px;
+          cursor: pointer;
+        }
+
+        .show_new_products_product_name, .show_new_products_product_mini_description, .show_new_products_product_price {
+          padding: 0 25px;
+        }
+
+
+          /*-------------------------------------------
+          -------SHOW NEW PRODUCTS : PRODUCT NAME------
+          -------------------------------------------*/
+
+          .show_new_products_product_name {
+            height: 50px;
+
+            line-height: 15.6px;
+            color: rgb(0, 40, 140);
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: underline;
+          }
+
+          /*-------------------------------------------------------
+          -------SHOW NEW PRODUCTS : PRODUCT MINI DESCRIPTION------
+          -------------------------------------------------------*/
+
+          .show_new_products_product_mini_description {
+            height: 80px;
+
+            padding-top: 7px;
+
+            line-height: 14.4px;
+            color: rgb(100, 100, 100);
+            font-size: 14px;
+            font-weight: normal;
+            font-style: italic;
+          }
+
+          /*--------------------------------------------
+          -------SHOW NEW PRODUCTS : PRODUCT PRICE------
+          --------------------------------------------*/
+
+          .show_new_products_product_price {
+            color: rgb(20, 20, 20);
+            font-size: 17.6px;
+            font-weight: bold;
+          }
 
 
     /*-----------------------------------------
@@ -1112,7 +1201,7 @@
       -------BASKET TITLE------
       -----------------------*/
 
-      #basketTitle {
+      #basketTitle, #show_new_products_title {
         font-family: dinpro, arial;
         font-weight: normal;
         font-size: 18px;

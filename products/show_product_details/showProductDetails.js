@@ -29,10 +29,12 @@ function showProductDetails(productId) {
 function handleProductClick() {
   var productId = 0;
 
-	$(document).on('click', '.product_image, .productName', function() {
+	$(document).on('click', '.product_image, .productName, .show_new_products_product', function() {
     if ($(this).hasClass('product_image')) productId = $(this).parent().parent().attr('id');
+    else if ($(this).hasClass('show_new_products_product')) productId = $(this).attr('id');
     // If the element the user clicked on is from the productName class.
     else productId = $(this).parent().parent().parent().attr('id');
+
     productId = parseInt(productId);
     showProductDetails(productId);
   });

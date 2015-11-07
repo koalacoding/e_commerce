@@ -43,5 +43,7 @@ Tested with Google Chrome Version 46.0.2490.80 m.
 * When an admin deletes a product, if an user had the product in his basket,
   the number of items in his basket is now updated.
 * Admins can now modify a product dynamically on a product's details page.
+* On the main page, the last 3 products that have been added are now shown,
+  and we can access to a product's details by cliking on it.
 
 ## To do.

@@ -1,10 +1,8 @@
 <div id="header_wrapper">
 	<div id="header">
 		<div id="logo_site">
-			<a href="/e_commerce/index.php">
-				<img src="http://image.noelshack.com/fichiers/2015/45/1446852143-logo.png"
-				height="76" width="175" alt="logo">
-			</a>
+			<img src="http://image.noelshack.com/fichiers/2015/45/1446852143-logo.png" height="76"
+					 width="175" alt="logo">
 		</div>
 
 		<div id="search_bar">
