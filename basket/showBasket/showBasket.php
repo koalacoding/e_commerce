@@ -33,7 +33,7 @@
                  '€</div>
                 <div class="delete_product_from_basket_logo">
                   <img id="'.$productDetails['id'].'" class="delete_basket_product"
-                       src="http://media.ldlc.com/v3/img/panier/ico-supprimer.png" width="15"
+                       src="/e_commerce/images/red_cross.png" width="15"
                        height="15">
                  </div>
               </div>
@@ -111,7 +111,7 @@
 
             <div id="emptyBasketButton">
               <div id="emptyBasketButtonLogo">
-                <img src="http://media.ldlc.com/v3/img/panier/ico-vider.gif">
+                <img src="/e_commerce/images/trash_can.png">
               </div>
               <span>vider le panier</span>
             </div>

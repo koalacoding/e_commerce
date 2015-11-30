@@ -275,7 +275,7 @@
         --------------------------------------*/
 
         .elementLogoAccount {
-          background: url(http://media.ldlc.com/v3/img/general/ico-compte.png) no-repeat 0 top;
+          background: url("/e_commerce/images/account_icon.png") no-repeat 0 top;
           background-size: 20px 20px;
         }
 
@@ -284,7 +284,7 @@
         -------------------------------------*/
 
         .elementLogoBasket {
-          background: url(https://media.ldlc.com/v3/img/general/ico-panier.png) no-repeat 0 top;
+          background: url("/e_commerce/images/basket.png") no-repeat 0 top;
           background-size: 20px 20px;
         }
 
@@ -310,7 +310,7 @@
         height: 12px;
         transform: translateY(70%);
 
-        background: url(http://media.ldlc.com/v3/img/general/ico-fleche.svg) no-repeat 0 top;
+        background: url("/e_commerce/images/blue_arrow.png") no-repeat 0 top;
         background-size: 12px 12px;
       }
 

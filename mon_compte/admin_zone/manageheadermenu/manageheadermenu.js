@@ -12,8 +12,7 @@ function addMenuElement() {
 				"<div class='header_menu_element' id='"+$('[name="menuNameAdd"]').val().toLowerCase()+"'> \
 			     <div class='header_menu_element_title'>"+$('[name="menuNameAdd"]').val().toLowerCase()+"</div> \
 					 <div class='header_menu_element_white_arrow'> \
-				   	<img src='http://media.ldlc.com/v3/img/general/ico-triangle-bas.gif' \
-							   alt='white_arrow' /> \
+				   	<img src='/e_commerce/images/white_arrow.png' alt='white_arrow' /> \
 					 </div> \
 				 </div>";
 

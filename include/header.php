@@ -8,7 +8,7 @@
 		<div id="search_bar">
 			<div id="search_bar_glass_container">
 				<img id="search_bar_glass"
-					 src="http://media.ldlc.com/v3/img/general/moteur/ico-loupe.svg"
+					 src="/e_commerce/images/magnifying_glass.png"
 					 alt="search_bar_glass">
 			</div>
 			<input id="search_bar_field" type="text" name="search_field" value="Rechercher"
